@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+        http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="AppBundle\Entity\Siglum" table="sigla"
+        repository-class="AppBundle\Repository\SiglumRepository">
+        
+        <many-to-one field="kind" target-entity="SiglumKind" />
+        <many-to-one field="subject" target-entity="Subject" />
+        
+    </entity>
+    
+</doctrine-mapping>

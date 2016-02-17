@@ -1,0 +1,14 @@
+{% extends 'admin/simple/list.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'siglum' %}
+{% set title = 'title.sigla'|trans %}
+
+{% block headerMoreFields1 %}
+	<th><i class="fa fa-"></i> {{ 'label.siglum.subject'|trans }}</th>
+	<th><i class="fa fa-"></i> {{ 'label.siglum.kind'|trans }}</th>
+{% endblock %}
+
+{% block entryMoreFields1 %}
+	<td>{{ item.subject.name}}</td>
+	<td>{{ item.kind.name}}</td>
+{% endblock %}

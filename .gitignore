@@ -16,4 +16,8 @@
 /web/bundles/
 /web/assets/vendor/
 /web/uploads/
+/web/css/*
+!/web/css/*.min.css
+/web/js/*
+!/web/js/*.min.js
 /node_modules/

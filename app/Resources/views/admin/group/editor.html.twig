@@ -1,0 +1,11 @@
+{% extends 'admin/simple/editor.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'group' %}
+{% set title = 'title.groups'|trans %}
+
+
+{%  block moreFields1 %}	
+    {{ form_row(form.parent, { 'label': 'label.group.parent'|trans }) }}
+    {{ form_row(form.stage, { 'label': 'label.group.stage'|trans }) }}
+    {{ form_row(form.content, { 'label': 'label.group.content'|trans }) }}
+{%  endblock %}

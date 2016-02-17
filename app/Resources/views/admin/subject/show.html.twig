@@ -1,0 +1,13 @@
+{% extends 'admin/simple/show.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'subject' %}
+{% set title = 'title.subjects'|trans %}
+
+{% block moreFields1 %}
+	<div class="col-xs-12 col-md-2 col-lg-3 text-xs-right"><b>{{ 'label.subject.stage'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.stage.name }}</div>
+	<div class="col-xs-12"><hr></div>
+	<div class="col-xs-12 col-md-2 col-lg-3 text-xs-right"><b>{{ 'label.subject.content'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.content }}</div>
+	<div class="col-xs-12"><hr></div>
+{% endblock %}

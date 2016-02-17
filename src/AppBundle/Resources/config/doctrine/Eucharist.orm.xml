@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+        http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="AppBundle\Entity\Eucharist" table="eucharists"
+        repository-class="AppBundle\Repository\EucharistRepository">
+        
+        <field name="date" type="datetime" />
+        <field name="info" type="string" length="64" nullable="true" />
+        
+        <many-to-one field="group" target-entity="Group" />
+        
+        <field name="siglum1st" type="string" length="32" nullable="true" />
+        <field name="siglum2nd" type="string" length="32" nullable="true" />
+        <field name="siglumGos" type="string" length="32" nullable="true" />
+        
+        <many-to-one field="introIntBy" target-entity="User" nullable="true" />
+        <many-to-one field="intro1stBy" target-entity="User" nullable="true" />
+        <many-to-one field="intro2ndBy" target-entity="User" nullable="true" />
+        <many-to-one field="introGosBy" target-entity="User" nullable="true" />
+        
+        <many-to-one field="breadBy" target-entity="User" nullable="true" />
+        <many-to-one field="prayerBy" target-entity="User" nullable="true" />
+        <many-to-one field="flowersBy" target-entity="User" nullable="true" />
+        
+        <many-to-one field="songInt" target-entity="Song" nullable="true" />
+        <many-to-one field="songPce" target-entity="Song" nullable="true" />
+        <many-to-one field="songBr1" target-entity="Song" nullable="true" />
+        <many-to-one field="songBr2" target-entity="Song" nullable="true" />
+        <many-to-one field="songBr3" target-entity="Song" nullable="true" />
+        <many-to-one field="songWn1" target-entity="Song" nullable="true" />
+        <many-to-one field="songWn2" target-entity="Song" nullable="true" />
+        <many-to-one field="songWn3" target-entity="Song" nullable="true" />
+        <many-to-one field="songOut" target-entity="Song" nullable="true" />
+        
+    </entity>
+    
+</doctrine-mapping>

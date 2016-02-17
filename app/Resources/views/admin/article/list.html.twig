@@ -1,0 +1,12 @@
+{% extends 'admin/image/list.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'article' %}
+{% set title = 'title.articles'|trans %}
+
+{% block headerMoreFields2 %}
+	<th><i class="fa fa-"></i> {{ 'label.article.group'|trans }}</th>
+{% endblock %}
+
+{% block entryMoreFields2 %}
+	<td>{{ item.group.name }}</td>
+{% endblock %}

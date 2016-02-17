@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+        http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="AppBundle\Entity\Liturgy" table="liturgies"
+        repository-class="AppBundle\Repository\LiturgyRepository">
+        
+        <field name="date" type="datetime" />
+        
+        <many-to-one field="group" target-entity="Group" />
+        <many-to-one field="subject" target-entity="Subject" />
+        
+        <field name="siglum1st" type="string" length="32" nullable="true" />
+        <field name="siglum2nd" type="string" length="32" nullable="true" />
+        <field name="siglum3rd" type="string" length="32" nullable="true" />
+        <field name="siglumGos" type="string" length="32" nullable="true" />
+        
+        <many-to-one field="introIntBy" target-entity="User" nullable="true" />
+        <many-to-one field="intro1stBy" target-entity="User" nullable="true" />
+        <many-to-one field="intro2ndBy" target-entity="User" nullable="true" />
+        <many-to-one field="intro3rdBy" target-entity="User" nullable="true" />
+        <many-to-one field="introGosBy" target-entity="User" nullable="true" />
+        
+        <many-to-one field="songInt" target-entity="Song" nullable="true" />
+        <many-to-one field="song1st" target-entity="Song" nullable="true" />
+        <many-to-one field="song2nd" target-entity="Song" nullable="true" />
+        <many-to-one field="song3rd" target-entity="Song" nullable="true" />
+        <many-to-one field="songPce" target-entity="Song" nullable="true" />
+        <many-to-one field="songOut" target-entity="Song" nullable="true" />
+        
+    </entity>
+    
+</doctrine-mapping>

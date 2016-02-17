@@ -1,0 +1,19 @@
+{% extends 'admin/simple/list.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'liturgy' %}
+{% set title = 'title.liturgies'|trans %}
+
+{% block filterMoreFields1 %}
+{% endblock %}
+
+{% block headerMoreFields1 %}
+	<th><i class="fa fa-"></i> {{ 'label.liturgy.date'|trans }}</th>
+	<th><i class="fa fa-"></i> {{ 'label.liturgy.group'|trans }}</th>
+	<th><i class="fa fa-"></i> {{ 'label.liturgy.subject'|trans }}</th>
+{% endblock %}
+
+{% block entryMoreFields1 %}
+	<td>{{ item.date|date('Y-m-d H:i:s')}}</td>
+	<td>{{ item.group.name}}</td>
+	<td>{{ item.subject.name}}</td>
+{% endblock %}

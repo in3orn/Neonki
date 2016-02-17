@@ -1,0 +1,12 @@
+{% extends 'admin/simple/list.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'stage' %}
+{% set title = 'title.stages'|trans %}
+
+{% block headerMoreFields1 %}
+	<th><i class="fa fa-"></i> {{ 'label.stage.number'|trans }}</th>
+{% endblock %}
+
+{% block entryMoreFields1 %}
+	<td>{{ item.number}}</td>
+{% endblock %}

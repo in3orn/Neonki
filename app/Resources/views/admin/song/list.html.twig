@@ -1,0 +1,20 @@
+{% extends 'admin/simple/list.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'song' %}
+{% set title = 'title.songs'|trans %}
+
+{% block filterMoreFields1 %}
+	<li class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+		{{ form_widget(filter.stages, { 'label': 'label.song.stage' }) }}
+	</li>
+{% endblock %}
+
+{% block headerMoreFields1 %}
+	<th><i class="fa fa-"></i> {{ 'label.song.site'|trans }}</th>
+	<th><i class="fa fa-"></i> {{ 'label.song.stage'|trans }}</th>
+{% endblock %}
+
+{% block entryMoreFields1 %}
+	<td>{{ item.site}}</td>
+	<td>{{ item.stage.name}}</td>
+{% endblock %}

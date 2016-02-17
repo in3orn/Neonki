@@ -1,0 +1,16 @@
+{% extends 'site/simple/list.html.twig' %}
+
+{% set mainPath = 'site_' ~ 'eucharist' %}
+{% set title = 'title.eucharists'|trans %}
+
+{% block otherFilterButtons %}
+	{% if is_granted('ROLE_RESPONSIBLE') %}
+		<div class="col-sm-2">
+			<div class="btn-group btn-group-justified" role="group">
+				<a class="btn btn-success" href="{{ path(mainPath ~ '_new') }}">
+					<i class="fa fa-plus"></i>{{ 'action.new'|trans }}
+				</a>				
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

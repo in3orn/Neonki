@@ -1,0 +1,10 @@
+{% extends 'admin/image/editor.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'article' %}
+{% set title = 'title.articles'|trans %}
+
+
+{%  block moreFields1 %}	
+	{{ form_row(form.group, { 'label': 'label.article.group'|trans }) }}
+    {{ form_row(form.content, { 'label': 'label.article.content'|trans }) }}
+{%  endblock %}

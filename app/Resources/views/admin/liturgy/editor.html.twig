@@ -1,0 +1,31 @@
+{% extends 'admin/simple/editor.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'liturgy' %}
+{% set title = 'title.liturgies'|trans %}
+
+
+{%  block moreFields1 %}
+	{{ form_row(form.date, { 'label': 'label.liturgy.date'|trans }) }}
+    {{ form_row(form.group, { 'label': 'label.liturgy.group'|trans }) }}
+    {{ form_row(form.subject, { 'label': 'label.liturgy.subject'|trans }) }}
+{%  endblock %}
+
+{%  block moreFields2 %}
+	{{ form_row(form.siglum1st, { 'label': 'label.liturgy.siglum1st'|trans }) }}
+	{{ form_row(form.siglum2nd, { 'label': 'label.liturgy.siglum2nd'|trans }) }}
+	{{ form_row(form.siglum3rd, { 'label': 'label.liturgy.siglum3rd'|trans }) }}
+	{{ form_row(form.siglumGos, { 'label': 'label.liturgy.siglumGos'|trans }) }}
+	
+	{{ form_row(form.introIntBy, { 'label': 'label.liturgy.introIntBy'|trans }) }}
+	{{ form_row(form.intro1stBy, { 'label': 'label.liturgy.intro1stBy'|trans }) }}
+	{{ form_row(form.intro2ndBy, { 'label': 'label.liturgy.intro2ndBy'|trans }) }}
+	{{ form_row(form.intro3rdBy, { 'label': 'label.liturgy.intro3rdBy'|trans }) }}
+	{{ form_row(form.introGosBy, { 'label': 'label.liturgy.introGosBy'|trans }) }}
+	
+	{{ form_row(form.songInt, { 'label': 'label.liturgy.songInt'|trans }) }}
+	{{ form_row(form.song1st, { 'label': 'label.liturgy.song1st'|trans }) }}
+	{{ form_row(form.song2nd, { 'label': 'label.liturgy.song2nd'|trans }) }}
+	{{ form_row(form.song3rd, { 'label': 'label.liturgy.song3rd'|trans }) }}
+	{{ form_row(form.songPce, { 'label': 'label.liturgy.songPce'|trans }) }}
+	{{ form_row(form.songOut, { 'label': 'label.liturgy.songOut'|trans }) }}
+{%  endblock %}

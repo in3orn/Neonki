@@ -1,0 +1,85 @@
+{% extends 'site/index.html.twig' %}
+
+{% block content %}
+	{% form_theme filter 'form/fields.html.twig' %}
+
+	{% block filterBlock %}
+		<div class="row">
+		
+			{% block mainFilterButtons %}
+				<div class="col-sm-2 col-sm-offset-5">
+					<div class="btn-group btn-group-justified" role="group">
+						<a class="btn btn-primary toggle" data-toggle="collapse" data-parent="#accodrion" href="#filter">
+							<i class="fa fa-filter"></i>{{ 'action.filter'|trans }}
+						</a>				
+					</div>
+				</div>
+			{% endblock %}
+			
+			{% block otherFilterButtons %}
+			{% endblock %}
+		</div>
+	{% endblock %}
+			
+	{% block filterMenu %}
+		<div class="panel-group" id="accordion">
+			<div id="filter" class="accordion-body collapse">
+			
+				{% block filterForm %}
+					{% form_theme filter 'form/fields.html.twig' %}
+					
+					{{ form_start(filter) }}
+					<ul class="list-inline">
+						{% block filterMoreFields1 %}
+						{% endblock %}
+					
+						{% block filterMainFields1 %}
+						{% endblock %}
+						
+						{% block filterMoreFields2 %}
+						{% endblock %}
+						
+						{% block filterMainFields2 %}
+						{% endblock %}
+						
+						{% block filterActions %}
+						{% endblock %}
+					</ul>			
+					{{ form_end(filter) }}
+				{% endblock %}
+			</div>
+		</div>
+		
+		<script type="text/javascript">$("#filter").collapse("hide");</script>
+	{%  endblock %}
+	
+	{%  block listBlock %}
+		{% for entry in entries%}
+			{% block entryBlock %}
+				<hr>
+				<div class="row">
+					{% block entryMoreFields1 %}
+					{% endblock %}
+				
+					{% block entryMainFields1 %}
+					{% endblock %}
+					
+					{% block entryMoreFields2 %}
+					{% endblock %}
+					
+					{% block entryMainFields2 %}
+					{% endblock %}
+				</div>
+			{% endblock %}
+		{% else %}
+			<p>{{ 'label.noEntries'|trans }}</p>
+		{% endfor %}
+	{% endblock %}
+	
+	{% block listPaginator %}
+		<div>
+	        {{ knp_pagination_render(entries) }}
+	    </div>
+    {% endblock %}
+    
+{% endblock %}

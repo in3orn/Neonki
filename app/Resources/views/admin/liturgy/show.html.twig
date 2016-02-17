@@ -1,0 +1,121 @@
+{% extends 'admin/simple/show.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'liturgy' %}
+{% set title = 'title.liturgies'|trans %}
+
+{% block moreFields1 %}
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.date'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.date|date('Y-m-d H:i:s') }}</div>
+	<div class="col-xs-12"><hr></div>
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.group'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.group.name }}</div>
+	<div class="col-xs-12"><hr></div>
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.subject'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.subject.name }}</div>
+	<div class="col-xs-12"><hr></div>
+{% endblock %}
+
+{% block moreFields2 %}
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.siglum1st'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.siglum1st }}</div>
+	<div class="col-xs-12"><hr></div>
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.siglum2nd'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.siglum2nd }}</div>
+	<div class="col-xs-12"><hr></div>
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.siglum3rd'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.siglum3rd }}</div>
+	<div class="col-xs-12"><hr></div>
+	<div class="col-xs-12 col-md-2 col-lg-3 text-md-right"><b>{{ 'label.liturgy.siglumGos'|trans }}</b></div>
+	<div class="col-xs-12 col-md-8 col-lg-6">{{ entry.siglumGos }}</div>
+	<div class="col-xs-12"><hr></div>
+	
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.introIntBy'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.introIntBy != null %}{{ entry.introIntBy.username }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.intro1stBy'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.intro1stBy != null %}{{ entry.intro1stBy.username }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.intro2ndBy'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.intro2ndBy != null %}{{ entry.intro2ndBy.username }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.intro3rdBy'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.intro3rdBy != null %}{{ entry.intro3rdBy.username }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.introGosBy'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.introGosBy != null %}{{ entry.introGosBy.username }}{% endif %}
+		</div>
+	</div>
+	
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.songInt'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.songInt != null %}{{ entry.songInt.name }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.song1st'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.song1st != null %}{{ entry.song1st.name }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.song2nd'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.song2nd != null %}{{ entry.song2nd.name }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.song3rd'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.song3rd != null %}{{ entry.song3rd.name }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.songPce'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.songPce != null %}{{ entry.songPce.name }}{% endif %}
+		</div>
+	</div>
+	<div class="row"><hr>
+		<div class="col-xs-12 col-md-2 col-lg-3 text-md-right">
+			<b>{{ 'label.liturgy.songOut'|trans }}</b>
+		</div>
+		<div class="col-xs-12 col-md-8 col-lg-6">
+			{% if entry.songOut != null %}{{ entry.songOut.name }}{% endif %}
+		</div>
+	</div>
+{% endblock %}

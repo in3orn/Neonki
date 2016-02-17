@@ -1,0 +1,9 @@
+{% extends 'admin/simple/editor.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'siglum' %}
+{% set title = 'title.sigla'|trans %}
+
+
+{%  block moreFields1 %}	
+	{{ form_row(form.subject, { 'label': 'label.siglum.subject'|trans }) }}
+{%  endblock %}

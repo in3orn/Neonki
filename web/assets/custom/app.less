@@ -1,0 +1,84 @@
+@import "variables.less";
+
+@import "..\vendor\bootstrap\less\bootstrap.less";
+@import "..\vendor\eonasdan-bootstrap-datetimepicker\src\less\_bootstrap-datetimepicker.less";
+
+.text-xs-left { text-align: left; }
+.text-xs-right { text-align: right; }
+.text-xs-center { text-align: center; }
+.text-xs-justify { text-align: justify; }
+
+@media (min-width: 768px) {
+	.row {
+      	position: relative;
+  	}
+
+	.text-sm-bottom {
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+  	}
+  	
+  	.text-sm-left { text-align: left; }
+  	.text-sm-right { text-align: right; }
+  	.text-sm-center { text-align: center; }
+  	.text-sm-justify { text-align: justify; }
+}
+
+@media (min-width: 992px) {
+	.row {
+      	position: relative;
+  	}
+
+	.text-md-bottom {
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+  	}
+  
+  	.text-md-left { text-align: left; }
+  	.text-md-right { text-align: right; }
+  	.text-md-center { text-align: center; }
+  	.text-md-justify { text-align: justify; }
+}
+
+@media (min-width: 1200px) {
+	.row {
+      	position: relative;
+  	}
+
+	.text-lg-bottom {
+    	position: absolute;
+    	bottom: 0;
+    	right: 0;
+  	}
+  	
+  	.text-lg-left { text-align: left; }
+  	.text-lg-right { text-align: right; }
+  	.text-lg-center { text-align: center; }
+  	.text-lg-justify { text-align: justify; }
+}
+
+html, body {
+	height: 100%;
+}
+
+.page-header {
+	margin-top: 60px;
+}
+
+.fill {
+	min-height: 100%;
+	height: auto;
+	
+	margin: 0 auto -60px;
+	padding: 0 0 -600px;
+}
+
+.footer {
+	height: 60px;
+  	text-align: center;
+  	color: @white;
+  	background: @inverse-background;
+  	padding-bottom: (@padding * 4);
+}

@@ -1,0 +1,394 @@
+# App Routing
+app:
+    resource: "@AppBundle/Controller"
+    type:     annotation
+
+
+
+
+# Site Routing
+site:
+    path:      /
+    defaults:  { _controller: "AppBundle:Site/Site:index" }
+
+# Site Articles Routing  
+site_article_show:
+    path:      /articles/show/{id}
+    defaults:  { _controller: "AppBundle:Site/Article:show" }
+    
+site_article:
+    path:      /articles/{page}
+    defaults:  { _controller: "AppBundle:Site/Article:index", page: 1 }
+    
+# Site Eucharists Routing  
+site_eucharist_show:
+    path:      /eucharists/show/{id}
+    defaults:  { _controller: "AppBundle:Site/Eucharist:show" }
+    
+site_eucharist_new:
+    path:      /eucharists/new
+    defaults:  { _controller: "AppBundle:Site/Eucharist:new" }
+    
+site_eucharist_edit:
+    path:      /eucharists/edit/{id}
+    defaults:  { _controller: "AppBundle:Site/Eucharist:edit" }   
+    
+site_eucharist:
+    path:      /eucharists/{page}
+    defaults:  { _controller: "AppBundle:Site/Eucharist:index", page: 1 }
+    
+# Site Liturgies Routing  
+site_liturgy_show:
+    path:      /liturgies/show/{id}
+    defaults:  { _controller: "AppBundle:Site/Liturgy:show" }
+    
+site_liturgy_new:
+    path:      /liturgies/new
+    defaults:  { _controller: "AppBundle:Site/Liturgy:new" }
+    
+site_liturgy_edit:
+    path:      /liturgies/edit/{id}
+    defaults:  { _controller: "AppBundle:Site/Liturgy:edit" }    
+        
+site_liturgy:
+    path:      /liturgies/{page}
+    defaults:  { _controller: "AppBundle:Site/Liturgy:index", page: 1 }
+    
+# Site Subjects Routing  
+site_subject_show:
+    path:      /subjects/show/{id}
+    defaults:  { _controller: "AppBundle:Site/Subject:show" }
+    
+site_subject:
+    path:      /subjects/{page}
+    defaults:  { _controller: "AppBundle:Site/Subject:index", page: 1 }
+    
+# Site Songs Routing  
+site_song_show:
+    path:      /songs/show/{id}
+    defaults:  { _controller: "AppBundle:Site/Song:show" }
+    
+site_song:
+    path:      /songs/{page}
+    defaults:  { _controller: "AppBundle:Site/Song:index", page: 1 }  
+  
+    
+    
+    
+    
+# Admin Routing
+admin:
+    path:      /admin/
+    defaults:  { _controller: "AppBundle:Admin/Admin:index" }
+
+
+
+
+# Admin Articles Routing    
+admin_article_show:
+    path:      /admin/articles/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Article:show" }
+    
+admin_article_new:
+    path:      /admin/articles/new
+    defaults:  { _controller: "AppBundle:Admin/Article:new" }
+    
+admin_article_copy:
+    path:      /admin/articles/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Article:copy" }
+    
+admin_article_edit:
+    path:      /admin/articles/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Article:edit" }
+    
+admin_article_delete:
+    path:      /admin/articles/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Article:delete" }
+    
+admin_article_delete_selected:
+    path:      /admin/articles/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Article:deleteSelected" }
+
+admin_article:
+    path:      /admin/articles/{page}
+    defaults:  { _controller: "AppBundle:Admin/Article:index", page: 1 }
+    
+    
+    
+        
+# Admin Eucharists Routing    
+admin_eucharist_show:
+    path:      /admin/eucharists/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:show" }
+    
+admin_eucharist_new:
+    path:      /admin/eucharists/new
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:new" }
+    
+admin_eucharist_copy:
+    path:      /admin/eucharists/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:copy" }
+    
+admin_eucharist_edit:
+    path:      /admin/eucharists/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:edit" }
+    
+admin_eucharist_delete:
+    path:      /admin/eucharists/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:delete" }
+    
+admin_eucharist_delete_selected:
+    path:      /admin/eucharists/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:deleteSelected" }
+
+admin_eucharist:
+    path:      /admin/eucharists/{page}
+    defaults:  { _controller: "AppBundle:Admin/Eucharist:index", page: 1 }
+    
+    
+    
+    
+# Admin Groups Routing    
+admin_group_show:
+    path:      /admin/groups/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Group:show" }
+    
+admin_group_new:
+    path:      /admin/groups/new
+    defaults:  { _controller: "AppBundle:Admin/Group:new" }
+    
+admin_group_copy:
+    path:      /admin/groups/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Group:copy" }
+    
+admin_group_edit:
+    path:      /admin/groups/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Group:edit" }
+    
+admin_group_delete:
+    path:      /admin/groups/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Group:delete" }
+    
+admin_group_delete_selected:
+    path:      /admin/groups/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Group:deleteSelected" }
+
+admin_group:
+    path:      /admin/groups/{page}
+    defaults:  { _controller: "AppBundle:Admin/Group:index", page: 1 }
+    
+    
+    
+
+# Admin Liturgies Routing    
+admin_liturgy_show:
+    path:      /admin/liturgies/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:show" }
+    
+admin_liturgy_new:
+    path:      /admin/liturgies/new
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:new" }
+    
+admin_liturgy_copy:
+    path:      /admin/liturgies/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:copy" }
+    
+admin_liturgy_edit:
+    path:      /admin/liturgies/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:edit" }
+    
+admin_liturgy_delete:
+    path:      /admin/liturgies/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:delete" }
+    
+admin_liturgy_delete_selected:
+    path:      /admin/liturgies/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:deleteSelected" }
+
+admin_liturgy:
+    path:      /admin/liturgies/{page}
+    defaults:  { _controller: "AppBundle:Admin/Liturgy:index", page: 1 }
+    
+    
+    
+        
+# Admin Sigla Routing    
+admin_siglum_show:
+    path:      /admin/sigla/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Siglum:show" }
+    
+admin_siglum_new:
+    path:      /admin/sigla/new
+    defaults:  { _controller: "AppBundle:Admin/Siglum:new" }
+    
+admin_siglum_copy:
+    path:      /admin/sigla/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Siglum:copy" }
+    
+admin_siglum_edit:
+    path:      /admin/sigla/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Siglum:edit" }
+    
+admin_siglum_delete:
+    path:      /admin/sigla/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Siglum:delete" }
+    
+admin_siglum_delete_selected:
+    path:      /admin/sigla/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Siglum:deleteSelected" }
+
+admin_siglum:
+    path:      /admin/sigla/{page}
+    defaults:  { _controller: "AppBundle:Admin/Siglum:index", page: 1 }
+    
+    
+    
+
+# Admin SiglumKinds Routing    
+admin_siglum_kind_show:
+    path:      /admin/siglum_kinds/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:show" }
+    
+admin_siglum_kind_new:
+    path:      /admin/siglum_kinds/new
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:new" }
+    
+admin_siglum_kind_copy:
+    path:      /admin/siglum_kinds/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:copy" }
+    
+admin_siglum_kind_edit:
+    path:      /admin/siglum_kinds/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:edit" }
+    
+admin_siglum_kind_delete:
+    path:      /admin/siglum_kinds/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:delete" }
+    
+admin_siglum_kind_delete_selected:
+    path:      /admin/siglum_kinds/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:deleteSelected" }
+
+admin_siglum_kind:
+    path:      /admin/siglum_kinds/{page}
+    defaults:  { _controller: "AppBundle:Admin/SiglumKind:index", page: 1 }
+    
+    
+    
+    
+        
+# Admin Songs Routing    
+admin_song_show:
+    path:      /admin/songs/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Song:show" }
+    
+admin_song_new:
+    path:      /admin/songs/new
+    defaults:  { _controller: "AppBundle:Admin/Song:new" }
+    
+admin_song_copy:
+    path:      /admin/songs/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Song:copy" }
+    
+admin_song_edit:
+    path:      /admin/songs/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Song:edit" }
+    
+admin_song_delete:
+    path:      /admin/songs/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Song:delete" }
+    
+admin_song_delete_selected:
+    path:      /admin/songs/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Song:deleteSelected" }
+
+admin_song:
+    path:      /admin/songs/{page}
+    defaults:  { _controller: "AppBundle:Admin/Song:index", page: 1 }
+    
+    
+    
+
+# Admin Stages Routing    
+admin_stage_show:
+    path:      /admin/stages/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Stage:show" }
+    
+admin_stage_new:
+    path:      /admin/stages/new/
+    defaults:  { _controller: "AppBundle:Admin/Stage:new" }
+    
+admin_stage_copy:
+    path:      /admin/stages/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Stage:copy" }
+    
+admin_stage_edit:
+    path:      /admin/stages/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Stage:edit" }
+    
+admin_stage_delete:
+    path:      /admin/stages/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Stage:delete" }
+
+admin_stage_delete_selected:
+    path:      /admin/stages/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Stage:deleteSelected" }
+    
+admin_stage:
+    path:      /admin/stages/{page}
+    defaults:  { _controller: "AppBundle:Admin/Stage:index", page: 1 }
+
+
+
+
+# Admin Subjects Routing    
+admin_subject_show:
+    path:      /admin/subjects/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/Subject:show" }
+    
+admin_subject_new:
+    path:      /admin/subjects/new/
+    defaults:  { _controller: "AppBundle:Admin/Subject:new" }
+    
+admin_subject_copy:
+    path:      /admin/subjects/copy/{id}
+    defaults:  { _controller: "AppBundle:Admin/Subject:copy" }
+    
+admin_subject_edit:
+    path:      /admin/subjects/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/Subject:edit" }
+    
+admin_subject_delete:
+    path:      /admin/subjects/delete/{id}
+    defaults:  { _controller: "AppBundle:Admin/Subject:delete" }
+
+admin_subject_delete_selected:
+    path:      /admin/subjects/deleteSelected
+    defaults:  { _controller: "AppBundle:Admin/Subject:deleteSelected" }
+    
+admin_subject:
+    path:      /admin/subjects/{page}
+    defaults:  { _controller: "AppBundle:Admin/Subject:index", page: 1 }
+    
+    
+    
+    
+# Admin Users Routing    
+admin_user_show:
+    path:      /admin/users/show/{id}
+    defaults:  { _controller: "AppBundle:Admin/User:show" }
+    
+admin_user_edit:
+    path:      /admin/users/edit/{id}
+    defaults:  { _controller: "AppBundle:Admin/User:edit" }
+    
+admin_user:
+    path:      /admin/users/{page}
+    defaults:  { _controller: "AppBundle:Admin/User:index", page: 1 }
+
+
+
+
+# Friends of Symfony Routing    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

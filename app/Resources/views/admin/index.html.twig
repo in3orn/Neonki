@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+	
+	<div class="">
+		{% block navigationBar %}
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container-fluid">
+					
+					{% block navigationHeader %}
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" 
+									data-toggle="collapse" 
+									data-target="#bs-example-navbar-collapse-1" 
+									aria-expanded="false">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+					      	</button>
+							<a class="navbar-brand" href="{{ path('site') }}">
+								<img alt="Brand" src="{{ asset('favicon.ico') }}">
+							</a>
+				    	</div>
+			    	{% endblock %}
+			    	
+			    	{% block navigationList %}
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      			<ul class="nav navbar-nav navbar-right">
+								<li {% if mainPath == 'admin' %} class="active" {% endif %}><a href="{{ path('admin') }}">{% trans %}title.admin{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_article' %} class="active" {% endif %}><a href="{{ path('admin_article') }}">{% trans %}title.articles{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_eucharist' %} class="active" {% endif %}><a href="{{ path('admin_eucharist') }}">{% trans %}title.eucharists{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_group' %} class="active" {% endif %}><a href="{{ path('admin_group') }}">{% trans %}title.groups{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_liturgy' %} class="active" {% endif %}><a href="{{ path('admin_liturgy') }}">{% trans %}title.liturgies{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_siglum_kind' %} class="active" {% endif %}><a href="{{ path('admin_siglum_kind') }}">{% trans %}title.siglumKinds{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_siglum' %} class="active" {% endif %}><a href="{{ path('admin_siglum') }}">{% trans %}title.sigla{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_song' %} class="active" {% endif %}><a href="{{ path('admin_song') }}">{% trans %}title.songs{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_stage' %} class="active" {% endif %}><a href="{{ path('admin_stage') }}">{% trans %}title.stages{% endtrans %}</a></li>
+								<li {% if mainPath == 'admin_subject' %} class="active" {% endif %}><a href="{{ path('admin_subject') }}">{% trans %}title.subjects{% endtrans %}</a></li>
+								{% if is_granted('ROLE_SUPER_ADMIN') %}
+									<li {% if mainPath == 'admin_user' %} class="active" {% endif %}><a href="{{ path('admin_user') }}">{% trans %}title.users{% endtrans %}</a></li>
+								{% endif %}
+							</ul>
+						</div>
+					{% endblock %}
+			  	</div>
+			</nav>
+		{% endblock %}
+		
+		{% block header %}
+			<div class="page-header row">
+				<div class="col-sm-9">
+					<h1>{{ title }}</h1>
+				</div>
+				<div class ="text-sm-bottom col-sm-3">
+					{% if is_granted('ROLE_USER') %}
+						<p>{{ 'label.welcome'|trans }}, <a href="{{ path('fos_user_security_logout') }}">{{ 'label.logout'|trans }}</a></p>
+					{% else %}
+						<div class="row"><a href="{{ path('fos_user_security_login') }}">{{ 'label.login'|trans }}</a></div>
+						<div class="row"><a href="{{ path('fos_user_registration_register') }}">{{ 'label.register'|trans }}</a></div>
+					{% endif %}
+				</div>
+			</div>
+		{% endblock %}
+		
+		{% block content %}
+		{% endblock %}
+	</div>
+	
+	{% block footer %}
+		<div class="footer">
+	  		<div class="container-fluid">
+		    	<div class="col-lg-12">
+		      		<p>&copy; 2016 KRK Developement</p>
+		      		<div class="social-media">
+	        			<a href="#"><i class="fa fa-facebook"></i></a>
+		        		<a href="#"><i class="fa fa-twitter"></i></a>
+		        		<a href="#"><i class="fa fa-pinterest"></i></a>
+		        		<a href="#"><i class="fa fa-instagram"></i></a>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+	{% endblock %}
+{% endblock %}

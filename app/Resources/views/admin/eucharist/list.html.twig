@@ -1,0 +1,17 @@
+{% extends 'admin/simple/list.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'eucharist' %}
+{% set title = 'title.eucharists'|trans %}
+
+{% block filterMoreFields1 %}
+{% endblock %}
+
+{% block headerMoreFields1 %}
+	<th><i class="fa fa-"></i> {{ 'label.eucharist.group'|trans }}</th>
+	<th><i class="fa fa-"></i> {{ 'label.eucharist.date'|trans }}</th>
+{% endblock %}
+
+{% block entryMoreFields1 %}
+	<td>{{ item.group.name}}</td>
+	<td>{{ item.date|date('y-m-d h:i') }}</td>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'admin/simple/editor.html.twig' %}
+
+{% set mainPath = 'admin_' ~ 'subject' %}
+{% set title = 'title.subjects'|trans %}
+
+
+{%  block moreFields1 %}	
+	{{ form_row(form.stage, { 'label': 'label.subject.stage'|trans }) }}
+    {{ form_row(form.content, { 'label': 'label.subject.content'|trans }) }}
+{%  endblock %}
