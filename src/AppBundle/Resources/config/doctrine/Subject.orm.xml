@@ -11,6 +11,12 @@
         
         <many-to-one field="stage" target-entity="Stage" />
         
+        <one-to-many field="liturgies" target-entity="Liturgy" mapped-by="subject">
+            <order-by>
+                <order-by-field name="date" direction="DESC" />
+            </order-by>
+        </one-to-many>
+        
     </entity>
     
 </doctrine-mapping>

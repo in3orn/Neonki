@@ -3,18 +3,24 @@
 {% set mainPath = 'site_' ~ 'subject' %}
 {% set title = 'title.subjects'|trans %}
 
-{% block list %}
+{% block filterBlock %}
+	{% block otherActions %}
+		{% if is_granted('ROLE_RESPONSIBLE') %}
+			<div class="btn-group btn-group-justified" role="group">
+				<a class="btn btn-success" href="{{ path('site_liturgy_new', { subject: entry.id }) }}">
+					<i class="fa fa-plus"></i> {{ 'action.newLiturgy'|trans }}
+				</a>
+			</div>
+		{% endif %}
+	{% endblock %}
+
 	{% form_theme rendererForm 'form/fields.html.twig' %}
 
 	{% block rendererFormBlock %}
-		<div class="row">
-			<div class="col-sm-2 col-sm-offset-5">
-				<div class="btn-group btn-group-justified" role="group">
-					<a class="btn btn-primary toggle" data-toggle="collapse" data-parent="#accodrion" href="#rendererForm">
-						<i class="fa fa-filter"></i>{{ 'action.filter'|trans }}
-					</a>				
-				</div>
-			</div>
+		<div class="btn-group btn-group-justified lowered" role="group">
+			<a class="btn btn-primary toggle" data-toggle="collapse" data-parent="#accodrion" href="#rendererForm">
+				<i class="fa fa-filter"></i> {{ 'action.filter'|trans }}
+			</a>			
 		</div>
 	{% endblock %}
 			
@@ -28,10 +34,10 @@
 					{{ form_start(rendererForm) }}
 					<ul class="list-inline">
 						
-						<li class="col-lg-3">{{ form_widget(rendererForm.actUser, { 'placeholder': 'label.selectActUser' }) }}</li>
-						<li class="col-lg-3">{{ form_widget(rendererForm.maxUser, { 'placeholder': 'label.selectMaxUser' }) }}</li>
-						<li class="col-lg-3">{{ form_widget(rendererForm.colorUser, { 'label': 'label.colorUser' }) }}</li>
-						<li class="col-lg-3">{{ form_widget(rendererForm.showUserOnly, { 'label': 'label.showUserOnly' }) }}</li>
+						<li class="col-xs-12 lowered">{{ form_widget(rendererForm.actUser, { 'placeholder': 'label.selectActUser' }) }}</li>
+						<li class="col-xs-12 lowered">{{ form_widget(rendererForm.maxUser, { 'placeholder': 'label.selectMaxUser' }) }}</li>
+						<li class="col-xs-12">{{ form_widget(rendererForm.colorUser, { 'label': 'label.colorUser' }) }}</li>
+						<li class="col-xs-12">{{ form_widget(rendererForm.showUserOnly, { 'label': 'label.showUserOnly' }) }}</li>
 						
 						<li>
 							<div class="btn-group">
@@ -48,173 +54,158 @@
 		
 		<script type="text/javascript">$("#rendererForm").collapse("hide");</script>
 	{%  endblock %}
-
-
-	<div class="row">
-		<div class="col-xs-12 col-sm-6 col-md-3">
-			<div class="hidden-xs row">
-				<img alt="{{ 'label.historical'|trans }}" src="{{ asset('img/historical.png') }}" width="160" height="160">
-			</div>
-			
-			<div class="row"><h4>{{ 'label.historical'|trans }}</h4></div>
-			
-			{% for detail in historical %}
-				{% set textColor = "" %}
-				{% set textHidden = "" %}
-				
-				{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
-					{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
-						{% if renderer.colorUser %}
-							{% set textColor = "text-primary" %}
-						{% endif %}
-					{% else %}
-						{% if renderer.showUserOnly %}
-							{% set textHidden = "hidden" %}
-						{% endif %}
-					{% endif %}
-				{% endif %}
-				
-				<div class="{{ textHidden }} row {{ textColor }}">
-					<div class="col-xs-2">
-						{% if renderer.maxUser > 0 %}
-							{{ 1 + (loop.index0 % renderer.maxUser) }}
-						{% else %}
-							{{ 1 + loop.index0 }}
-						{% endif %}
-					</div>
-					<div class="col-xs-10">{{ detail.name }}</div>
-				</div>
-			{% else %}
-				No entries found.
-			{% endfor %}
+{% endblock %}
+	
+{% block list %}
+	<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="hidden-xs row">
+			<img alt="{{ 'label.historical'|trans }}" src="{{ asset('img/historical.png') }}" width="160" height="160">
 		</div>
 		
-		<div class="col-xs-12 col-sm-6 col-md-3">
-			<div class="hidden-xs row">
-				<img alt="{{ 'label.prophetic'|trans }}" src="{{ asset('img/prophetic.png') }}" width="160" height="160">
-			</div>
-			
-			<div class="row"><h4>{{ 'label.prophetic'|trans }}</h4></div>
-			
-			{% for detail in prophetic %}
-				{% set textColor = "" %}
-				{% set textHidden = "" %}
-				
-				{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
-					{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
-						{% if renderer.colorUser %}
-							{% set textColor = "text-primary" %}
-						{% endif %}
-					{% else %}
-						{% if renderer.showUserOnly %}
-							{% set textHidden = "hidden" %}
-						{% endif %}
-					{% endif %}
-				{% endif %}
-				
-				<div class="{{ textHidden }} row {{ textColor }}">
-					<div class="col-xs-2">
-						{% if renderer.maxUser > 0 %}
-							{{ 1 + (loop.index0 % renderer.maxUser) }}
-						{% else %}
-							{{ 1 + loop.index0 }}
-						{% endif %}
-					</div>
-					<div class="col-xs-10">{{ detail.name }}</div>
-				</div>
-			{% else %}
-				No entries found.
-			{% endfor %}
-		</div>
+		<div class="row"><h3>{{ 'label.historical'|trans }}</h3></div>
 		
-		<div class="col-xs-12 col-sm-6 col-md-3">
-			<div class="hidden-xs row">
-				<img alt="{{ 'label.gospels'|trans }}" src="{{ asset('img/gospels.png') }}" width="160" height="160">
-			</div>
+		{% for detail in historical %}
+			{% set textColor = "" %}
+			{% set textHidden = "" %}
 			
-			<div class="row"><h4>{{ 'label.gospels'|trans }}</h4></div>
-			
-			{% for detail in gospels %}
-				{% set textColor = "" %}
-				{% set textHidden = "" %}
-				
-				{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
-					{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
-						{% if renderer.colorUser %}
-							{% set textColor = "text-primary" %}
-						{% endif %}
-					{% else %}
-						{% if renderer.showUserOnly %}
-							{% set textHidden = "hidden" %}
-						{% endif %}
+			{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
+				{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
+					{% if renderer.colorUser %}
+						{% set textColor = "text-primary" %}
+					{% endif %}
+				{% else %}
+					{% if renderer.showUserOnly %}
+						{% set textHidden = "hidden" %}
 					{% endif %}
 				{% endif %}
-				
-				<div class="{{ textHidden }} row {{ textColor }}">
-					<div class="col-xs-2">
-						{% if renderer.maxUser > 0 %}
-							{{ 1 + (loop.index0 % renderer.maxUser) }}
-						{% else %}
-							{{ 1 + loop.index0 }}
-						{% endif %}
-					</div>
-					<div class="col-xs-10">{{ detail.name }}</div>
-				</div>
-			{% else %}
-				No entries found.
-			{% endfor %}
-		</div>
-		
-		<div class="col-xs-12 col-sm-6 col-md-3">
-			<div class="hidden-xs row">
-				<img alt="{{ 'label.others'|trans }}" src="{{ asset('img/others.png') }}" width="160" height="160">
-			</div>
+			{% endif %}
 			
-			<div class="row"><h4>{{ 'label.others'|trans }}</h4></div>
-			
-			{% for detail in other %}
-				{% set textColor = "" %}
-				{% set textHidden = "" %}
-				
-				{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
-					{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
-						{% if renderer.colorUser %}
-							{% set textColor = "text-primary" %}
-						{% endif %}
+			<div class="{{ textHidden }} row {{ textColor }}">
+				<div class="col-xs-2">
+					{% if renderer.maxUser > 0 %}
+						{{ 1 + (loop.index0 % renderer.maxUser) }}
 					{% else %}
-						{% if renderer.showUserOnly %}
-							{% set textHidden = "hidden" %}
-						{% endif %}
+						{{ 1 + loop.index0 }}
 					{% endif %}
-				{% endif %}
-				
-				<div class="{{ textHidden }} row {{ textColor }}">
-					<div class="col-xs-2">
-						{% if renderer.maxUser > 0 %}
-							{{ 1 + (loop.index0 % renderer.maxUser) }}
-						{% else %}
-							{{ 1 + loop.index0 }}
-						{% endif %}
-					</div>
-					<div class="col-xs-10">{{ detail.name }}</div>
 				</div>
-			{% else %}
-				No entries found.
-			{% endfor %}
-		</div>
+				<div class="col-xs-10">{{ detail.name }}</div>
+			</div>
+		{% else %}
+			No entries found.
+		{% endfor %}
 	</div>
 	
-	{% block otherActions %}
-		{% if is_granted('ROLE_RESPONSIBLE') %}
-		<div class="row">
-			<div class="col-sm-2 col-sm-offset-5">
-				<div class="btn-group btn-group-justified" role="group">
-					<a class="btn btn-success" href="{{ path('site_liturgy_new', { subject: entry.id }) }}">
-						<i class="fa fa-plus"></i>{{ 'action.newLiturgy'|trans }}
-					</a>
-				</div>
-			</div>
+	<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="hidden-xs row">
+			<img alt="{{ 'label.prophetic'|trans }}" src="{{ asset('img/prophetic.png') }}" width="160" height="160">
 		</div>
-		{% endif %}
-	{% endblock %}
+		
+		<div class="row"><h3>{{ 'label.prophetic'|trans }}</h3></div>
+		
+		{% for detail in prophetic %}
+			{% set textColor = "" %}
+			{% set textHidden = "" %}
+			
+			{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
+				{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
+					{% if renderer.colorUser %}
+						{% set textColor = "text-primary" %}
+					{% endif %}
+				{% else %}
+					{% if renderer.showUserOnly %}
+						{% set textHidden = "hidden" %}
+					{% endif %}
+				{% endif %}
+			{% endif %}
+			
+			<div class="{{ textHidden }} row {{ textColor }}">
+				<div class="col-xs-2">
+					{% if renderer.maxUser > 0 %}
+						{{ 1 + (loop.index0 % renderer.maxUser) }}
+					{% else %}
+						{{ 1 + loop.index0 }}
+					{% endif %}
+				</div>
+				<div class="col-xs-10">{{ detail.name }}</div>
+			</div>
+		{% else %}
+			No entries found.
+		{% endfor %}
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="hidden-xs row">
+			<img alt="{{ 'label.gospels'|trans }}" src="{{ asset('img/gospels.png') }}" width="160" height="160">
+		</div>
+		
+		<div class="row"><h3>{{ 'label.gospels'|trans }}</h3></div>
+		
+		{% for detail in gospels %}
+			{% set textColor = "" %}
+			{% set textHidden = "" %}
+			
+			{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
+				{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
+					{% if renderer.colorUser %}
+						{% set textColor = "text-primary" %}
+					{% endif %}
+				{% else %}
+					{% if renderer.showUserOnly %}
+						{% set textHidden = "hidden" %}
+					{% endif %}
+				{% endif %}
+			{% endif %}
+			
+			<div class="{{ textHidden }} row {{ textColor }}">
+				<div class="col-xs-2">
+					{% if renderer.maxUser > 0 %}
+						{{ 1 + (loop.index0 % renderer.maxUser) }}
+					{% else %}
+						{{ 1 + loop.index0 }}
+					{% endif %}
+				</div>
+				<div class="col-xs-10">{{ detail.name }}</div>
+			</div>
+		{% else %}
+			No entries found.
+		{% endfor %}
+	</div>
+	
+	<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="hidden-xs row">
+			<img alt="{{ 'label.others'|trans }}" src="{{ asset('img/others.png') }}" width="160" height="160">
+		</div>
+		
+		<div class="row"><h3>{{ 'label.others'|trans }}</h3></div>
+		
+		{% for detail in other %}
+			{% set textColor = "" %}
+			{% set textHidden = "" %}
+			
+			{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
+				{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
+					{% if renderer.colorUser %}
+						{% set textColor = "text-primary" %}
+					{% endif %}
+				{% else %}
+					{% if renderer.showUserOnly %}
+						{% set textHidden = "hidden" %}
+					{% endif %}
+				{% endif %}
+			{% endif %}
+			
+			<div class="{{ textHidden }} row {{ textColor }}">
+				<div class="col-xs-2">
+					{% if renderer.maxUser > 0 %}
+						{{ 1 + (loop.index0 % renderer.maxUser) }}
+					{% else %}
+						{{ 1 + loop.index0 }}
+					{% endif %}
+				</div>
+				<div class="col-xs-10">{{ detail.name }}</div>
+			</div>
+		{% else %}
+			No entries found.
+		{% endfor %}
+	</div>
 {% endblock %}

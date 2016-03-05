@@ -23,7 +23,11 @@ class Subject extends SimpleEntity
      */
     private $stage;
 
-
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $liturgies;
+    
     /**
      * Set content
      *
@@ -70,5 +74,47 @@ class Subject extends SimpleEntity
     public function getStage()
     {
         return $this->stage;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->liturgies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add liturgy
+     *
+     * @param \AppBundle\Entity\Liturgy $liturgy
+     *
+     * @return Subject
+     */
+    public function addLiturgy(\AppBundle\Entity\Liturgy $liturgy)
+    {
+        $this->liturgies[] = $liturgy;
+
+        return $this;
+    }
+
+    /**
+     * Remove liturgy
+     *
+     * @param \AppBundle\Entity\Liturgy $liturgy
+     */
+    public function removeLiturgy(\AppBundle\Entity\Liturgy $liturgy)
+    {
+        $this->liturgies->removeElement($liturgy);
+    }
+
+    /**
+     * Get liturgies
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLiturgies()
+    {
+        return $this->liturgies;
     }
 }

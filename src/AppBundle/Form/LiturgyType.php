@@ -22,7 +22,15 @@ class LiturgyType extends SimpleEntityType
 	 */
 	protected function addMoreFields(FormBuilderInterface $builder, array $options) {
 		$builder
-			->add('date', DateTimeType::class)
+			->add('date', DateTimeType::class, array(
+			    'widget' => 'single_text',
+			    'format' => 'yyyy-MM-dd hh:mm',
+			    'attr' => [
+			        'class' => 'form-control input-inline datetimepicker',
+			        'data-provide' => 'datetimepicker',
+			        'data-date-format' => 'YYYY-MM-DD hh:mm'
+			    ]
+			))
 			
 			->add('siglum1st', TextType::class, array(
 					'required'		=> false

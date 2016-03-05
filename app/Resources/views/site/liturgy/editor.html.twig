@@ -5,7 +5,16 @@
 
 
 {%  block moreFields1 %}
-	{{ form_row(form.date, { 'label': 'label.liturgy.date'|trans }) }}
+	<div class='input-group date' id='datetimepicker1'>
+		{{ form_widget(form.date, { 'label': 'label.liturgy.date'|trans }) }}
+		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+    <script type="text/javascript">
+		$(function () {
+			$('#datetimepicker1').datetimepicker();
+		});
+	</script>
+	
     <div class="hidden">
     	{{ form_row(form.group, { 'label': 'label.liturgy.group'|trans }) }}
 	</div>

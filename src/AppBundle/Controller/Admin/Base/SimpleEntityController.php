@@ -87,7 +87,7 @@ abstract class SimpleEntityController extends Controller
 		$query = $repository->querySelected($filter);
 			
 		$paginator = $this->get('knp_paginator');
-		return $paginator->paginate($query, $page, 10); //TODO count settings?
+		return $paginator->paginate($query, $page, 8); //TODO count settings?
 	}
 	
 	/**

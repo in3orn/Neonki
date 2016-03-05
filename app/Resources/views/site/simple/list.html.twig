@@ -2,9 +2,7 @@
 
 
 {% block filterMainFields1 %}
-	<li class="col-lg-3">
-		{{ form_widget(filter.name, { 'label': 'label.name' }) }}
-	</li>
+	<li class="col-xs-12 lowered">{{ form_widget(filter.name, { 'label': 'label.name' }) }}</li>
 {% endblock %}
 
 {% block filterMainFields2 %}
@@ -14,15 +12,19 @@
 	<li class="hidden">{{ form_widget(filter.updatedBefore) }}</li>
 {% endblock %}
 						
-{% block filterActions %}
-	{{ form_widget(filter.search, { 'icon': 'fa-search', 'label': 'action.search', 'attr': {'class': 'btn btn-primary'} }) }}
-	{{ form_widget(filter.clear, { 'icon': 'fa-eraser', 'label': 'action.clear', 'attr': {'class': 'btn btn-warning'} }) }}
+{% block filterActions %}	
+	<li class="btn-group lowered">
+		{{ form_widget(filter.search, { 'icon': 'fa-search', 'label': 'action.search', 'attr': {'class': 'btn btn-primary'} }) }}
+		{{ form_widget(filter.clear, { 'icon': 'fa-eraser', 'label': 'action.clear', 'attr': {'class': 'btn btn-warning'} }) }}
+	</li>
 {% endblock %}
 
 {% block entryMainFields1 %}
-	<div class="col-xs-12 col-sm-4 col-md-4">
-		<a href="{{ path(mainPath ~ '_show', { id: entry.id }) }}">
-			{{ entry.name }}
-		</a>
+	<div class="row col-xs-8 col-sm-4">
+		<div class="col-xs-2">{{ loop.index }}</div>
+		
+		<div class="col-xs-10">
+			<a href="{{ path(mainPath ~ '_show', { id: entry.id }) }}">{{ entry.name }} </a>
+		</div>
 	</div>
 {% endblock %}

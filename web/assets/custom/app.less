@@ -9,10 +9,6 @@
 .text-xs-justify { text-align: justify; }
 
 @media (min-width: 768px) {
-	.row {
-      	position: relative;
-  	}
-
 	.text-sm-bottom {
     	position: absolute;
     	bottom: 0;
@@ -26,10 +22,6 @@
 }
 
 @media (min-width: 992px) {
-	.row {
-      	position: relative;
-  	}
-
 	.text-md-bottom {
     	position: absolute;
     	bottom: 0;
@@ -43,10 +35,6 @@
 }
 
 @media (min-width: 1200px) {
-	.row {
-      	position: relative;
-  	}
-
 	.text-lg-bottom {
     	position: absolute;
     	bottom: 0;
@@ -59,20 +47,30 @@
   	.text-lg-justify { text-align: justify; }
 }
 
-html, body {
-	height: 100%;
+body {
+	font-family: "Calibri", Sans-serif
+}
+
+.hr-space {
+	display:inline-block;
+	width: 10px;
+}
+
+.row {
+	position: relative;
+}
+
+.content {
+	margin-bottom: 20px;
+	min-height: 730px;
 }
 
 .page-header {
-	margin-top: 60px;
+	margin-top: 50px;
 }
 
-.fill {
-	min-height: 100%;
-	height: auto;
-	
-	margin: 0 auto -60px;
-	padding: 0 0 -600px;
+.lowered {
+	margin-top: (@padding * 1px);
 }
 
 .footer {
@@ -80,5 +78,5 @@ html, body {
   	text-align: center;
   	color: @white;
   	background: @inverse-background;
-  	padding-bottom: (@padding * 4);
+  	padding-bottom: (@padding * 4px);
 }

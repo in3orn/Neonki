@@ -4,61 +4,65 @@
 
 {% block body %}
 	
-	<div>
-		{% block navigationBar %}
-			<nav class="navbar navbar-default navbar-fixed-top">
-				<div class="container-fluid">
-					
-					{% block navigationHeader %}
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" 
-									data-toggle="collapse" 
-									data-target="#bs-example-navbar-collapse-1" 
-									aria-expanded="false">
-						        <span class="sr-only">Toggle navigation</span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-					      	</button>
-							<a class="navbar-brand" href="{{ path('site') }}">
-								<img alt="Brand" src="{{ asset('favicon.ico') }}">
-							</a>
-				    	</div>
-			    	{% endblock %}
-			    	
-			    	{% block navigationList %}
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      			<ul class="nav navbar-nav navbar-right">
-								<li {% if mainPath == 'site' %} class="active" {% endif %}><a href="{{ path('site') }}">{% trans %}title.site{% endtrans %}</a></li>
-								<li {% if mainPath == 'site_article' %} class="active" {% endif %}><a href="{{ path('site_article') }}">{% trans %}title.articles{% endtrans %}</a></li>
-								<li {% if mainPath == 'site_eucharist' %} class="active" {% endif %}><a href="{{ path('site_eucharist') }}">{% trans %}title.eucharists{% endtrans %}</a></li>
-								<li {% if mainPath == 'site_liturgy' %} class="active" {% endif %}><a href="{{ path('site_liturgy') }}">{% trans %}title.liturgies{% endtrans %}</a></li>
-								<li {% if mainPath == 'site_subject' %} class="active" {% endif %}><a href="{{ path('site_subject') }}">{% trans %}title.subjects{% endtrans %}</a></li>
-								<li {% if mainPath == 'site_song' %} class="active" {% endif %}><a href="{{ path('site_song') }}">{% trans %}title.songs{% endtrans %}</a></li>
-							</ul>
-						</div>
-					{% endblock %}
-			  	</div>
-			</nav>
-		{% endblock %}
-		
-		{% block header %}
-			<div class="page-header row">
-				<div class="col-sm-9">
-					<h1>{{ title }}</h1>
-				</div>
-				<div class ="text-sm-bottom col-sm-3">
-					{% if is_granted('ROLE_USER') %}
-						<p>{{ 'label.welcome'|trans }}, <a href="{{ path('fos_user_security_logout') }}">{{ 'label.logout'|trans }}</a></p>
-					{% else %}
-						<div class="row"><a href="{{ path('fos_user_security_login') }}">{{ 'label.login'|trans }}</a></div>
-						<div class="row"><a href="{{ path('fos_user_registration_register') }}">{{ 'label.register'|trans }}</a></div>
-					{% endif %}
+	{% block navigationBar %}
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				
+				{% block navigationHeader %}
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" 
+								data-toggle="collapse" 
+								data-target="#bs-example-navbar-collapse-1" 
+								aria-expanded="false">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+				      	</button>
+						<a class="navbar-brand" href="{{ path('site') }}">
+							<img alt="Brand" src="{{ asset('favicon.ico') }}">
+						</a>
+			    	</div>
+		    	{% endblock %}
+		    	
+		    	{% block navigationList %}
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      			<ul class="nav navbar-nav navbar-right">
+							<li {% if mainPath == 'site' %} class="active" {% endif %}><a href="{{ path('site') }}">{% trans %}title.site{% endtrans %}</a></li>
+							<li {% if mainPath == 'site_article' %} class="active" {% endif %}><a href="{{ path('site_article') }}">{% trans %}title.articles{% endtrans %}</a></li>
+							<li {% if mainPath == 'site_eucharist' %} class="active" {% endif %}><a href="{{ path('site_eucharist') }}">{% trans %}title.eucharists{% endtrans %}</a></li>
+							<li {% if mainPath == 'site_liturgy' %} class="active" {% endif %}><a href="{{ path('site_liturgy') }}">{% trans %}title.liturgies{% endtrans %}</a></li>
+							<li {% if mainPath == 'site_subject' %} class="active" {% endif %}><a href="{{ path('site_subject') }}">{% trans %}title.subjects{% endtrans %}</a></li>
+							<li {% if mainPath == 'site_song' %} class="active" {% endif %}><a href="{{ path('site_song') }}">{% trans %}title.songs{% endtrans %}</a></li>
+						</ul>
+					</div>
+				{% endblock %}
+		  	</div>
+		</nav>
+	{% endblock %}
+	
+	{% block header %}
+		<div class="page-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<h1>{{ title }}</h1>
+					</div>
+					<div class ="col-sm-4 text-sm-bottom text-sm-right">
+						{% if is_granted('ROLE_USER') %}
+							<p>{{ 'label.welcome'|trans }} <strong>{{ app.user.username }}</strong>, <a href="{{ path('fos_user_security_logout') }}">{{ 'label.logout'|trans }}</a></p>
+						{% else %}
+							<div class="row"><a href="{{ path('fos_user_security_login') }}">{{ 'label.login'|trans }}</a></div>
+							<div class="row"><a href="{{ path('fos_user_registration_register') }}">{{ 'label.register'|trans }}</a></div>
+						{% endif %}
+					</div>
 				</div>
 			</div>
-		{% endblock %}
+		</div>
+	{% endblock %}
 		
-		<div class="container">
+	<div class="container content">
+		<div class="row">
 			{% block content %}
 			{% endblock %}
 		</div>

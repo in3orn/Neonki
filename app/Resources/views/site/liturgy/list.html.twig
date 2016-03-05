@@ -3,14 +3,23 @@
 {% set mainPath = 'site_' ~ 'liturgy' %}
 {% set title = 'title.liturgies'|trans %}
 
-{% block otherFilterButtons %}
+{% block actionsBlock %}
 	{% if is_granted('ROLE_RESPONSIBLE') %}
-		<div class="col-sm-2">
-			<div class="btn-group btn-group-justified" role="group">
-				<a class="btn btn-success" href="{{ path(mainPath ~ '_new') }}">
-					<i class="fa fa-plus"></i>{{ 'action.new'|trans }}
-				</a>				
-			</div>
+		<div class="btn-group btn-group-justified lowered" role="group">
+			<a class="btn btn-success" href="{{ path(mainPath ~ '_new') }}">
+				<i class="fa fa-plus"></i> {{ 'action.new'|trans }}
+			</a>				
 		</div>
 	{% endif %}
+{% endblock %}
+
+{% block entryMoreFields2 %}
+	<div class="col-xs-4 col-sm-2">{{ entry.date|date("Y-m-d") }} </div>
+	
+	<div class="row hidden-xs col-sm-6">
+		<div class="col-xs-3">{{ entry.siglum1st }} </div>
+		<div class="col-xs-3">{{ entry.siglum2nd }} </div>
+		<div class="col-xs-3">{{ entry.siglum3rd }} </div>
+		<div class="col-xs-3">{{ entry.siglumGos }} </div>
+	</div>
 {% endblock %}
