@@ -1,27 +1,29 @@
 {% extends 'site/index.html.twig' %}
 
 {% block content %}
+<div class="container">
+	<div class="row">
+	    <div class="col-sm-3 col-sm-push-9">
+	    	{% block filterBlock %}
+	    	{% endblock %}
+    	</div>
     
-    <div class="col-sm-3 col-sm-push-9">
-    	{% block filterBlock %}
-    	{% endblock %}
+	    <div class="col-sm-9 col-sm-pull-3">
+		    {% block mainFields1 %}
+		    {% endblock %}
+		    
+		    {% block moreFields1 %}
+		    {% endblock %}
+		    
+		    {% block mainFields2 %}
+		    {% endblock %}
+		    
+		    {% block moreFields2 %}
+		    {% endblock %}
+		    
+		    {% block list %}
+		    {% endblock %}
+	    </div>
     </div>
-    
-    <div class="col-sm-9 col-sm-pull-3">
-	    {% block mainFields1 %}
-	    {% endblock %}
-	    
-	    {% block moreFields1 %}
-	    {% endblock %}
-	    
-	    {% block mainFields2 %}
-	    {% endblock %}
-	    
-	    {% block moreFields2 %}
-	    {% endblock %}
-	    
-	    {% block list %}
-	    {% endblock %}
-    </div>
-    
+</div>
 {% endblock %}

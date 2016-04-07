@@ -1,81 +1,93 @@
 {% extends 'site/index.html.twig' %}
 
 {% block content %}
-	<div class="col-sm-3 col-sm-push-9">
-		{% form_theme filter 'form/fields.html.twig' %}
-	
-		{% block actionsBlock %}
-		{% endblock %}
-	
-		{% block filterBlock %}
-			{% block mainFilterButtons %}
-				<div class="btn-group btn-group-justified lowered" role="group">
-					<a class="btn btn-primary toggle" data-toggle="collapse" data-parent="#accodrion" href="#filter">
-						<i class="fa fa-filter"></i> {{ 'action.filter'|trans }}
-					</a>			
-				</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3 col-sm-push-9">
+			{% form_theme filter 'form/fields.html.twig' %}
+		
+			{% block actionsBlock %}
 			{% endblock %}
-		{% endblock %}
-				
-		{% block filterMenu %}
-			<div class="panel-group" id="accordion">
-				<div id="filter" class="accordion-body collapse">
-				
-					{% block filterForm %}
-						{% form_theme filter 'form/fields.html.twig' %}
-						
-						{{ form_start(filter) }}
-							<ul class="list-inline">
-								{% block filterMoreFields1 %}
-								{% endblock %}
+		
+			{% block filterBlock %}
+				{% block mainFilterButtons %}
+					<div class="btn-group btn-group-justified lowered" role="group">
+						<a class="btn btn-primary toggle" data-toggle="collapse" data-parent="#accodrion" href="#filter">
+							<i class="fa fa-filter"></i> {{ 'action.filter'|trans }}
+						</a>			
+					</div>
+				{% endblock %}
+			{% endblock %}
+					
+			{% block filterMenu %}
+				<div class="panel-group" id="accordion">
+					<div id="filter" class="accordion-body collapse">
+					
+						{% block filterForm %}
+							{% form_theme filter 'form/fields.html.twig' %}
 							
-								{% block filterMainFields1 %}
-								{% endblock %}
+							{{ form_start(filter) }}
+								<ul class="list-inline">
+									{% block filterMoreFields1 %}
+									{% endblock %}
 								
-								{% block filterMoreFields2 %}
-								{% endblock %}
-								
-								{% block filterMainFields2 %}
-								{% endblock %}
-								
-								{% block filterActions %}
-								{% endblock %}	
-							</ul>
-						{{ form_end(filter) }}
-					{% endblock %}
-				</div>
-			</div>		
-		{% endblock %}
-		<script type="text/javascript">$("#filter").collapse("hide");</script>
-	</div>
-	
-	<div class="col-sm-9 col-sm-pull-3">
-	{% block listBlock %}
-		{% for entry in entries%}
-			{% block entryBlock %}
-				<div class="row">
-					{% block entryMoreFields1 %}
-					{% endblock %}
-				
-					{% block entryMainFields1 %}
-					{% endblock %}
-					
-					{% block entryMoreFields2 %}
-					{% endblock %}
-					
-					{% block entryMainFields2 %}
-					{% endblock %}
-				</div>
-				<hr>
+									{% block filterMainFields1 %}
+									{% endblock %}
+									
+									{% block filterMoreFields2 %}
+									{% endblock %}
+									
+									{% block filterMainFields2 %}
+									{% endblock %}
+									
+									{% block filterActions %}
+									{% endblock %}	
+								</ul>
+							{{ form_end(filter) }}
+						{% endblock %}
+					</div>
+				</div>		
 			{% endblock %}
-		{% else %}
-			<p>{{ 'label.noEntries'|trans }}</p>
-		{% endfor %}
-	{% endblock %}
-	
-	{% block listPaginator %}
-		<div>{{ knp_pagination_render(entries) }}</div>
-    {% endblock %}
+			<script type="text/javascript">$("#filter").collapse("hide");</script>
+		</div>
+		
+		<div class="col-sm-9 col-sm-pull-3">
+			
+		{% block listBlock %}
+		<div class="row">
+			<div class="col-xs-12">
+				{% for entry in entries%}
+					{% block entryBlock %}
+						<div class="row">
+							{% block entryMoreFields1 %}
+							{% endblock %}
+						
+							{% block entryMainFields1 %}
+							{% endblock %}
+							
+							{% block entryMoreFields2 %}
+							{% endblock %}
+							
+							{% block entryMainFields2 %}
+							{% endblock %}
+						</div>
+						<hr>
+					{% endblock %}
+				{% else %}
+					<p>{{ 'label.noEntries'|trans }}</p>
+				{% endfor %}
+			</div>
+		</div>
+		{% endblock %}
+		
+		{% block listPaginator %}
+		<div class="row">
+			<div class="col-xs-12">
+		        {{ knp_pagination_render(entries) }}
+			</div>
+		</div>
+		{% endblock %}
+	    </div>
     </div>
-    
+</div>
 {% endblock %}

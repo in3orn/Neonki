@@ -8,6 +8,7 @@
         repository-class="AppBundle\Repository\ArticleRepository">
         
         <field name="content" type="text" nullable="true" />
+        <field name="date" type="datetime" />
         
         <many-to-one field="group" target-entity="Group" />
         

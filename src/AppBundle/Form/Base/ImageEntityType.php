@@ -18,7 +18,7 @@ class ImageEntityType extends SimpleEntityType
 		parent::addMainFields($builder, $options);
 		
 		$builder
-			->add('image', FileType::class, array(
+			->add('file', FileType::class, array(
 					'required' => false
 			));
 	}

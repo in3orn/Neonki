@@ -96,3 +96,8 @@ fos_user:
 services:
     fos_user.doctrine_registry:
         alias: doctrine
+        
+# Knp Paginator
+knp_paginator:
+    template:
+         pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig

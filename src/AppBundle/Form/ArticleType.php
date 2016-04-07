@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use AppBundle\Form\Base\ImageEntityType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class ArticleType extends ImageEntityType
 {
@@ -19,6 +20,18 @@ class ArticleType extends ImageEntityType
 	 */
 	protected function addMoreFields(FormBuilderInterface $builder, array $options) {
 		$builder
+			->add('date', DateTimeType::class, array(
+					'widget' => 'single_text',
+					'format' => 'yyyy-MM-dd hh:mm',
+					'attr' => [
+							'class' => 'form-control input-inline datetimepicker',
+							'data-provide' => 'datetimepicker',
+							'data-date-format' => 'YYYY-MM-DD hh:mm'
+					]
+			))
+			->add('content', TextareaType::class, array(
+					'required'		=> true
+			))
 			->add('content', TextareaType::class, array(
 					'required'		=> false
 			))

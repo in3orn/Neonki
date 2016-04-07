@@ -60,7 +60,8 @@ class SimpleEntityFilterType extends BaseFormType
 							'data-provide' => 'datepicker',
 							'data-date-format' => 'DD-MM-YYYY hh:mm'
 					]
-			));
+			))
+		;
 	}
 	
 	/**

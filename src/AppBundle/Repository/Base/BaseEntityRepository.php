@@ -25,10 +25,10 @@ abstract class BaseEntityRepository extends EntityRepository
 	 */
     public function querySelected(BaseEntityFilter $filter)
     {
-    	$query = 'SELECT e ';
-    	$query .= 'FROM ' . $this->getEntityType() . ' e ';
-    	$query .= $filter->getFilterExpression();
-    	$query .= $filter->getOrderByExpression();
+    	$query = 'SELECT e';
+    	$query .= ' FROM ' . $this->getEntityType() . ' e';
+    	$query .= ' ' . $filter->getFilterExpression();
+    	$query .= ' ' . $filter->getOrderByExpression();
     	
         return $this->getEntityManager()->createQuery($query);
     }

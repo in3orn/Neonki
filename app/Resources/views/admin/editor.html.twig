@@ -2,6 +2,7 @@
 
 {% block content %}
 	
+	<div class="container">
 	{% block formBlock %}
 		{% form_theme form 'form/fields.html.twig' %}
 		
@@ -24,5 +25,6 @@
 		    {% endblock %}
 		{{ form_end(form) }}
 	{% endblock %}
+	</div>
 	
 {% endblock %}

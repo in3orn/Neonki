@@ -2,6 +2,7 @@
 
 {% block content %}
 	
+	<div class="container">
 	{% block filterMenu %}
 		<div class="panel-group" id="accordion">
 			<div id="filter" class="accordion-body collapse">
@@ -33,11 +34,13 @@
 		
 		<script type="text/javascript">$("#filter").collapse("hide");</script>
 	{%  endblock %}
+	</div>
 	
 	{%  block listBlock %}
 		{% form_theme form 'form/fields.html.twig' %}
 	
 		{{ form_start(form) }}
+			<div class="container">
 			{% block listActions %}
 				<ul class="list-inline">
 					{% block headerActions %}
@@ -49,6 +52,7 @@
 					</li>
 				</ul>
 			{% endblock %}
+			</div>
 	    	
     		{% block listTable %}
 	    		<table class="table table-striped">
@@ -104,10 +108,10 @@
 		{{ form_end(form) }}
 	{% endblock %}
 	
+	<div class="container">
 	{% block listPaginator %}
-		<div>
-	        {{ knp_pagination_render(entries) }}
-	    </div>
+	<div>{{ knp_pagination_render(entries) }}</div>
     {% endblock %}
+    </div>
     
 {% endblock %}

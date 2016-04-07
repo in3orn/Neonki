@@ -80,4 +80,62 @@ class Article extends ImageEntity
     {
         return $this->group;
     }
+    /**
+     * @var \DateTime
+     */
+    private $term;
+
+
+    /**
+     * Set term
+     *
+     * @param \DateTime $term
+     *
+     * @return Article
+     */
+    public function setTerm($term)
+    {
+        $this->term = $term;
+
+        return $this;
+    }
+
+    /**
+     * Get term
+     *
+     * @return \DateTime
+     */
+    public function getTerm()
+    {
+        return $this->term;
+    }
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Article
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
 }

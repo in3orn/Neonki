@@ -6,7 +6,7 @@
 	
 	{% block navigationBar %}
 		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container-fluid">
+			<div class="container">
 				
 				{% block navigationHeader %}
 					<div class="navbar-header">
@@ -42,30 +42,28 @@
 	{% endblock %}
 	
 	{% block header %}
-		<div class="page-header">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-8">
-						<h1>{{ title }}</h1>
-					</div>
-					<div class ="col-sm-4 text-sm-bottom text-sm-right">
-						{% if is_granted('ROLE_USER') %}
-							<p>{{ 'label.welcome'|trans }} <strong>{{ app.user.username }}</strong>, <a href="{{ path('fos_user_security_logout') }}">{{ 'label.logout'|trans }}</a></p>
-						{% else %}
-							<div class="row"><a href="{{ path('fos_user_security_login') }}">{{ 'label.login'|trans }}</a></div>
-							<div class="row"><a href="{{ path('fos_user_registration_register') }}">{{ 'label.register'|trans }}</a></div>
-						{% endif %}
-					</div>
+	<div class="page-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-9">
+					<h1>{{ title }}</h1>
+				</div>
+				<div class ="text-sm-bottom text-sm-right col-sm-3">
+					{% if is_granted('ROLE_USER') %}
+						<p>{{ 'label.welcome'|trans }} <strong>{{ app.user.username }}</strong>, <a href="{{ path('fos_user_security_logout') }}">{{ 'label.logout'|trans }}</a></p>
+					{% else %}
+						<p><a href="{{ path('fos_user_security_login') }}">{{ 'label.login'|trans }}</a><p>
+						<p><a href="{{ path('fos_user_registration_register') }}">{{ 'label.register'|trans }}</a></p>
+					{% endif %}
 				</div>
 			</div>
 		</div>
-	{% endblock %}
+	</div>
+	{% endblock %}	
 		
-	<div class="container content">
-		<div class="row">
-			{% block content %}
-			{% endblock %}
-		</div>
+	<div class="content">
+	{% block content %}
+	{% endblock %}
 	</div>
 	
 	{% block footer %}
