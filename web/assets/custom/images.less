@@ -1,0 +1,52 @@
+.rect {
+	position: relative;
+  	overflow: hidden;
+  	border: none;
+  	
+	width: 100%;
+	height: auto;
+	padding-top: 100%;
+}
+
+.rect img {
+	position: absolute;
+  	left: 50%;
+  	top: 50%;
+  	height: 100%;
+  	width: auto;
+  	-webkit-transform: translate(-50%,-50%);
+      	-ms-transform: translate(-50%,-50%);
+          	transform: translate(-50%,-50%);
+}
+
+.rounded {
+	border-radius: 2vw;
+}
+
+.bkg-primary {
+	background-color: @brand-primary;
+}
+
+.bkg-success {
+	background-color: @brand-success;
+}
+
+.bkg-warning {
+	background-color: @brand-warning;
+}
+
+.div-center {
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.logo {
+	color: @white;
+	font-size: 12vw;
+	font-weight: bold;
+}

@@ -16,6 +16,14 @@ site_article_show:
     path:      /articles/show/{id}
     defaults:  { _controller: "AppBundle:Site/Article:show" }
     
+site_article_edit:
+    path:      /articles/edit/{id}
+    defaults:  { _controller: "AppBundle:Site/Article:edit" }   
+    
+site_article_new:
+    path:      /articles/new
+    defaults:  { _controller: "AppBundle:Site/Article:new" }
+        
 site_article:
     path:      /articles/{page}
     defaults:  { _controller: "AppBundle:Site/Article:index", page: 1 }
@@ -25,30 +33,39 @@ site_eucharist_show:
     path:      /eucharists/show/{id}
     defaults:  { _controller: "AppBundle:Site/Eucharist:show" }
     
-site_eucharist_new:
-    path:      /eucharists/new
-    defaults:  { _controller: "AppBundle:Site/Eucharist:new" }
-    
 site_eucharist_edit:
     path:      /eucharists/edit/{id}
     defaults:  { _controller: "AppBundle:Site/Eucharist:edit" }   
     
+site_eucharist_new:
+    path:      /eucharists/new
+    defaults:  { _controller: "AppBundle:Site/Eucharist:new" }
+    
 site_eucharist:
     path:      /eucharists/{page}
     defaults:  { _controller: "AppBundle:Site/Eucharist:index", page: 1 }
+
+# Site GroupRequests Routing      
+site_group_request_new:
+    path:      /requests/new
+    defaults:  { _controller: "AppBundle:Site/GroupRequest:new" }
     
+site_group_request_delete:
+    path:      /requests/delete/{id}
+    defaults:  { _controller: "AppBundle:Site/GroupRequest:delete" }
+        
 # Site Liturgies Routing  
 site_liturgy_show:
     path:      /liturgies/show/{id}
     defaults:  { _controller: "AppBundle:Site/Liturgy:show" }
     
-site_liturgy_new:
-    path:      /liturgies/new
-    defaults:  { _controller: "AppBundle:Site/Liturgy:new" }
-    
 site_liturgy_edit:
     path:      /liturgies/edit/{id}
     defaults:  { _controller: "AppBundle:Site/Liturgy:edit" }    
+    
+site_liturgy_new:
+    path:      /liturgies/new
+    defaults:  { _controller: "AppBundle:Site/Liturgy:new" }
         
 site_liturgy:
     path:      /liturgies/{page}
@@ -72,17 +89,26 @@ site_song:
     path:      /songs/{page}
     defaults:  { _controller: "AppBundle:Site/Song:index", page: 1 }  
   
+# Site Users Routing  
+site_user_show:
+    path:      /profile
+    defaults:  { _controller: "AppBundle:Site/User:show", id: 1 }    
     
+site_user_add:
+    path:      /profile/add/{id}
+    defaults:  { _controller: "AppBundle:Site/User:add" }
     
-    
+site_user_remove:
+    path:      /profile/remove/{id}
+    defaults:  { _controller: "AppBundle:Site/User:remove" }    
+
+
+
     
 # Admin Routing
 admin:
     path:      /admin/
     defaults:  { _controller: "AppBundle:Admin/Admin:index" }
-
-
-
 
 # Admin Articles Routing    
 admin_article_show:

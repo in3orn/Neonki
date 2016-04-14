@@ -3,7 +3,7 @@
 {% set mainPath = 'site_' ~ 'subject' %}
 {% set title = 'title.subjects'|trans %}
 
-{% block filterBlock %}
+{% block sidebarContent %}
 	{% block otherActions %}
 		{% if is_granted('ROLE_RESPONSIBLE') %}
 			<div class="btn-group btn-group-justified" role="group">

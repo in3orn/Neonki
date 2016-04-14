@@ -87,7 +87,11 @@ abstract class SimpleEntityController extends Controller
 		$query = $repository->querySelected($filter);
 			
 		$paginator = $this->get('knp_paginator');
-		return $paginator->paginate($query, $page, 8); //TODO count settings?
+		return $paginator->paginate($query, $page, $this->getPageCount());
+	}
+	
+	protected function getPageCount() {
+		return 10;
 	}
 	
 	/**
@@ -384,6 +388,24 @@ abstract class SimpleEntityController extends Controller
 	 */
 	protected function getCopyRoute() {
 		return $this->getIndexRoute() . '_copy';
+	}
+	
+	/**
+	 * Get edit route (e.g. admin_branches_edit)
+	 *
+	 * @return string
+	 */
+	protected function getEditRoute() {
+		return $this->getIndexRoute() . '_edit';
+	}
+	
+	/**
+	 * Get show route (e.g. admin_branches_edit)
+	 *
+	 * @return string
+	 */
+	protected function getShowRoute() {
+		return $this->getIndexRoute() . '_show';
 	}
 	
 	/**

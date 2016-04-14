@@ -29,7 +29,7 @@ class ArticleType extends ImageEntityType
 							'data-date-format' => 'YYYY-MM-DD hh:mm'
 					]
 			))
-			->add('content', TextareaType::class, array(
+			->add('intro', TextareaType::class, array(
 					'required'		=> true
 			))
 			->add('content', TextareaType::class, array(

@@ -109,4 +109,50 @@ class Group extends ImageTree
     {
         return $this->parent;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $users;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Group
+     */
+    public function addUser(\AppBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \AppBundle\Entity\User $user
+     */
+    public function removeUser(\AppBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
 }

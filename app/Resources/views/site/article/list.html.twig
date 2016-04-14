@@ -1,23 +1,21 @@
-{% extends 'site/simple/list.html.twig' %}
+{% extends 'site/image/list.html.twig' %}
 
 {% set mainPath = 'site_' ~ 'article' %}
 {% set title = 'title.articles'|trans %}
 
 {% block entryMainFields1 %}
-	<h3 class="col-xs-12">
-		<a href="{{ path(mainPath ~ '_show', { id: entry.id }) }}">
-			{{ entry.name }}
-		</a>
-	</h3>
-	
-	<div class="col-sm-4 col-md-3">
-		<img alt="{{ entry.name }}" src="{{ asset(entry.getImagePath()) }}" class="img-responsive" />
+	<div class="col-sm-4 col-md-3 article">
+		<div class="rect">
+			<img alt="{{ entry.name }}" src="{{ asset(entry.getImagePath()) }}" class="img-rounded" />
+		</div>
 	</div>
 {% endblock %}
 
 {% block entryMoreFields2 %}
-	<div class="col-sm-8 col-md-9">
-		<p>{{ entry.content }}</p>
+	<div class="col-sm-8 col-md-9 article">
+		<a href="{{ path(mainPath ~ '_show', { id: entry.id }) }}">
+			<h2>{{ entry.name }}</h2>
+		</a>
 		
 		<p class="text-muted">
 			<span class="fa fa-calendar"></span> {{ entry.date|date("Y-m-d: h:i") }}
@@ -26,6 +24,8 @@
 			<span class="hr-space"></span>
 			<span class="fa fa-user"></span> {{ entry.createdBy.username }}
 		</p>
+		
+		<p>{{ entry.intro }}</p>
 		
 		<a href="{{ path(mainPath ~ '_show', { id: entry.id }) }}" class="btn btn-primary">
 			{{ 'label.readMore'|trans }}

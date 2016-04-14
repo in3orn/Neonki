@@ -26,15 +26,18 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         
-        # Admin
-        - { path: user, role: ROLE_SUPER_ADMIN }
-        - { path: delete, role: ROLE_SUPER_ADMIN }
-        
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        
         # Site
+        - { path: ^/requests/new, role: ROLE_USER }
+        - { path: ^/requests/delete, role: ROLE_USER }
+        
         - { path: new, role: ROLE_RESPONSIBLE }
         - { path: copy, role: ROLE_RESPONSIBLE }
         - { path: edit, role: ROLE_RESPONSIBLE }
         
         - { path: ^/, role: ROLE_USER }
+        
+        # Admin
+        - { path: user, role: ROLE_SUPER_ADMIN }
+        - { path: delete, role: ROLE_SUPER_ADMIN }
+        
+        - { path: ^/admin/, role: ROLE_ADMIN }

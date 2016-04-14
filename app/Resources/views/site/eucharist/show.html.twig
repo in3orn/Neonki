@@ -3,61 +3,197 @@
 {% set mainPath = 'site_' ~ 'eucharist' %}
 {% set title = 'title.eucharists'|trans %}
 
-{%  block moreFields1 %}
-	<div class="col-sm-2">{{ entry.date|date("Y-m-d") }} </div>
-	
-	<div class="row col-sm-6">
-		<div class="col-xs-4">{{ entry.siglum1st }} </div>
-		<div class="col-xs-4">{{ entry.siglum2nd }} </div>
-		<div class="col-xs-4">{{ entry.siglumGos }} </div>
+{% block moreFields1 %}
+	<div class="row">
+		<div class="col-sm-4">
+			<p class="text-sm-right show-label">{{ 'label.eucharist.date'|trans }}</p>
+		</div>
+		<div class="col-sm-8">
+			<div class="row">
+				<div class="col-xs-4">
+					<p>{{ entry.date|date('d-m-Y') }}</p>
+				</div>
+				<div class="col-xs-4">
+					<p>{{ entry.info }}</p>
+				</div>
+			</div>
+		</div>
 	</div>
-		
-    <div class='input-group date' id='datetimepicker1'>
-		{{ form_widget(form.date, { 'label': 'label.eucharist.date'|trans }) }}
-		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-    </div>
-    <script type="text/javascript">
-		$(function () {
-			$('#datetimepicker1').datetimepicker();
-		});
-	</script>
-	
-    <div class="hidden">
-    	{{ form_row(form.group, { 'label': 'label.eucharist.group'|trans }) }}
-    </div>
-    {{ form_row(form.info, { 'label': 'label.eucharist.info'|trans }) }}
-    
-    {{ form_row(form.siglum1st, { 'label': 'label.eucharist.siglum1st'|trans }) }}
-    {{ form_row(form.siglum2nd, { 'label': 'label.eucharist.siglum2nd'|trans }) }}
-    {{ form_row(form.siglumGos, { 'label': 'label.eucharist.siglumGos'|trans }) }}
-    
-    {{ form_row(form.introIntBy, { 'label': 'label.eucharist.introIntBy'|trans }) }}
-    {{ form_row(form.intro1stBy, { 'label': 'label.eucharist.intro1stBy'|trans }) }}
-    {{ form_row(form.intro2ndBy, { 'label': 'label.eucharist.intro2ndBy'|trans }) }}
-    {{ form_row(form.introGosBy, { 'label': 'label.eucharist.introGosBy'|trans }) }}
-    
-    {{ form_row(form.prayerBy, { 'label': 'label.eucharist.prayerBy'|trans }) }}
-    
-    {{ form_row(form.breadBy, { 'label': 'label.eucharist.breadBy'|trans }) }}
-    {{ form_row(form.flowersBy, { 'label': 'label.eucharist.flowersBy'|trans }) }}
-    
-    {{ form_row(form.songInt, { 'label': 'label.eucharist.songInt'|trans }) }}
-    {{ form_row(form.songPce, { 'label': 'label.eucharist.songPce'|trans }) }}
-    {{ form_row(form.songBr1, { 'label': 'label.eucharist.songBr1'|trans }) }}
-    {{ form_row(form.songBr2, { 'label': 'label.eucharist.songBr2'|trans }) }}
-    {{ form_row(form.songBr3, { 'label': 'label.eucharist.songBr3'|trans }) }}
-    {{ form_row(form.songWn1, { 'label': 'label.eucharist.songWn1'|trans }) }}
-    {{ form_row(form.songWn2, { 'label': 'label.eucharist.songWn2'|trans }) }}
-    {{ form_row(form.songWn3, { 'label': 'label.eucharist.songWn3'|trans }) }}
-    {{ form_row(form.songOut, { 'label': 'label.eucharist.songOut'|trans }) }}
 {%  endblock %}
 
-{% block entryMoreFields2 %}
-	<div class="col-sm-2">{{ entry.date|date("Y-m-d") }} </div>
-	
-	<div class="row col-sm-6">
-		<div class="col-xs-4">{{ entry.siglum1st }} </div>
-		<div class="col-xs-4">{{ entry.siglum2nd }} </div>
-		<div class="col-xs-4">{{ entry.siglumGos }} </div>
+{%  block moreFields2 %}
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.intro'|trans }}</p>
 	</div>
-{% endblock %}
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-4">
+				{% if entry.introIntBy != '' %}
+					<p class="text-muted"><span class="fa fa-user"></span> {{ entry.introIntBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.songInt != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songInt }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.siglum1st'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglum1st }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.intro1stBy != '' %}
+					<p class="text-muted"><span class="fa fa-user"></span> {{ entry.intro1stBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.siglumRes != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.siglumRes }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.siglum2nd'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglum2nd }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.intro2ndBy != '' %}
+					<p class="text-muted"><span class="fa fa-user"></span> {{ entry.intro2ndBy }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.siglumGos'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglumGos }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.introGosBy != '' %}
+					<p class="text-muted"><span class="fa fa-user"></span> {{ entry.introGosBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.siglumAkl != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.siglumAkl }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.peace'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-8">
+				{% if entry.songPce != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songPce }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.bread'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-4">
+				{% if entry.breadBy != '' %}
+					<p class="text-muted"><span class="fa fa-user"></span> {{ entry.breadBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.songBr1 != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songBr1 }}</p>
+				{% endif %}
+				{% if entry.songBr2 != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songBr2 }}</p>
+				{% endif %}
+				{% if entry.songBr3 != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songBr3 }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.wine'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-8">
+				{% if entry.songWn1 != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songWn1 }}</p>
+				{% endif %}
+				{% if entry.songWn2 != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songWn2 }}</p>
+				{% endif %}
+				{% if entry.songWn3 != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songWn3 }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.outro'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-8">
+				{% if entry.songOut != '' %}
+					<p class="text-muted"><span class="fa fa-music"></span> {{ entry.songOut }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.eucharist.flowers'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-4">
+				{% if entry.breadBy != '' %}
+					<p class="text-muted"><span class="fa fa-user"></span> {{ entry.flowersBy }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{%  endblock %}

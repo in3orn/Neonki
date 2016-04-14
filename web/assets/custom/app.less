@@ -1,4 +1,7 @@
 @import "variables.less";
+@import "images.less";
+
+@import "signin.less";
 
 @import "..\vendor\bootstrap\less\bootstrap.less";
 @import "..\vendor\eonasdan-bootstrap-datetimepicker\src\less\_bootstrap-datetimepicker.less";
@@ -47,6 +50,37 @@
   	.text-lg-justify { text-align: justify; }
 }
 
+
+
+
+
+
+@media (min-width: 768px) {
+    .pull-right-sm {
+        float: right;
+    }
+}
+
+@media (min-width: 992px) {
+    .pull-right-md {
+        float: right;
+    }
+}
+
+@media (min-width: 1200px) {
+    .pull-right-lg {
+        float: right;
+    }
+}
+
+
+.show-label {
+	color: @gray-light;
+	font-weight: bold;
+}
+
+
+
 body {
 	font-family: "Calibri", Sans-serif
 }
@@ -57,12 +91,22 @@ body {
 }
 
 .content {
+	margin-top: 75px;
 	margin-bottom: 20px;
-	min-height: 726px;
+	min-height: 800px;
 }
 
-.page-header {
-	margin-top: 50px;
+.welcome {
+    background-image: url('/img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    
+    color: white;
+    
+    margin-top: 0px;
+	margin-bottom: 0px;
+	min-height: 955px;
 }
 
 .lowered {
@@ -72,7 +116,34 @@ body {
 .footer {
 	height: 60px;
   	text-align: center;
-  	color: @white;
-  	background: @inverse-background;
+  	color: white;
+  	background: @brand-primary;
   	padding-bottom: (@padding * 4px);
+}
+
+.footer a {
+	color: @brand-warning;
+}
+
+
+.article h2 {
+	margin-top: 0px;
+}
+
+
+.nav > li {
+	font-weight: bold;
+}
+
+.navbar-nav li a {
+    color: @brand-primary !important;
+}
+
+.navbar-nav li.active > a {
+    color: @brand-success !important;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li a:focus {
+    color: @brand-warning !important;
 }

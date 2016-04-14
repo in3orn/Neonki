@@ -2,3 +2,154 @@
 
 {% set mainPath = 'site_' ~ 'liturgy' %}
 {% set title = 'title.liturgies'|trans %}
+
+{% block moreFields1 %}
+	<div class="row">
+		<div class="col-sm-4">
+			<p class="text-sm-right show-label">{{ 'label.liturgy.date'|trans }}</p>
+		</div>
+		<div class="col-sm-8">
+			<p>{{ entry.date|date('d-m-Y') }}</p>
+		</div>
+	</div>
+{%  endblock %}
+
+{%  block moreFields2 %}
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.subject'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p><strong>{{ entry.subject.name }}</strong></p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.introIntBy != '' %}
+					<p class="text-muted "><span class="fa fa-user"></span> {{ entry.introIntBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.songInt != '' %}
+					<p class="text-muted "><span class="fa fa-music"></span> {{ entry.songInt }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.siglum1st'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglum1st }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.intro1stBy != '' %}
+					<p class="text-muted "><span class="fa fa-user"></span> {{ entry.intro1stBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.song1st != '' %}
+					<p class="text-muted "><span class="fa fa-music"></span> {{ entry.song1st }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.siglum2nd'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglum2nd }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.intro2ndBy != '' %}
+					<p class="text-muted "><span class="fa fa-user"></span> {{ entry.intro2ndBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.song2nd != '' %}
+					<p class="text-muted "><span class="fa fa-music"></span> {{ entry.song2nd }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.siglum3rd'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglum3rd }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.intro3rdBy != '' %}
+					<p class="text-muted "><span class="fa fa-user"></span> {{ entry.intro3rdBy }}</p>
+				{% endif %}
+			</div>
+			<div class="col-xs-4">
+				{% if entry.song3rd != '' %}
+					<p class="text-muted "><span class="fa fa-music"></span> {{ entry.song3rd }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.siglumGos'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4">
+				<p>{{ entry.siglumGos }}</p>
+			</div>
+			<div class="col-xs-4">
+				{% if entry.introGosBy != '' %}
+					<p class="text-muted "><span class="fa fa-user"></span> {{ entry.introGosBy }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.peace'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-8">
+				{% if entry.songPce != '' %}
+					<p class="text-muted "><span class="fa fa-music"></span> {{ entry.songPce }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<p class="text-sm-right show-label">{{ 'label.liturgy.outro'|trans }}</p>
+	</div>
+	<div class="col-sm-8">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-8">
+				{% if entry.songOut != '' %}
+					<p class="text-muted "><span class="fa fa-music"></span> {{ entry.songOut }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{%  endblock %}

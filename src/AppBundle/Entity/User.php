@@ -46,4 +46,82 @@ class User extends BaseUser
     {
         return $this->group;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $sentRequests;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $receivedRequests;
+
+
+    /**
+     * Add sentRequest
+     *
+     * @param \AppBundle\Entity\GroupRequest $sentRequest
+     *
+     * @return User
+     */
+    public function addSentRequest(\AppBundle\Entity\GroupRequest $sentRequest)
+    {
+        $this->sentRequests[] = $sentRequest;
+
+        return $this;
+    }
+
+    /**
+     * Remove sentRequest
+     *
+     * @param \AppBundle\Entity\GroupRequest $sentRequest
+     */
+    public function removeSentRequest(\AppBundle\Entity\GroupRequest $sentRequest)
+    {
+        $this->sentRequests->removeElement($sentRequest);
+    }
+
+    /**
+     * Get sentRequests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSentRequests()
+    {
+        return $this->sentRequests;
+    }
+
+    /**
+     * Add receivedRequest
+     *
+     * @param \AppBundle\Entity\GroupRequest $receivedRequest
+     *
+     * @return User
+     */
+    public function addReceivedRequest(\AppBundle\Entity\GroupRequest $receivedRequest)
+    {
+        $this->receivedRequests[] = $receivedRequest;
+
+        return $this;
+    }
+
+    /**
+     * Remove receivedRequest
+     *
+     * @param \AppBundle\Entity\GroupRequest $receivedRequest
+     */
+    public function removeReceivedRequest(\AppBundle\Entity\GroupRequest $receivedRequest)
+    {
+        $this->receivedRequests->removeElement($receivedRequest);
+    }
+
+    /**
+     * Get receivedRequests
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReceivedRequests()
+    {
+        return $this->receivedRequests;
+    }
 }

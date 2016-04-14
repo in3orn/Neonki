@@ -3,6 +3,9 @@
 {% set mainPath = 'site_' ~ 'subject' %}
 {% set title = 'title.subjects'|trans %}
 
+{% block actionsBlock %}
+{% endblock %}
+
 {% block entryMoreFields2 %}
 	<div class="col-xs-4 col-sm-4">
 		{% if entry.liturgies.count > 0 %}

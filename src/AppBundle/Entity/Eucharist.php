@@ -651,4 +651,62 @@ class Eucharist extends SimpleEntity
     {
         return $this->songOut;
     }
+    /**
+     * @var string
+     */
+    private $siglumRes;
+
+    /**
+     * @var string
+     */
+    private $siglumAkl;
+
+
+    /**
+     * Set siglumRes
+     *
+     * @param string $siglumRes
+     *
+     * @return Eucharist
+     */
+    public function setSiglumRes($siglumRes)
+    {
+        $this->siglumRes = $siglumRes;
+
+        return $this;
+    }
+
+    /**
+     * Get siglumRes
+     *
+     * @return string
+     */
+    public function getSiglumRes()
+    {
+        return $this->siglumRes;
+    }
+
+    /**
+     * Set siglumAkl
+     *
+     * @param string $siglumAkl
+     *
+     * @return Eucharist
+     */
+    public function setSiglumAkl($siglumAkl)
+    {
+        $this->siglumAkl = $siglumAkl;
+
+        return $this;
+    }
+
+    /**
+     * Get siglumAkl
+     *
+     * @return string
+     */
+    public function getSiglumAkl()
+    {
+        return $this->siglumAkl;
+    }
 }

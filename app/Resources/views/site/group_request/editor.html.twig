@@ -1,0 +1,28 @@
+{% extends 'site/simple/editor.html.twig' %}
+
+{% set mainPath = 'site_' ~ 'group_request' %}
+{% set title = 'title.group_requests'|trans %}
+
+
+{%  block mainFields1 %}
+    <div class="hidden">
+    	{{ form_row(form.sender, { 'label': 'label.group_request.sender'|trans }) }}
+    </div>
+    {{ form_row(form.receiver, { 'label': 'label.group_request.receiver'|trans }) }}
+{%  endblock %}
+
+{% block actions %}
+	<div class="btn-group">
+	    {{ form_widget(form.saveAndQuit, { 'icon': 'fa-save', 'label': 'action.save', 'attr': {'class': 'btn btn-success'} }) }}
+	    <a type="button" class="btn btn-primary" href="{{ path('site_user_show') }}">
+	    	<i class="fa fa-close"></i>{{ 'action.back'|trans }}
+		</a>
+    </div>
+    
+    <div class="hidden">
+    	{{ form_widget(form.saveAndNew, { 'icon': 'fa-file-o', 'label': 'action.saveAndNew', 'attr': {'class': 'btn btn-success'} }) }}
+    </div>
+    <div class="hidden">
+    	{{ form_widget(form.saveAndCopy, { 'icon': 'fa-copy', 'label': 'action.saveAndCopy', 'attr': {'class': 'btn btn-warning'} }) }}
+    </div>
+{% endblock %}

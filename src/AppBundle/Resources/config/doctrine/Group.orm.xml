@@ -16,6 +16,8 @@
             <gedmo:tree-parent />
         </many-to-one>
         
+        <one-to-many field="users" target-entity="User" mapped-by="group">
+        </one-to-many>
     </entity>
     
 </doctrine-mapping>

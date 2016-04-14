@@ -1,0 +1,31 @@
+{% extends 'site/simple/editor.html.twig' %}
+
+{%  block mainFields1 %}	
+    {{ form_row(form.name, { 'label': 'label.name' }) }}
+    
+    <div class="row">
+	    <div class="col-sm-4">
+	    	<div class="rect">
+	    		<img class="img-rounded" alt="{{ entry.name }}-image" src="{{ asset(entry.getImagePath()) }}">
+	    	</div>
+	    </div>
+	    {{ form_row(form.file, { 'label': 'label.image'}) }}
+    </div>
+{%  endblock %}
+
+
+{% block actions %}
+	<div class="btn-group">
+	    {{ form_widget(form.saveAndQuit, { 'icon': 'fa-save', 'label': 'action.save', 'attr': {'class': 'btn btn-success'} }) }}
+	    <a type="button" class="btn btn-primary" href="{{ path(mainPath) }}">
+	    	<i class="fa fa-close"></i>{{ 'action.back'|trans }}
+		</a>
+    </div>
+    
+    <div class="hidden">
+    	{{ form_widget(form.saveAndNew, { 'icon': 'fa-file-o', 'label': 'action.saveAndNew', 'attr': {'class': 'btn btn-success'} }) }}
+    </div>
+    <div class="hidden">
+    	{{ form_widget(form.saveAndCopy, { 'icon': 'fa-copy', 'label': 'action.saveAndCopy', 'attr': {'class': 'btn btn-warning'} }) }}
+    </div>
+{% endblock %}

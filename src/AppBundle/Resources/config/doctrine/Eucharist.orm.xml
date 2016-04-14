@@ -13,7 +13,9 @@
         <many-to-one field="group" target-entity="Group" />
         
         <field name="siglum1st" type="string" length="32" nullable="true" />
+        <field name="siglumRes" type="string" length="32" nullable="true" />
         <field name="siglum2nd" type="string" length="32" nullable="true" />
+        <field name="siglumAkl" type="string" length="32" nullable="true" />
         <field name="siglumGos" type="string" length="32" nullable="true" />
         
         <many-to-one field="introIntBy" target-entity="User" nullable="true" />

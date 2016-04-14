@@ -2,3 +2,37 @@
 
 {% set title = 'title.site'|trans %}
 {% set mainPath = 'site' %}
+
+{% block mainContent %}
+	<div class="row">
+		<div class="col-xs-4">
+			<div class="rect rounded bkg-success">
+				<p class="div-center logo">N</p>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="rect rounded bkg-primary">
+				<p class="div-center logo">e</p>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<div class="rect rounded bkg-warning">
+				<p class="div-center logo">o</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<h2 class="text-center">Witamy!</h2>
+			<p class="text-center">Witamy na stronie Krakowskiego Neokatechumenatu.</p>
+			<p class="text-center">
+				Jeœli w ró¿nych podsekcjach strony nie widzisz treœci dotyczacych twojej wspólnoty, 
+				wejdŸ na stronê swojego 
+				<a href="#">profilu</a> 
+				i upewnij siê, ¿e pole <strong>wspólnota</strong> jest wype³nione.
+				Jesli tak nie jest, zg³oœ siê do jednego z odpowiedzialnych z twojej wspólnoty.
+			</p>
+		</div>
+	</div>
+{% endblock %}

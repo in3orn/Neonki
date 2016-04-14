@@ -1,29 +1,33 @@
 {% extends 'site/index.html.twig' %}
 
-{% block content %}
-<div class="container">
-	<div class="row">
-	    <div class="col-sm-3 col-sm-push-9">
-	    	{% block filterBlock %}
-	    	{% endblock %}
-    	</div>
+{% block sidebarContent %}
+	{% if is_granted('ROLE_RESPONSIBLE') %}
+	<div class="btn-group btn-group-justified lowered" role="group">
+		<a class="btn btn-success" href="{{ path(mainPath ~ '_new') }}">
+			<i class="fa fa-plus"></i> {{ 'action.new'|trans }}
+		</a>				
+	</div>
+	<div class="btn-group btn-group-justified lowered" role="group">
+		<a class="btn btn-warning" href="{{ path(mainPath ~ '_edit', { id: entry.id }) }}">
+			<i class="fa fa-edit"></i> {{ 'action.edit'|trans }}
+		</a>
+	</div>
+	{% endif %}
+{% endblock %}
+	
+{% block mainContent %}
+    {% block mainFields1 %}
+    {% endblock %}
     
-	    <div class="col-sm-9 col-sm-pull-3">
-		    {% block mainFields1 %}
-		    {% endblock %}
-		    
-		    {% block moreFields1 %}
-		    {% endblock %}
-		    
-		    {% block mainFields2 %}
-		    {% endblock %}
-		    
-		    {% block moreFields2 %}
-		    {% endblock %}
-		    
-		    {% block list %}
-		    {% endblock %}
-	    </div>
-    </div>
-</div>
+    {% block moreFields1 %}
+    {% endblock %}
+    
+    {% block mainFields2 %}
+    {% endblock %}
+    
+    {% block moreFields2 %}
+    {% endblock %}
+    
+    {% block list %}
+    {% endblock %}
 {% endblock %}

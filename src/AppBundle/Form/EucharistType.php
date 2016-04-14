@@ -37,7 +37,13 @@ class EucharistType extends SimpleEntityType
 			->add('siglum1st', TextType::class, array(
 					'required'		=> false
 			))
+			->add('siglumRes', TextType::class, array(
+					'required'		=> false
+			))
 			->add('siglum2nd', TextType::class, array (
+					'required'		=> false
+			))
+			->add('siglumAkl', TextType::class, array(
 					'required'		=> false
 			))
 			->add('siglumGos', TextType::class, array(

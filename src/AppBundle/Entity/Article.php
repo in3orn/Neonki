@@ -138,4 +138,33 @@ class Article extends ImageEntity
     {
         return $this->date;
     }
+    /**
+     * @var string
+     */
+    private $intro;
+
+
+    /**
+     * Set intro
+     *
+     * @param string $intro
+     *
+     * @return Article
+     */
+    public function setIntro($intro)
+    {
+        $this->intro = $intro;
+
+        return $this;
+    }
+
+    /**
+     * Get intro
+     *
+     * @return string
+     */
+    public function getIntro()
+    {
+        return $this->intro;
+    }
 }

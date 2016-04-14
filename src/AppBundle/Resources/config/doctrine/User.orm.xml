@@ -12,6 +12,10 @@
         
         <many-to-one field="group" target-entity="Group" />
         
+        <one-to-many field="sentRequests" target-entity="GroupRequest" mapped-by="sender">
+        </one-to-many>
+        <one-to-many field="receivedRequests" target-entity="GroupRequest" mapped-by="receiver">
+        </one-to-many>
     </entity>
     
 </doctrine-mapping>

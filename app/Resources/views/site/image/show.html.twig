@@ -1,0 +1,15 @@
+{% extends 'site/simple/show.html.twig' %}
+
+{% block mainFields1 %}
+	<div class="row">
+		<h1 class="text-center">{{ entry.name }}</h1>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="">
+				<img alt="{{ entry.name }}" src="{{ asset(entry.getImagePath()) }}" class="img-responsive" />
+			</div>
+		</div>
+	</div>
+{% endblock %}

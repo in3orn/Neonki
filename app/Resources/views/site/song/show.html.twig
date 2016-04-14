@@ -2,3 +2,14 @@
 
 {% set mainPath = 'site_' ~ 'song' %}
 {% set title = 'title.songs'|trans %}
+
+{% block sidebarContent %}
+{% endblock %}
+
+{% block moreFields1 %}
+	<div class="row">
+		<div class="col-sm-4">
+			<p>{{ entry.content }}</p>
+		</div>
+	</div>
+{% endblock %}

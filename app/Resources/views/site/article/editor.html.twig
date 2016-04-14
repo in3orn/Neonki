@@ -1,0 +1,23 @@
+{% extends 'site/image/editor.html.twig' %}
+
+{% set mainPath = 'site_' ~ 'article' %}
+{% set title = 'title.articles'|trans %}
+
+
+{%  block moreFields1 %}	
+    <div class='input-group date' id='datetimepicker1'>
+		{{ form_widget(form.date, { 'label': 'label.article.date'|trans }) }}
+		<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+    </div>
+    <script type="text/javascript">
+		$(function () {
+			$('#datetimepicker1').datetimepicker();
+		});
+	</script>
+	
+    <div class="hidden">
+    	{{ form_row(form.group, { 'label': 'label.article.group'|trans }) }}
+    </div>
+    {{ form_row(form.intro, { 'label': 'label.article.intro'|trans }) }}
+    {{ form_row(form.content, { 'label': 'label.article.content'|trans }) }}
+{%  endblock %}
