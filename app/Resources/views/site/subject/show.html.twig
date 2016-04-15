@@ -8,7 +8,7 @@
 		{% if is_granted('ROLE_RESPONSIBLE') %}
 			<div class="btn-group btn-group-justified" role="group">
 				<a class="btn btn-success" href="{{ path('site_liturgy_new', { subject: entry.id }) }}">
-					<i class="fa fa-plus"></i> {{ 'action.newLiturgy'|trans }}
+					<i class="fa fa-plus"></i> {{ 'action.subject.new_liturgy'|trans }}
 				</a>
 			</div>
 		{% endif %}
@@ -58,11 +58,13 @@
 	
 {% block list %}
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="hidden-xs row">
-			<img alt="{{ 'label.historical'|trans }}" src="{{ asset('img/historical.png') }}" width="160" height="160">
+		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
+			<div class="rect rounded-1 bkg-success">
+				<p class="div-center subject-logo">{{ 'label.subject.historical_sc'|trans }}</p>
+			</div>
 		</div>
 		
-		<div class="row"><h3>{{ 'label.historical'|trans }}</h3></div>
+		<div class="col-xs-12"><h3>{{ 'label.subject.historical'|trans }}</h3></div>
 		
 		{% for detail in historical %}
 			{% set textColor = "" %}
@@ -96,11 +98,13 @@
 	</div>
 	
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="hidden-xs row">
-			<img alt="{{ 'label.prophetic'|trans }}" src="{{ asset('img/prophetic.png') }}" width="160" height="160">
+		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
+			<div class="rect rounded-1 bkg-primary">
+				<p class="div-center subject-logo">{{ 'label.subject.prophetic_sc'|trans }}</p>
+			</div>
 		</div>
 		
-		<div class="row"><h3>{{ 'label.prophetic'|trans }}</h3></div>
+		<div class="col-xs-12"><h3>{{ 'label.subject.prophetic'|trans }}</h3></div>
 		
 		{% for detail in prophetic %}
 			{% set textColor = "" %}
@@ -134,11 +138,13 @@
 	</div>
 	
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="hidden-xs row">
-			<img alt="{{ 'label.gospels'|trans }}" src="{{ asset('img/gospels.png') }}" width="160" height="160">
+		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
+			<div class="rect rounded-1 bkg-warning">
+				<p class="div-center subject-logo">{{ 'label.subject.gospels_sc'|trans }}</p>
+			</div>
 		</div>
 		
-		<div class="row"><h3>{{ 'label.gospels'|trans }}</h3></div>
+		<div class="col-xs-12"><h3>{{ 'label.subject.gospels'|trans }}</h3></div>
 		
 		{% for detail in gospels %}
 			{% set textColor = "" %}
@@ -172,11 +178,13 @@
 	</div>
 	
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="hidden-xs row">
-			<img alt="{{ 'label.others'|trans }}" src="{{ asset('img/others.png') }}" width="160" height="160">
+		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
+			<div class="rect rounded-1 bkg-primary">
+				<p class="div-center subject-logo">{{ 'label.subject.others_sc'|trans }}</p>
+			</div>
 		</div>
 		
-		<div class="row"><h3>{{ 'label.others'|trans }}</h3></div>
+		<div class="col-xs-12"><h3>{{ 'label.subject.others'|trans }}</h3></div>
 		
 		{% for detail in other %}
 			{% set textColor = "" %}

@@ -19,7 +19,11 @@ site_article_show:
 site_article_edit:
     path:      /articles/edit/{id}
     defaults:  { _controller: "AppBundle:Site/Article:edit" }   
-    
+
+site_article_delete:
+    path:      /articles/delete/{id}
+    defaults:  { _controller: "AppBundle:Site/Article:delete" }
+        
 site_article_new:
     path:      /articles/new
     defaults:  { _controller: "AppBundle:Site/Article:new" }
@@ -35,7 +39,11 @@ site_eucharist_show:
     
 site_eucharist_edit:
     path:      /eucharists/edit/{id}
-    defaults:  { _controller: "AppBundle:Site/Eucharist:edit" }   
+    defaults:  { _controller: "AppBundle:Site/Eucharist:edit" }
+    
+site_eucharist_delete:
+    path:      /eucharists/delete/{id}
+    defaults:  { _controller: "AppBundle:Site/Eucharist:delete" }   
     
 site_eucharist_new:
     path:      /eucharists/new
@@ -53,6 +61,10 @@ site_group_request_new:
 site_group_request_delete:
     path:      /requests/delete/{id}
     defaults:  { _controller: "AppBundle:Site/GroupRequest:delete" }
+    
+site_group_request:
+    path:      /requests/{page}
+    defaults:  { _controller: "AppBundle:Site/GroupRequest:index", page: 1 }
         
 # Site Liturgies Routing  
 site_liturgy_show:
@@ -61,7 +73,11 @@ site_liturgy_show:
     
 site_liturgy_edit:
     path:      /liturgies/edit/{id}
-    defaults:  { _controller: "AppBundle:Site/Liturgy:edit" }    
+    defaults:  { _controller: "AppBundle:Site/Liturgy:edit" }
+    
+site_liturgy_delete:
+    path:      /liturgies/delete/{id}
+    defaults:  { _controller: "AppBundle:Site/Liturgy:delete" }    
     
 site_liturgy_new:
     path:      /liturgies/new
@@ -100,7 +116,11 @@ site_user_add:
     
 site_user_remove:
     path:      /profile/remove/{id}
-    defaults:  { _controller: "AppBundle:Site/User:remove" }    
+    defaults:  { _controller: "AppBundle:Site/User:remove" } 
+    
+site_user:
+    path:      /group/{page}
+    defaults:  { _controller: "AppBundle:Site/User:index", page: 1 }     
 
 
 

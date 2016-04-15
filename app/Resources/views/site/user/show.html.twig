@@ -17,7 +17,7 @@
 {% block moreFields1 %}
 <div class="row">
 	<div class="col-sm-4">
-		<p class="text-sm-right show-label">{{ 'label.user.name' }}</p>
+		<p class="text-sm-right show-label">{{ 'label.name'|trans }}</p>
 	</div>
 	<div class="col-sm-8">
 		<p>{{ entry.username }}</p>
@@ -25,7 +25,7 @@
 </div>
 <div class="row">
 	<div class="col-sm-4">
-		<p class="text-sm-right show-label">{{ 'label.user.group' }}</p>
+		<p class="text-sm-right show-label">{{ 'label.user.group'|trans }}</p>
 	</div>
 	<div class="col-sm-8">
 		{% if entry.group %}
@@ -35,7 +35,8 @@
 				</div>
 				<div class="col-xs-6">
 					<a class="btn btn-danger" href="{{ path(mainPath ~ '_remove', { id: entry.id }) }}">
-						{{ 'action.user.remove' }}
+						<span class="fa fa-minus"></span>				
+						{{ 'action.user.remove_from_group'|trans }}
 					</a>
 				</div>
 			</div>
@@ -48,7 +49,7 @@
 				</div>
 				<div class="col-xs-6">
 					<a class="btn btn-success" href="{{ path('site_group_request_new') }}">
-						{{ 'action.user.request' }}
+						{{ 'action.user.request'|trans }}
 					</a>
 				</div>
 			</div>
@@ -57,7 +58,7 @@
 </div>
 <div class="row">
 	<div class="col-sm-4">
-		<p class="text-sm-right show-label">{{ 'label.user.roles' }}</p>
+		<p class="text-sm-right show-label">{{ 'label.user.roles'|trans }}</p>
 	</div>
 	<div class="col-sm-8">
 		<ul>
@@ -67,120 +68,4 @@
 		</ul>
 	</div>
 </div>
-
-<div class="row">
-	<div class="col-xs-12">
-		<h3>{{ 'label.sent_requests'|trans }}</h3>
-		
-		{% if entry.sentRequests|length > 0 %}
-			<table class="table table-striped">
-				<thead>
-					<th><span class="fa fa-user"></span> {{ 'label.request.receiver' }}</th>
-					<th><span class="fa fa-calendar"></span> {{ 'label.date' }}</th>
-					<th><span class="fa fa-play-circle"></span> {{ 'label.actions' }}</th>
-				</thead>
-				<tbody>
-					{% for request in entry.sentRequests %}
-					<tr>
-						<td>
-							<p>{{ request.receiver.username }}</p>
-						</td>
-						<td>
-							<p>{{ request.createdAt|date('d-m-Y') }}</p>
-						</td>
-						<td>
-							<a class="btn btn-danger" href="{{ path('site_group_request_delete', { id: request.id }) }}">
-								<span class="fa fa-trash"></span> {{ 'action.request.remove' }}
-							</a>
-						</td>
-					</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		{% else %}
-			<p>{{ 'text.no_entries'|trans }}</p>
-		{% endif %}
-	</div>
-</div>
-{% endblock %}
-
-{% block moreFields2 %}	
-{% if is_granted('ROLE_RESPONSIBLE') and entry.group %}
-	<div class="row">
-		<div class="col-xs-12">
-			<h3>{{ 'label.users'|trans }}</h3>
-			
-			{% if entry.group.users|length > 0 %}
-				<table class="table table-striped">
-					<thead>
-						<th><span class="fa fa-user"></span> {{ 'label.user' }}</th>
-						<th><span class="fa fa-mail"></span> {{ 'label.email' }}</th>
-						<th><span class="fa fa-play-circle"></span> {{ 'label.actions' }}</th>
-					</thead>
-					<tbody>
-						{% for user in entry.group.users %}
-						<tr>
-							<td>
-								<p>{{ user.username }}</p>
-							</td>
-							<td>
-								<p>{{ user.email }}</p>
-							</td>
-							<td>
-								<a class="btn btn-danger" href="{{ path(mainPath ~ '_remove', { id: user.id }) }}">
-									<span class="fa fa-trash"></span> {{ 'action.user.remove' }}
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-				<p>{{ 'text.no_entries'|trans }}</p>
-			{% endif %}
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-xs-12">
-			<h3>{{ 'label.received_requests'|trans }}</h3>
-			
-			{% if entry.receivedRequests|length > 0 %}
-				<table class="table table-striped">
-					<thead>
-						<th><span class="fa fa-user"></span> {{ 'label.request.sender' }}</th>
-						<th><span class="fa fa-mail"></span> {{ 'label.user.email' }}</th>
-						<th><span class="fa fa-calendar"></span> {{ 'label.date' }}</th>
-						<th><span class="fa fa-play-circle"></span> {{ 'label.actions' }}</th>
-					</thead>
-					<tbody>
-						{% for request in entry.receivedRequests %}
-						<tr>
-							<td>
-								<p>{{ request.sender.username }}</p>
-							</td>
-							<td>
-								<p>{{ request.sender.email }}</p>
-							</td>
-							<td>
-								<p>{{ request.createdAt|date('d-m-Y') }}</p>
-							</td>
-							<td>
-								<a class="btn btn-warning" href="{{ path(mainPath ~ '_add', { id: request.sender.id }) }}">
-									<span class="fa fa-plus"></span> {{ 'action.user.add' }}
-								</a>
-								<a class="btn btn-danger" href="{{ path('site_group_request_delete', { id: request.id }) }}">
-									<span class="fa fa-trash"></span> {{ 'action.request.remove' }}
-								</a>
-							</td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-				<p>{{ 'text.no_entries'|trans }}</p>
-			{% endif %}
-		</div>
-	</div>
-{% endif %}
 {% endblock %}

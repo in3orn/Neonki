@@ -9,7 +9,9 @@
 
 	<div class="form-signin">
 		<form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
-			<h2 class="form-signin-heading">{{ 'security.login.header'|trans }}</h2>
+			
+			<h2 class="form-signin-heading">{{ 'layout.login'|trans }}</h2>
+			
 			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 		
 	    	<label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
@@ -26,7 +28,7 @@
 		
 		<div class="col-xs-12">
 			<a class="btn btn-success btn-block" href="{{ path('fos_user_registration_register') }}">
-				{{ 'security.login.register'|trans }}
+				{{ 'layout.register'|trans }}
 			</a>
 		</div>
 	</div>

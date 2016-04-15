@@ -51,7 +51,9 @@ class SubjectController extends SiteEntityController
 		
 		$rendererForm = $this->createForm($this->getRendererFormType(), $renderer);
 		$rendererForm->handleRequest($request);
-			
+		
+		$this->denyAccessUnlessGranted('show', $entry);
+		
 		if ($rendererForm->isSubmitted() && $rendererForm->isValid()) {
 			if ($rendererForm->get('search')->isClicked()) {
 				$params = $renderer->getValues();

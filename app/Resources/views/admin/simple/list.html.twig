@@ -104,14 +104,14 @@
 {% block entryMainFields2 %}	        
 	<td>
 		{% if item.updatedAt > date("01-01-1900") %}
-    		{{ item.updatedAt|date('Y-m-d H:i:s') }}
+    		{{ item.updatedAt|date('d.m.Y H:i:s') }}
 		{% endif %}
 	</td>
 	<td>{{ item.updatedBy }}</td>
 	        
 	<td>
 		{% if item.createdAt > date("01-01-1900") %}
-	    	{{ item.createdAt|date('Y-m-d H:i:s') }}
+	    	{{ item.createdAt|date('d.m.Y H:i:s') }}
 		{% endif %}
 	</td>
 	<td>{{ item.createdBy }}</td>

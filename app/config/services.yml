@@ -20,3 +20,24 @@ services:
         class: AppBundle\Extension\ShowExtension
         tags:
             - { name: twig.extension }
+            
+    
+    
+    
+    app.base_entity_voter:
+        class: AppBundle\Security\Base\BaseEntityVoter
+        tags:
+            - { name: security.voter }
+        public: false
+        
+    app.group_dependent_voter:
+        class: AppBundle\Security\Base\GroupDependentVoter
+        tags:
+            - { name: security.voter }
+        public: false
+        
+    app.stage_dependent_voter:
+        class: AppBundle\Security\Base\StageDependentVoter
+        tags:
+            - { name: security.voter }
+        public: false

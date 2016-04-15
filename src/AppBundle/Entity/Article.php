@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Base\ImageEntity;
+use AppBundle\Entity\Dependent\GroupDependent;
 
 /**
  * Article
@@ -10,7 +11,7 @@ use AppBundle\Entity\Base\ImageEntity;
  * @author inb
  *
  */
-class Article extends ImageEntity
+class Article extends ImageEntity implements GroupDependent
 {
 	/**
 	 * 

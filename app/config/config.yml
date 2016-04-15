@@ -11,6 +11,7 @@ parameters:
 
 framework:
     #esi:             ~
+    default_locale: pl
     translator:      { fallbacks: [en] }
     secret:          "%secret%"
     router:

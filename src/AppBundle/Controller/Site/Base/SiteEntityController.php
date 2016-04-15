@@ -35,11 +35,19 @@ abstract class SiteEntityController extends SimpleEntityController
 		}
 		
 		$allEntries = $this->getAllEntries($filter, $page);
+		
+		$params = $this->initTwigParams($request);
+		
+		$params['entries'] = $allEntries;
+		$params['filter'] = $filterForm->createView();
 		 
-		return $this->render($this->getTwigList(), array(
-				'entries' => $allEntries,
-				'filter' => $filterForm->createView()
-		));
+		return $this->render($this->getTwigList(), $params);
+	}
+	
+	protected function initTwigParams(Request $request) {
+		$params = array ();
+		
+		return $params;
 	}
 	
 	//------------------------------------------------------------------------

@@ -79,6 +79,20 @@
 	font-weight: bold;
 }
 
+.label-as-badge {
+	padding-left: 10px;
+	padding-right: 10px;
+	color: @white;
+	font-weight: bold;
+    border-radius: 1em;
+}
+
+.active > a > .label-as-badge,
+a.active > .label-as-badge,
+a:hover > .label-as-badge,
+a:focus > .label-as-badge {
+	background-color: @brand-warning;
+}
 
 
 body {
@@ -130,6 +144,10 @@ body {
 	margin-top: 0px;
 }
 
+
+.list-header {
+	font-weight: bold;
+}
 
 .nav > li {
 	font-weight: bold;

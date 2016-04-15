@@ -8,24 +8,44 @@
             </trans-unit>
             <trans-unit id="title.site">
                 <source>title.site</source>
-                <target>Neonki</target>
+                <target>Neonkowo</target>
             </trans-unit>
             
             <trans-unit id="title.articles">
                 <source>title.articles</source>
-                <target>Articles</target>
+                <target>News</target>
             </trans-unit>
             <trans-unit id="title.eucharists">
                 <source>title.eucharists</source>
                 <target>Eucharists</target>
             </trans-unit>
+            <trans-unit id="title.group">
+                <source>title.group</source>
+                <target>Brotherhood</target>
+            </trans-unit>
             <trans-unit id="title.groups">
                 <source>title.groups</source>
-                <target>Groups</target>
+                <target>Brotherhoods</target>
             </trans-unit>
             <trans-unit id="title.liturgies">
                 <source>title.liturgies</source>
                 <target>Liturgies</target>
+            </trans-unit>
+            <trans-unit id="title.profile">
+                <source>title.profile</source>
+                <target>Profile</target>
+            </trans-unit>
+            <trans-unit id="title.requests">
+                <source>title.requests</source>
+                <target>Rrequests</target>
+            </trans-unit>
+            <trans-unit id="title.requests_sent">
+                <source>title.requests_sent</source>
+                <target>Sent</target>
+            </trans-unit>
+            <trans-unit id="title.requests_received">
+                <source>title.requests_received</source>
+                <target>Received</target>
             </trans-unit>
             <trans-unit id="title.sigla">
                 <source>title.sigla</source>
@@ -47,6 +67,10 @@
                 <source>title.subjects</source>
                 <target>Subjects</target>
             </trans-unit>
+            <trans-unit id="title.user">
+                <source>title.user</source>
+                <target>User</target>
+            </trans-unit>
             <trans-unit id="title.users">
                 <source>title.users</source>
                 <target>Users</target>
@@ -56,10 +80,7 @@
             
             
             
-            <trans-unit id="label.welcome">
-                <source>label.welcome</source>
-                <target>Welcome</target>
-            </trans-unit>
+            
             <trans-unit id="label.logout">
                 <source>label.logout</source>
                 <target>logout</target>
@@ -68,7 +89,14 @@
                 <source>label.noEntries</source>
                 <target>No entries found.</target>
             </trans-unit>
-            
+            <trans-unit id="label.profile">
+                <source>label.profile</source>
+                <target>profile</target>
+            </trans-unit>
+            <trans-unit id="label.welcome">
+                <source>label.welcome</source>
+                <target>Welcome</target>
+            </trans-unit>
             
             
             
@@ -80,6 +108,10 @@
             <trans-unit id="label.article.group">
                 <source>label.article.group</source>
                 <target>Group</target>
+            </trans-unit>
+            <trans-unit id="label.article.intro">
+                <source>label.article.intro</source>
+                <target>Introduction</target>
             </trans-unit>
             
             
@@ -99,6 +131,36 @@
                 <target>Group</target>
             </trans-unit>
             
+            <trans-unit id="label.eucharist.sigla">
+                <source>label.eucharist.sigla</source>
+                <target>Sigla</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.intro">
+                <source>label.eucharist.intro</source>
+                <target>Introduction</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.peace">
+                <source>label.eucharist.peace</source>
+                <target>Peace</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.bread">
+                <source>label.eucharist.bread</source>
+                <target>Bread</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.wine">
+                <source>label.eucharist.wine</source>
+                <target>Wine</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.outro">
+                <source>label.eucharist.outro</source>
+                <target>Outro</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.flowers">
+                <source>label.eucharist.flowers</source>
+                <target>Flowers</target>
+            </trans-unit>
+            
             <trans-unit id="label.eucharist.siglum1st">
                 <source>label.eucharist.siglum1st</source>
                 <target>First reading</target>
@@ -110,6 +172,15 @@
             <trans-unit id="label.eucharist.siglumGos">
                 <source>label.eucharist.siglumGos</source>
                 <target>Gospel</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.siglumRes">
+                <source>label.eucharist.siglumRes</source>
+                <target>Responsorial psalm</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.siglumAkl">
+                <source>label.eucharist.siglumAkl</source>
+                <target>Acclamation</target>
             </trans-unit>
             
             <trans-unit id="label.eucharist.introIntBy">
@@ -200,6 +271,18 @@
             
             
             
+            
+            <trans-unit id="label.group_request.sender">
+                <source>label.group_request.sender</source>
+                <target>Sedner</target>
+            </trans-unit>
+            <trans-unit id="label.group_request.receiver">
+                <source>label.group_request.receiver</source>
+                <target>Receiver</target>
+            </trans-unit>
+            
+            
+            
             <trans-unit id="label.liturgy.date">
                 <source>label.liturgy.date</source>
                 <target>Date</target>
@@ -211,6 +294,20 @@
             <trans-unit id="label.liturgy.subject">
                 <source>label.liturgy.subject</source>
                 <target>Subject</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.peace">
+                <source>label.liturgy.peace</source>
+                <target>Peace</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.outro">
+                <source>label.liturgy.outro</source>
+                <target>Outro</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.sigla">
+                <source>label.liturgy.sigla</source>
+                <target>Sigla</target>
             </trans-unit>
             
             <trans-unit id="label.liturgy.siglum1st">
@@ -335,12 +432,57 @@
                 <target>Stage</target>
             </trans-unit>
             
+            <trans-unit id="label.subject.liturgies">
+                <source>label.subject.liturgies</source>
+                <target>Liturgies</target>
+            </trans-unit>
+            
+            <trans-unit id="label.subject.historical">
+                <source>label.subject.historical</source>
+                <target>Historical</target>
+            </trans-unit>
+            <trans-unit id="label.subject.prophetic">
+                <source>label.subject.prophetic</source>
+                <target>Prophetic</target>
+            </trans-unit>
+            <trans-unit id="label.subject.gospels">
+                <source>label.subject.gospels</source>
+                <target>Gospels</target>
+            </trans-unit>
+            <trans-unit id="label.subject.others">
+                <source>label.subject.others</source>
+                <target>Apostles creed</target>
+            </trans-unit>
+            
+            <trans-unit id="label.subject.historical_sc">
+                <source>label.subject.historical_sc</source>
+                <target>H</target>
+            </trans-unit>
+            <trans-unit id="label.subject.prophetic_sc">
+                <source>label.subject.prophetic_sc</source>
+                <target>P</target>
+            </trans-unit>
+            <trans-unit id="label.subject.gospels_sc">
+                <source>label.subject.gospels_sc</source>
+                <target>G</target>
+            </trans-unit>
+            <trans-unit id="label.subject.others_sc">
+                <source>label.subject.others_sc</source>
+                <target>AC</target>
+            </trans-unit>
             
             
-            
+            <trans-unit id="label.user.email">
+                <source>label.user.email</source>
+                <target>E-mail</target>
+            </trans-unit>
             <trans-unit id="label.user.group">
                 <source>label.user.group</source>
                 <target>Group</target>
+            </trans-unit>
+            <trans-unit id="label.user.roles">
+                <source>label.user.roles</source>
+                <target>Roles</target>
             </trans-unit>
             
             
@@ -379,6 +521,10 @@
                 <source>label.actions</source>
                 <target>Actions</target>
             </trans-unit>
+            <trans-unit id="label.readMore">
+                <source>label.readMore</source>
+                <target>Read more...</target>
+            </trans-unit>
             
             
             
@@ -402,24 +548,6 @@
             </trans-unit>
             
             
-            
-            
-            <trans-unit id="label.historical">
-                <source>label.historical</source>
-                <target>Historical</target>
-            </trans-unit>
-            <trans-unit id="label.prophetic">
-                <source>label.prophetic</source>
-                <target>Prophetic</target>
-            </trans-unit>
-            <trans-unit id="label.gospels">
-                <source>label.gospels</source>
-                <target>Gospels</target>
-            </trans-unit>
-            <trans-unit id="label.others">
-                <source>label.others</source>
-                <target>Others</target>
-            </trans-unit>
             
             
             
@@ -474,6 +602,10 @@
             </trans-unit>
             
             
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Save</target>
+            </trans-unit>
             <trans-unit id="action.saveAndNew">
                 <source>action.saveAndNew</source>
                 <target>Save &amp; new</target>
@@ -491,6 +623,21 @@
             <trans-unit id="action.back">
                 <source>action.back</source>
                 <target>Back</target>
+            </trans-unit>
+            
+            <trans-unit id="action.accept">
+                <source>action.accept</source>
+                <target>Accept</target>
+            </trans-unit>
+            
+            <trans-unit id="action.subject.new_liturgy">
+                <source>action.subject.new_liturgy</source>
+                <target>Create liturgy</target>
+            </trans-unit>
+            
+            <trans-unit id="action.user.remove_from_group">
+                <source>action.user.remove_from_group</source>
+                <target>Remove from group</target>
             </trans-unit>
         </body>
     </file>

@@ -125,6 +125,9 @@ abstract class SimpleEntityController extends Controller
 	public function showAction(Request $request, $id)
 	{
 		$entry = $this->getEntry($id);
+		
+		$this->denyAccessUnlessGranted('show', $entry);
+		
 		return $this->render($this->getTwigShow(), array('entry' => $entry));
 	}
 	
@@ -138,6 +141,7 @@ abstract class SimpleEntityController extends Controller
 	{
 		$entry = $this->getEntry($id);
 		$entry = $this->createFromTemplate($request, $entry);
+		
 		return $this->editEntry($request, $entry);
 	}
 	
@@ -158,10 +162,13 @@ abstract class SimpleEntityController extends Controller
 	public function editAction(Request $request, $id)
 	{
 		$entry = $this->getEntry($id);
+		
+		$this->denyAccessUnlessGranted('edit', $entry);
+		
 		return $this->editEntry($request, $entry);
 	}
 	
-	public function editEntry(Request $request, $entry)
+	protected function editEntry(Request $request, $entry)
 	{
 		$form = $this->createForm($this->getFormType(), $entry);
 		
@@ -202,10 +209,6 @@ abstract class SimpleEntityController extends Controller
 		$repository = $this->getDoctrine()->getRepository($this->getEntityType());
 		$entry = $repository->find($id);
 		
-		if (!$entry) {
-			throw $this->createNotFoundException('No entry found for id '.$id);
-		}
-		
 		return $entry;
 	}
 	
@@ -215,6 +218,9 @@ abstract class SimpleEntityController extends Controller
 		
 		//Make sure entity exists :)
 		$entry = $this->getEntry($id);
+		
+		$this->denyAccessUnlessGranted('delete', $entry);
+		
 		$em->remove($entry);
 		$em->flush();
 	
@@ -225,8 +231,9 @@ abstract class SimpleEntityController extends Controller
 	{
 		$em = $this->getDoctrine()->getManager();
 		
-		foreach ($entries as $entry)
+		foreach ($entries as $entry) {
 			$em->remove($entry);
+		}
 		
 		$em->flush();
 	}

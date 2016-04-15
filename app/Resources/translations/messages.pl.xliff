@@ -2,129 +2,497 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
     <file source-language="en" target-language="pl" datatype="plaintext" original="file.ext">
         <body>
-            <trans-unit id="note">
-                <source>note</source>
-                <target>UWAGA</target>
+        	<trans-unit id="title.admin">
+                <source>title.admin</source>
+                <target>Panel administratora</target>
             </trans-unit>
-            <trans-unit id="tip">
-                <source>tip</source>
-                <target>PORADA</target>
+            <trans-unit id="title.site">
+                <source>title.site</source>
+                <target>Neonkowo</target>
             </trans-unit>
-            <trans-unit id="not_available">
-                <source>not_available</source>
-                <target>Niedostępne</target>
+            
+            <trans-unit id="title.articles">
+                <source>title.articles</source>
+                <target>Informacje</target>
             </trans-unit>
-            <trans-unit id="mit_license">
-                <source>mit_license</source>
-                <target>Licencja MIT</target>
+            <trans-unit id="title.eucharists">
+                <source>title.eucharists</source>
+                <target>Eucharystie</target>
             </trans-unit>
-
-            <trans-unit id="title.homepage">
-                <source>title.homepage</source>
-                <target><![CDATA[Witamy w aplikacji <strong>Symfony Demo</strong>]]></target>
+            <trans-unit id="title.group">
+                <source>title.group</source>
+                <target>Wspólnota</target>
             </trans-unit>
-            <trans-unit id="title.source_code">
-                <source>title.source_code</source>
-                <target>Kod źródłowy użyty do wygenerowania tej podstrony</target>
+            <trans-unit id="title.groups">
+                <source>title.groups</source>
+                <target>Wspólnoty</target>
             </trans-unit>
-            <trans-unit id="title.controller_code">
-                <source>title.controller_code</source>
-                <target>Kod kontrolera</target>
+            <trans-unit id="title.liturgies">
+                <source>title.liturgies</source>
+                <target>Liturgie</target>
             </trans-unit>
-            <trans-unit id="title.twig_template_code">
-                <source>title.twig_template_code</source>
-                <target>Kod szablonu Twig</target>
+            <trans-unit id="title.profile">
+                <source>title.profile</source>
+                <target>Profil</target>
             </trans-unit>
-            <trans-unit id="title.login">
-                <source>title.login</source>
-                <target>Bezpieczne logowanie</target>
+            <trans-unit id="title.requests">
+                <source>title.requests</source>
+                <target>Zgłoszenia</target>
             </trans-unit>
-            <trans-unit id="title.post_list">
-                <source>title.post_list</source>
-                <target>Lista artykułów</target>
+            <trans-unit id="title.requests_sent">
+                <source>title.requests_sent</source>
+                <target>Wysłane</target>
             </trans-unit>
-            <trans-unit id="title.edit_post">
-                <source>title.edit_post</source>
-                <target>Edytuj artykuł #%id%</target>
+            <trans-unit id="title.requests_received">
+                <source>title.requests_received</source>
+                <target>Otrzymane</target>
             </trans-unit>
-            <trans-unit id="title.add_comment">
-                <source>title.add_comment</source>
-                <target>Dodaj komentarz</target>
+            <trans-unit id="title.sigla">
+                <source>title.sigla</source>
+                <target>Sigla</target>
             </trans-unit>
-            <trans-unit id="title.comment_error">
-                <source>title.comment_error</source>
-                <target>Podczas publikacji Twojego komentarza wystąpił błąd</target>
+            <trans-unit id="title.siglumKinds">
+                <source>title.siglumKinds</source>
+                <target>Typy sigli</target>
             </trans-unit>
-
-            <trans-unit id="action.show">
-                <source>action.show</source>
-                <target>Pokaż</target>
+            <trans-unit id="title.songs">
+                <source>title.songs</source>
+                <target>Pieśni</target>
             </trans-unit>
-            <trans-unit id="action.show_code">
-                <source>action.show_code</source>
-                <target>Pokaż kod</target>
+            <trans-unit id="title.stages">
+                <source>title.stages</source>
+                <target>Etapy</target>
             </trans-unit>
-            <trans-unit id="action.edit">
-                <source>action.edit</source>
-                <target>Edytuj</target>
+            <trans-unit id="title.subjects">
+                <source>title.subjects</source>
+                <target>Tematy</target>
             </trans-unit>
-            <trans-unit id="action.edit_post">
-                <source>action.edit_post</source>
-                <target>Edytuj artykuł</target>
+            <trans-unit id="title.user">
+                <source>title.user</source>
+                <target>Użytkownik</target>
             </trans-unit>
-            <trans-unit id="action.save">
-                <source>action.save</source>
-                <target>Zapisz</target>
+            <trans-unit id="title.users">
+                <source>title.users</source>
+                <target>Użytkownicy</target>
             </trans-unit>
-            <trans-unit id="action.delete_post">
-                <source>action.delete_post</source>
-                <target>Usuń artykuł</target>
+            
+            
+            
+            
+            
+            
+            <trans-unit id="label.logout">
+                <source>label.logout</source>
+                <target>wyloguj</target>
             </trans-unit>
-            <trans-unit id="delete_post_modal.title">
-                <source>delete_post_modal.title</source>
-                <target>Czy na pewno chcesz usunąć ten artykuł?</target>
+            <trans-unit id="label.noEntries">
+                <source>label.noEntries</source>
+                <target>Brak wyników.</target>
             </trans-unit>
-            <trans-unit id="delete_post_modal.body">
-                <source>delete_post_modal.body</source>
-                <target>Ta akcja nie może zostać cofnięta.</target>
+            <trans-unit id="label.profile">
+                <source>label.profile</source>
+                <target>profil</target>
             </trans-unit>
-            <trans-unit id="label.delete_post">
-                <source>label.delete_post</source>
-                <target>Usuń artykuł</target>
+            <trans-unit id="label.welcome">
+                <source>label.welcome</source>
+                <target>Witaj</target>
             </trans-unit>
-            <trans-unit id="label.cancel">
-                <source>label.cancel</source>
-                <target>Anuluj</target>
+            
+            
+            
+            
+            <trans-unit id="label.article.content">
+                <source>label.article.content</source>
+                <target>Treść</target>
             </trans-unit>
-            <trans-unit id="action.create_post">
-                <source>action.create_post</source>
-                <target>Dodaj nowy artykuł</target>
+            <trans-unit id="label.article.group">
+                <source>label.article.group</source>
+                <target>Wspólnota</target>
             </trans-unit>
-            <trans-unit id="label.create_post">
-                <source>label.create_post</source>
-                <target>Dodaj artykuł</target>
+            <trans-unit id="label.article.intro">
+                <source>label.article.intro</source>
+                <target>Wprowadzenie</target>
             </trans-unit>
-            <trans-unit id="action.back_to_list">
-                <source>action.back_to_list</source>
-                <target>Powrót do listy artykułów</target>
+            
+            
+            
+            
+            
+            <trans-unit id="label.eucharist.date">
+                <source>label.eucharist.date</source>
+                <target>Data</target>
             </trans-unit>
-            <trans-unit id="action.publish_comment">
-                <source>action.publish_comment</source>
-                <target>Publikuj komentarz</target>
+            <trans-unit id="label.eucharist.info">
+                <source>label.eucharist.info</source>
+                <target>Notka</target>
             </trans-unit>
-            <trans-unit id="action.sign_in">
-                <source>action.sign_in</source>
-                <target>Zaloguj się</target>
+            <trans-unit id="label.eucharist.group">
+                <source>label.eucharist.group</source>
+                <target>Wspólnota</target>
             </trans-unit>
-            <trans-unit id="action.browse_app">
-                <source>action.browse_app</source>
-                <target>Przeglądaj aplikację</target>
+            
+            <trans-unit id="label.eucharist.sigla">
+                <source>label.eucharist.sigla</source>
+                <target>Sigla</target>
             </trans-unit>
-            <trans-unit id="action.browse_admin">
-                <source>action.browse_admin</source>
-                <target>Przeglądaj panel administracyjny</target>
+            
+            <trans-unit id="label.eucharist.intro">
+                <source>label.eucharist.intro</source>
+                <target>Wprowadzenie</target>
             </trans-unit>
-
+            <trans-unit id="label.eucharist.peace">
+                <source>label.eucharist.peace</source>
+                <target>Pokój</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.bread">
+                <source>label.eucharist.bread</source>
+                <target>Chleb</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.wine">
+                <source>label.eucharist.wine</source>
+                <target>Wino</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.outro">
+                <source>label.eucharist.outro</source>
+                <target>Wyjście</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.flowers">
+                <source>label.eucharist.flowers</source>
+                <target>Kwiaty</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.siglum1st">
+                <source>label.eucharist.siglum1st</source>
+                <target>Pierwsze czytanie</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.siglum2nd">
+                <source>label.eucharist.siglum2nd</source>
+                <target>Drugie czytanie</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.siglumGos">
+                <source>label.eucharist.siglumGos</source>
+                <target>Ewangelia</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.siglumRes">
+                <source>label.eucharist.siglumRes</source>
+                <target>Psalm responsoryjny</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.siglumAkl">
+                <source>label.eucharist.siglumAkl</source>
+                <target>Aklamacja</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.introIntBy">
+                <source>label.eucharist.introIntBy</source>
+                <target>Wprowadzenie ogólne</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.intro1stBy">
+                <source>label.eucharist.intro1stBy</source>
+                <target>Wprowadzenie do 1 czytania</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.intro2ndBy">
+                <source>label.eucharist.intro2ndBy</source>
+                <target>Wprowadzenie do 2 czytania</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.introGosBy">
+                <source>label.eucharist.introGosBy</source>
+                <target>Wprowadzenie do Ewangelii</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.breadBy">
+                <source>label.eucharist.breadBy</source>
+                <target>Chleb</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.prayerBy">
+                <source>label.eucharist.prayerBy</source>
+                <target>Modlitwa wiernych</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.flowersBy">
+                <source>label.eucharist.flowersBy</source>
+                <target>Kwiaty</target>
+            </trans-unit>
+            
+            <trans-unit id="label.eucharist.songInt">
+                <source>label.eucharist.songInt</source>
+                <target>Pieśń na wejście</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songPce">
+                <source>label.eucharist.songPce</source>
+                <target>Pieśń na pokój</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songBr1">
+                <source>label.eucharist.songBr1</source>
+                <target>Pierwsza pieśń na chleb</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songBr2">
+                <source>label.eucharist.songBr2</source>
+                <target>Druga pieśń na chleb</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songBr3">
+                <source>label.eucharist.songBr3</source>
+                <target>Trzecia pieśń na chleb</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songWn1">
+                <source>label.eucharist.songWn1</source>
+                <target>Pierwsza pieśń na wino</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songWn2">
+                <source>label.eucharist.songWn2</source>
+                <target>Druga pień na wino</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songWn3">
+                <source>label.eucharist.songWn3</source>
+                <target>Trzecia pieśń na wino</target>
+            </trans-unit>
+            <trans-unit id="label.eucharist.songOut">
+                <source>label.eucharist.songOut</source>
+                <target>Pieśń na wyjście</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            <trans-unit id="label.group.content">
+                <source>label.group.content</source>
+                <target>Treść</target>
+            </trans-unit>
+            <trans-unit id="label.group.stage">
+                <source>label.group.stage</source>
+                <target>Etap</target>
+            </trans-unit>
+            <trans-unit id="label.group.parent">
+                <source>label.group.parent</source>
+                <target>Nadrzędna</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
+            <trans-unit id="label.group_request.sender">
+                <source>label.group_request.sender</source>
+                <target>Nadawca</target>
+            </trans-unit>
+            <trans-unit id="label.group_request.receiver">
+                <source>label.group_request.receiver</source>
+                <target>Adresat</target>
+            </trans-unit>
+            
+            
+            
+            <trans-unit id="label.liturgy.date">
+                <source>label.liturgy.date</source>
+                <target>Data</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.group">
+                <source>label.liturgy.group</source>
+                <target>Wspólnota</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.subject">
+                <source>label.liturgy.subject</source>
+                <target>Temat</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.peace">
+                <source>label.liturgy.peace</source>
+                <target>Pokój</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.outro">
+                <source>label.liturgy.outro</source>
+                <target>Wyjście</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.sigla">
+                <source>label.liturgy.sigla</source>
+                <target>Sigla</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.siglum1st">
+                <source>label.liturgy.siglum1st</source>
+                <target>Pierwsze czytanie</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.siglum2nd">
+                <source>label.liturgy.siglum2nd</source>
+                <target>Drugie czytanie</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.siglum3rd">
+                <source>label.liturgy.siglum3rd</source>
+                <target>Trzecie czytanie</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.siglumGos">
+                <source>label.liturgy.siglumGos</source>
+                <target>Ewangelia</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.introIntBy">
+                <source>label.liturgy.introIntBy</source>
+                <target>Wprowadzenie ogólne</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.intro1stBy">
+                <source>label.liturgy.intro1stBy</source>
+                <target>Wprowadzenie do 1 czytania</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.intro2ndBy">
+                <source>label.liturgy.intro2ndBy</source>
+                <target>Wprowadzenie do 2 czytania</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.intro3rdBy">
+                <source>label.liturgy.intro3rdBy</source>
+                <target>Wprowadzenie do 3 czytania</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.introGosBy">
+                <source>label.liturgy.introGosBy</source>
+                <target>Wprowadzenie do Ewangelii</target>
+            </trans-unit>
+            
+            <trans-unit id="label.liturgy.songInt">
+                <source>label.liturgy.songInt</source>
+                <target>Pieśń na wejście</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.song1st">
+                <source>label.liturgy.song1st</source>
+                <target>Pieśń po 1 czytaniu</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.song2nd">
+                <source>label.liturgy.song2nd</source>
+                <target>Pieśń po 2 czytaniu</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.song3rd">
+                <source>label.liturgy.song3rd</source>
+                <target>Pieśń po 3 czytaniu</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.songPce">
+                <source>label.liturgy.songPce</source>
+                <target>Pieśń na pokój</target>
+            </trans-unit>
+            <trans-unit id="label.liturgy.songOut">
+                <source>label.liturgy.songOut</source>
+                <target>Pieśń na wyjście</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
+            
+            <trans-unit id="label.siglum.kind">
+                <source>label.siglum.kind</source>
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="label.siglum.subject">
+                <source>label.siglum.subject</source>
+                <target>Temat</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
+            <trans-unit id="label.song.site">
+                <source>label.song.site</source>
+                <target>Strona</target>
+            </trans-unit>
+            <trans-unit id="label.song.content">
+                <source>label.song.content</source>
+                <target>Treść</target>
+            </trans-unit>
+            <trans-unit id="label.song.stage">
+                <source>label.song.stage</source>
+                <target>Etap</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            <trans-unit id="label.stage.number">
+                <source>label.stage.number</source>
+                <target>Numer porządkowy</target>
+            </trans-unit>
+            <trans-unit id="label.stage.main">
+                <source>label.stage.main</source>
+                <target>Etap główny</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            <trans-unit id="label.subject.content">
+                <source>label.subject.content</source>
+                <target>Treść</target>
+            </trans-unit>
+            <trans-unit id="label.subject.stage">
+                <source>label.subject.stage</source>
+                <target>Etao</target>
+            </trans-unit>
+            
+            <trans-unit id="label.subject.liturgies">
+                <source>label.subject.liturgies</source>
+                <target>Liturgie</target>
+            </trans-unit>
+            
+            <trans-unit id="label.subject.historical">
+                <source>label.subject.historical</source>
+                <target>Historyczne</target>
+            </trans-unit>
+            <trans-unit id="label.subject.prophetic">
+                <source>label.subject.prophetic</source>
+                <target>Prorockie</target>
+            </trans-unit>
+            <trans-unit id="label.subject.gospels">
+                <source>label.subject.gospels</source>
+                <target>Ewangelie</target>
+            </trans-unit>
+            <trans-unit id="label.subject.others">
+                <source>label.subject.others</source>
+                <target>Pozaewangeliczne</target>
+            </trans-unit>
+            
+            <trans-unit id="label.subject.historical_sc">
+                <source>label.subject.historical_sc</source>
+                <target>H</target>
+            </trans-unit>
+            <trans-unit id="label.subject.prophetic_sc">
+                <source>label.subject.prophetic_sc</source>
+                <target>P</target>
+            </trans-unit>
+            <trans-unit id="label.subject.gospels_sc">
+                <source>label.subject.gospels_sc</source>
+                <target>E</target>
+            </trans-unit>
+            <trans-unit id="label.subject.others_sc">
+                <source>label.subject.others_sc</source>
+                <target>Dz</target>
+            </trans-unit>
+            
+            
+            <trans-unit id="label.user.email">
+                <source>label.user.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="label.user.group">
+                <source>label.user.group</source>
+                <target>Wspólnota</target>
+            </trans-unit>
+            <trans-unit id="label.user.roles">
+                <source>label.user.roles</source>
+                <target>Role</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            <trans-unit id="label.selected">
+                <source>label.selected</source>
+                <target>Wybrane</target>
+            </trans-unit>
             <trans-unit id="label.name">
                 <source>label.name</source>
                 <target>Nazwa</target>
@@ -133,161 +501,143 @@
                 <source>label.image</source>
                 <target>Obrazek</target>
             </trans-unit>
-            <trans-unit id="label.description">
-                <source>label.description</source>
-                <target>Opis</target>
+            <trans-unit id="label.createdAt">
+                <source>label.createdAt</source>
+                <target>Stworzony o</target>
             </trans-unit>
-            
-            <trans-unit id="label.saveAndNew">
-                <source>label.saveAndNew</source>
-                <target>Zapisz i nowy</target>
+            <trans-unit id="label.createdBy">
+                <source>label.createdBy</source>
+                <target>Stworzony przez</target>
             </trans-unit>
-            <trans-unit id="label.saveAndCopy">
-                <source>label.saveAndCopy</source>
-                <target>Zapisz i kopiuj</target>
+            <trans-unit id="label.updatedAt">
+                <source>label.updatedAt</source>
+                <target>Edytowany o</target>
             </trans-unit>
-            <trans-unit id="label.saveAndQuit">
-                <source>label.saveAndQuit</source>
-                <target>Zapisz i zakończ</target>
-            </trans-unit>
-            
-            <trans-unit id="label.author">
-                <source>label.author</source>
-                <target>Autor</target>
-            </trans-unit>
-            <trans-unit id="label.author_email">
-                <source>label.author_email</source>
-                <target>Adres e-mail autora</target>
-            </trans-unit>
-            <trans-unit id="label.username">
-                <source>label.username</source>
-                <target>Użytkownik</target>
-            </trans-unit>
-            <trans-unit id="label.password">
-                <source>label.password</source>
-                <target>Hasło</target>
-            </trans-unit>
-            <trans-unit id="label.role">
-                <source>label.role</source>
-                <target>Rola</target>
-            </trans-unit>
-            <trans-unit id="label.content">
-                <source>label.content</source>
-                <target>Treść</target>
-            </trans-unit>
-            <trans-unit id="label.summary">
-                <source>label.summary</source>
-                <target>Podsumowanie</target>
-            </trans-unit>
-            <trans-unit id="label.published_at">
-                <source>label.published_at</source>
-                <target>Opublikowano</target>
+            <trans-unit id="label.updatedBy">
+                <source>label.updatedBy</source>
+                <target>Edytowany przez</target>
             </trans-unit>
             <trans-unit id="label.actions">
                 <source>label.actions</source>
                 <target>Akcje</target>
             </trans-unit>
-            <trans-unit id="title.post_new">
-                <source>title.post_new</source>
-                <target>Tworzenie nowego artykułu</target>
+            <trans-unit id="label.readMore">
+                <source>label.readMore</source>
+                <target>Czytaj więcej...</target>
             </trans-unit>
-            <trans-unit id="action.edit_contents">
-                <source>action.edit_contents</source>
-                <target>Edycja treści</target>
+            
+            
+            
+            
+            
+            <trans-unit id="label.selectActUser">
+                <source>label.selectActUser</source>
+                <target>Wybierz numer osoby</target>
             </trans-unit>
-
-            <trans-unit id="menu.post_list">
-                <source>menu.post_list</source>
-                <target>Lista artykułów</target>
+            <trans-unit id="label.selectMaxUser">
+                <source>label.selectMaxUser</source>
+                <target>Wybierz liczbę osób</target>
             </trans-unit>
-            <trans-unit id="menu.back_to_blog">
-                <source>menu.back_to_blog</source>
-                <target>Powrót do bloga</target>
+            <trans-unit id="label.colorUser">
+                <source>label.colorUser</source>
+                <target>Koloruj wybrane</target>
             </trans-unit>
-            <trans-unit id="menu.homepage">
-                <source>menu.homepage</source>
-                <target>Strona główna</target>
+            <trans-unit id="label.showUserOnly">
+                <source>label.showUserOnly</source>
+                <target>Pokaż tylko wybrane</target>
             </trans-unit>
-            <trans-unit id="menu.admin">
-                <source>menu.admin</source>
-                <target>Panel administracyjny</target>
+            
+            
+            
+            
+            
+            
+            <trans-unit id="action.filter">
+                <source>action.filter</source>
+                <target>Filtr</target>
             </trans-unit>
-            <trans-unit id="menu.logout">
-                <source>menu.logout</source>
-                <target>Wyloguj się</target>
+            <trans-unit id="action.search">
+                <source>action.search</source>
+                <target>Szukaj</target>
             </trans-unit>
-
-            <trans-unit id="post.to_publish_a_comment">
-                <source>post.to_publish_a_comment</source>
-                <target>aby dodać komentarz</target>
+            <trans-unit id="action.clear">
+                <source>action.clear</source>
+                <target>Wyczyść</target>
             </trans-unit>
-            <trans-unit id="post.num_comments">
-                <source>post.num_comments</source>
-                <target>%count% komentarz|%count% komentarze|%count% komentarzy</target>
+            
+            
+            <trans-unit id="action.new">
+                <source>action.new</source>
+                <target>Nowy</target>
             </trans-unit>
-            <trans-unit id="post.commented_on">
-                <source>post.commented_on</source>
-                <target>skomentował</target>
+            <trans-unit id="action.selectAll">
+                <source>action.selectAll</source>
+                <target>Zaznacz wszystkie</target>
             </trans-unit>
-            <trans-unit id="post.no_comments">
-                <source>post.no_comments</source>
-                <target>Bądź pierwszym, który skomentuje.</target>
+            <trans-unit id="action.selectNone">
+                <source>action.selectNone</source>
+                <target>Odznacz wszystkie</target>
             </trans-unit>
-            <trans-unit id="post.no_posts_found">
-                <source>post.no_posts_found</source>
-                <target>Brak artykułów</target>
+            <trans-unit id="action.deleteSelected">
+                <source>action.deleteSelected</source>
+                <target>Usuń zaznaczone</target>
             </trans-unit>
-            <trans-unit id="post.created_successfully">
-                <source>post.created_successfully</source>
-                <target>Artykuł został utworzony!</target>
+            
+            
+            <trans-unit id="action.show">
+                <source>action.show</source>
+                <target>Pokaż</target>
             </trans-unit>
-            <trans-unit id="post.updated_successfully">
-                <source>post.updated_successfully</source>
-                <target>Artykuł został zaktualizowany!</target>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edytuj</target>
             </trans-unit>
-            <trans-unit id="post.deleted_successfully">
-                <source>post.deleted_successfully</source>
-                <target>Artykuł został usunięty!</target>
+            <trans-unit id="action.copy">
+                <source>action.copy</source>
+                <target>Kopiuj</target>
             </trans-unit>
-            <trans-unit id="help.app_description">
-                <source>help.app_description</source>
-                <target><![CDATA[To jest <strong> przykładowa aplikacja </strong> zbudowana przy pomocy frameworka Symfony, dla zademonostrowania polecanego sposobu tworzenia aplikacji przy jego użyciu.]]></target>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Usuń</target>
             </trans-unit>
-            <trans-unit id="help.show_code">
-                <source>help.show_code</source>
-                <target><![CDATA[Kliknij poniższy przycisk, aby zobaczyć kod <strong>kontrolera</strong> oraz <strong>szablonu</strong> użytych podczas generowania tej podstrony.]]></target>
+            
+            
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Zapisz</target>
             </trans-unit>
-            <trans-unit id="help.browse_app">
-                <source>help.browse_app</source>
-                <target><![CDATA[Przeglądaj <strong>publiczną część</strong> aplikacji demonstracyjnej.]]></target>
+            <trans-unit id="action.saveAndNew">
+                <source>action.saveAndNew</source>
+                <target>Zapisz i nowy</target>
             </trans-unit>
-            <trans-unit id="help.browse_admin">
-                <source>help.browse_admin</source>
-                <target><![CDATA[Przeglądaj <strong>panel administracyjny</strong> aplikacji demonstracyjnej.]]></target>
+            <trans-unit id="action.saveAndCopy">
+                <source>action.saveAndCopy</source>
+                <target>Zapisz i kopiuj</target>
             </trans-unit>
-            <trans-unit id="help.login_users">
-                <source>help.login_users</source>
-                <target>Użyj dowolnego z poniższych użytkowników</target>
+            <trans-unit id="action.saveAndQuit">
+                <source>action.saveAndQuit</source>
+                <target>Zapisz i wyjdź</target>
             </trans-unit>
-            <trans-unit id="help.role_user">
-                <source>help.role_user</source>
-                <target>zwykły użytkownik</target>
+            
+            
+            <trans-unit id="action.back">
+                <source>action.back</source>
+                <target>Wróć</target>
             </trans-unit>
-            <trans-unit id="help.role_admin">
-                <source>help.role_admin</source>
-                <target>administrator</target>
+            
+            <trans-unit id="action.accept">
+                <source>action.accept</source>
+                <target>Akceptuj</target>
             </trans-unit>
-            <trans-unit id="help.reload_fixtures">
-                <source>help.reload_fixtures</source>
-                <target>Jeśli powyższe dane logowania nie działają, załaduj ponownie przykładowe dane dla tej aplikacji. Uruchom następującą komendę:</target>
+            
+            <trans-unit id="action.subject.new_liturgy">
+                <source>action.subject.new_liturgy</source>
+                <target>Stwórz liturgię</target>
             </trans-unit>
-            <trans-unit id="help.add_user">
-                <source>help.add_user</source>
-                <target>Jeśli chcesz dodać nowego użytkownika, uruchom następującą komendę:</target>
-            </trans-unit>
-            <trans-unit id="help.more_information">
-                <source>help.more_information</source>
-                <target><![CDATA[Sprawdź <a href="http://symfony.com/doc">dokumentację Symfony</a>, aby uzyskać więcej informacji.]]></target>
+            
+            <trans-unit id="action.user.remove_from_group">
+                <source>action.user.remove_from_group</source>
+                <target>Usuń z grupy</target>
             </trans-unit>
         </body>
     </file>

@@ -1,0 +1,79 @@
+{% extends 'site/simple/list.html.twig' %}
+
+{% set mainPath = 'site_' ~ 'group_request' %}
+{% set title = sent ? 'title.requests_sent'|trans : 'title.requests_received'|trans %}
+
+{% block actionsBlock %}
+{% endblock %}
+
+{% block headerMainFields1 %}
+<div class="col-xs-2 col-sm-1">
+	<h4 class="list-header">
+		<span class="fa fa-list"></span> 
+	</h4>
+</div>
+<div class="col-xs-4 col-sm-2">
+	<h4 class="list-header">
+		<span class="fa fa-tag"></span> 
+		{{ sent ? 'label.group_request.receiver'|trans : 'label.group_request.sender'|trans }}
+	</h4>
+</div>
+{% endblock %}
+
+{% block headerMoreFields2 %}
+{% if sent %}
+	<div class="col-xs-6 col-sm-6">
+		<h4 class="list-header">
+			<span class="fa fa-calendar"></span> {{ 'label.createdAt'|trans }}
+		</h4>
+	</div>
+{% else %}
+	<div class="col-xs-6 col-sm-3">
+		<h4 class="list-header">
+			<span class="fa fa-calendar"></span> {{ 'label.createdAt'|trans }}
+		</h4>
+	</div>
+	<div class="hidden-xs col-sm-3">
+		<h4 class="list-header">
+			<span class="fa fa-envelope-o"></span> {{ 'label.user.email'|trans }}
+		</h4>
+	</div>
+{% endif %}
+<div class="hidden-xs col-sm-3">
+	<h4 class="list-header">
+		<span class="fa fa-play-circle-o"></span> {{ 'label.actions'|trans }}
+	</h4>
+</div>
+{% endblock %}
+	
+{% block entryMainFields1 %}
+<div class="col-xs-2 col-sm-1">{{ loop.index }}</div>
+
+<div class="col-xs-4 col-sm-2">
+	<a href="{{ path('site_user_show', { id: entry.id }) }}">{{ entry.sender.username }} </a>
+</div>
+{% endblock %}
+
+{% block entryMoreFields2 %}
+<div class="col-xs-6 col-sm-3">{{ entry.createdAt|date('d.m.Y h:i:s') }}</div>
+
+{% if sent %}
+	<div class="col-xs-6 col-sm-3"></div>
+	<div class="col-xs-6 col-sm-3">
+		<a class="btn btn-danger" href="{{ path(mainPath ~ '_delete', { id: entry.id }) }}">
+			<span class="fa fa-trash"></span> {{ 'action.delete'|trans }}
+		</a>
+	</div>
+{% else %}
+	<div class="col-xs-6 col-sm-3">{{ entry.sender.email }}</div>
+	<div class="col-xs-6 col-sm-3">
+		<a class="btn btn-warning" href="{{ path('site_user_add', { id: entry.sender.id }) }}">
+			<span class="fa fa-check"></span> {{ 'action.accept'|trans }}
+		</a>
+		<a class="btn btn-danger" href="{{ path(mainPath ~ '_delete', { id: entry.id }) }}">
+			<span class="fa fa-trash"></span> {{ 'action.delete'|trans }}
+		</a>
+	</div>
+{% endif %}
+
+{% endblock %}

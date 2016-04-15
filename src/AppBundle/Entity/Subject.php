@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Base\SimpleEntity;
+use AppBundle\Entity\Dependent\StageDependent;
 
 /**
  * Subject
@@ -10,7 +11,7 @@ use AppBundle\Entity\Base\SimpleEntity;
  * @author inb
  *
  */
-class Subject extends SimpleEntity
+class Subject extends SimpleEntity implements StageDependent
 {
     
     /**

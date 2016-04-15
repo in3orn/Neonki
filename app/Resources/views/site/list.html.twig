@@ -56,25 +56,46 @@
 {% endblock %}
 
 {% block mainContent %}
+	{% block mainContentTitle %}
+	<h2>{{ title }}</h2>
+	{% endblock %}
+
+	{% block headerBlock %}
+	<div class="row">
+		{% block headerMoreFields1 %}
+		{% endblock %}
+	
+		{% block headerMainFields1 %}
+		{% endblock %}
+		
+		{% block headerMoreFields2 %}
+		{% endblock %}
+		
+		{% block headerMainFields2 %}
+		{% endblock %}
+	</div>
+	<hr>
+	{% endblock %}
+	
 	{% block listBlock %}
 	<div class="row">
 		<div class="col-xs-12">
 			{% for entry in entries%}
 				{% block entryBlock %}
-					<div class="row">
-						{% block entryMoreFields1 %}
-						{% endblock %}
+				<div class="row">
+					{% block entryMoreFields1 %}
+					{% endblock %}
+				
+					{% block entryMainFields1 %}
+					{% endblock %}
 					
-						{% block entryMainFields1 %}
-						{% endblock %}
-						
-						{% block entryMoreFields2 %}
-						{% endblock %}
-						
-						{% block entryMainFields2 %}
-						{% endblock %}
-					</div>
-					<hr>
+					{% block entryMoreFields2 %}
+					{% endblock %}
+					
+					{% block entryMainFields2 %}
+					{% endblock %}
+				</div>
+				<hr>
 				{% endblock %}
 			{% else %}
 				<p>{{ 'label.noEntries'|trans }}</p>

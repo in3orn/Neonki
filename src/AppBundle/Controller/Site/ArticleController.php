@@ -2,16 +2,17 @@
 
 namespace AppBundle\Controller\Site;
 
+use AppBundle\Controller\Site\Base\GroupTreeController;
 use AppBundle\Controller\Site\Base\SiteEntityController;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Article;
 use AppBundle\Entity\Filter\ArticleFilter;
-use AppBundle\Repository\GroupRepository;
 use AppBundle\Entity\Group;
 use AppBundle\Form\ArticleType;
+use AppBundle\Repository\GroupRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class ArticleController extends SiteEntityController
+class ArticleController extends GroupTreeController
 {
 	/**
 	 *
@@ -56,8 +57,7 @@ class ArticleController extends SiteEntityController
 	 *
 	 * @return mixed
 	 */
-	protected function createNewFilter() {
-		$groupRepository = $this->getDoctrine()->getRepository(Group::class);
+	protected function createGroupFilter(GroupRepository $groupRepository) {
 		return new ArticleFilter($groupRepository);
 	}
 	

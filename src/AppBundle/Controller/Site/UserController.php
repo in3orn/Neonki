@@ -10,6 +10,7 @@ use AppBundle\Repository\GroupRepository;
 use AppBundle\Entity\Group;
 use AppBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\GroupRequest;
 
 class UserController extends SiteEntityController
 {	
@@ -26,6 +27,16 @@ class UserController extends SiteEntityController
 		$entry = $this->getEntry($id);
 		$entry->setGroup($responsible->getGroup());
 		$this->saveEntry($entry);
+		
+		//remove request
+		$em = $this->getDoctrine()->getManager();
+	
+		//Make sure entity exists :)
+		$requestRepository = $this->getDoctrine()->getRepository(GroupRequest::class);
+		$request = $requestRepository->findOneBy(['sender' => $id]);
+		
+		$em->remove($request);
+		$em->flush();
 	
 		return $this->redirectToRoute($this->getShowRoute());
 	}
@@ -97,10 +108,18 @@ class UserController extends SiteEntityController
 	 */
 	protected function createNewFilter() {
 		$groupRepository = $this->getDoctrine()->getRepository(Group::class);
-		return new UserFilter($groupRepository);
+		
+		$user = $this->get('security.token_storage')->getToken()->getUser();
+		$groupId = $user->getGroup()->getId();
+		$group = $groupRepository->find($groupId);
+		
+		$filter = new UserFilter($groupRepository);
+		if($group) $filter->setGroups([$group]);
+		
+		return $filter;
 	}
 	
 	protected function getPageCount() {
-		return 3;
+		return 6;
 	}
 }

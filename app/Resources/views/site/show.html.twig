@@ -8,8 +8,13 @@
 		</a>				
 	</div>
 	<div class="btn-group btn-group-justified lowered" role="group">
-		<a class="btn btn-warning" href="{{ path(mainPath ~ '_edit', { id: entry.id }) }}">
+		<a class="btn btn-warning {% if entry.createdBy.id != app.user.id %}disabled{% endif %}" href="{{ path(mainPath ~ '_edit', { id: entry.id }) }}">
 			<i class="fa fa-edit"></i> {{ 'action.edit'|trans }}
+		</a>
+	</div>
+	<div class="btn-group btn-group-justified lowered" role="group">
+		<a class="btn btn-danger {% if entry.createdBy.id != app.user.id %}disabled{% endif %}" href="{{ path(mainPath ~ '_delete', { id: entry.id }) }}">
+			<i class="fa fa-trash"></i> {{ 'action.delete'|trans }}
 		</a>
 	</div>
 	{% endif %}

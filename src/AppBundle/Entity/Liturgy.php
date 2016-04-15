@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Base\SimpleEntity;
+use AppBundle\Entity\Dependent\GroupDependent;
 
 /**
  * Liturgy
@@ -10,7 +11,7 @@ use AppBundle\Entity\Base\SimpleEntity;
  * @author inb
  *
  */
-class Liturgy extends SimpleEntity
+class Liturgy extends SimpleEntity implements GroupDependent
 {
     
     /**
