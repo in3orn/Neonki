@@ -66,8 +66,9 @@ class GroupEntityFilter extends SimpleEntityFilter {
 		$expressions = parent::getExpressions();
 		
 		$expression = $this->getEqualArrayExpression('group', $this->groups);
-		if($expression)
+		if($expression) {
 			$expressions[] = $expression;
+		}
 		
 		return $expressions;
 	}

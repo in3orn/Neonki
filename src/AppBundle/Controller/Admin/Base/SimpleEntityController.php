@@ -34,7 +34,7 @@ abstract class SimpleEntityController extends Controller
 			}
 		}
 		
-		$allEntries = $this->getAllEntries($filter, $page);
+		$allEntries = $this->getAllEntries($request, $filter, $page);
 		$selectedEntries = $this->getSelectedEntries($filter, $allEntries);
 		
 		$form = $this->createForm($this->getListFormType(), $selectedEntries, array('choices' => $allEntries));
@@ -77,17 +77,31 @@ abstract class SimpleEntityController extends Controller
 	/**
 	 * Get all entries matching criteria specified in $filter.
 	 * 
+	 * @param Request $request
 	 * @param SimpleEntityFilter $filter
-	 * @param int $page
+	 * @param integer $page
 	 * 
-	 * @return array
+	 * return array
 	 */
-	protected function getAllEntries($filter, $page) {
+	protected function getAllEntries(Request $request, SimpleEntityFilter $filter, $page) {
+		$filter = $this->updateFilter($request, $filter);
+		
 		$repository = $this->getRepository();
 		$query = $repository->querySelected($filter);
 			
 		$paginator = $this->get('knp_paginator');
 		return $paginator->paginate($query, $page, $this->getPageCount());
+	}
+	
+	/**
+	 * 
+	 * @param Request $request
+	 * @param SimpleEntityFilter $filter
+	 * 
+	 * @return \AppBundle\Entity\Filter\Base\SimpleEntityFilter
+	 */
+	protected function updateFilter(Request $request, SimpleEntityFilter $filter) {
+		return $filter;
 	}
 	
 	protected function getPageCount() {

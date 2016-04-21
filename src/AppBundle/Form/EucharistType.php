@@ -23,11 +23,11 @@ class EucharistType extends SimpleEntityType
 		$builder
 			->add('date', DateTimeType::class, array(
 			    'widget' => 'single_text',
-			    'format' => 'yyyy-MM-dd hh:mm',
+			    'format' => 'dd/MM/yyyy HH:mm',
 			    'attr' => [
 			        'class' => 'form-control input-inline datetimepicker',
 			        'data-provide' => 'datetimepicker',
-			        'data-date-format' => 'YYYY-MM-DD hh:mm'
+			        'data-date-format' => 'DD/MM/YYYY HH:mm'
 			    ]
 			))
 			->add('info', TextType::class, array(

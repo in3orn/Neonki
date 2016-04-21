@@ -9,8 +9,9 @@ use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Group;
 use AppBundle\Entity\Subject;
 use AppBundle\Form\LiturgyType;
+use AppBundle\Controller\Site\Base\GroupEntityController;
 
-class LiturgyController extends SiteEntityController
+class LiturgyController extends GroupEntityController
 {
 	/**
 	 * 

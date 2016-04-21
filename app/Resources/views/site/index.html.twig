@@ -70,7 +70,7 @@
 						            	</li>
 						            	<li>
 							            	<a href="{{ path('site_group_request', { receivers: app.user.id }) }}">
-							            		<span class="fa fa-mail-forward"></span> 
+							            		<span class="fa fa-envelope"></span> 
 							            		{{ 'title.requests_received'|trans }}
 							            		<span class="label-as-badge label-success">x</span>
 						            		</a>
@@ -78,7 +78,7 @@
 					            	{% endif %}
 					            	<li>
 						            	<a href="{{ path('site_group_request', { senders: app.user.id }) }}">
-						            		<span class="fa fa-mail-reply"></span> 
+						            		<span class="fa fa-mail-forward"></span> 
 				            				{{ 'title.requests_sent'|trans }}
 						            		<span class="label-as-badge label-success">x</span>
 					            		</a>
@@ -134,13 +134,7 @@
 		<div class="footer">
 	  		<div class="container-fluid">
 		    	<div class="col-lg-12">
-		      		<p>&copy; 2016 KRK Developement</p>
-		      		<div class="social-media">
-	        			<a href="#"><i class="fa fa-facebook"></i></a>
-		        		<a href="#"><i class="fa fa-twitter"></i></a>
-		        		<a href="#"><i class="fa fa-pinterest"></i></a>
-		        		<a href="#"><i class="fa fa-instagram"></i></a>
-		      		</div>
+		      		<strong>&copy; 2016 KRK Developement</strong>
 		    	</div>
 		  	</div>
 		</div>

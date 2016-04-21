@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use AppBundle\Entity\GroupRequest;
 use AppBundle\Entity\User;
 use AppBundle\Form\Base\SimpleEntityType;
+use AppBundle\Repository\UserRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -33,7 +34,12 @@ class GroupRequestType extends SimpleEntityType
 			->add('receiver', EntityType::class, array(
 					'class'			=> User::class,
 					'choice_label' 	=> 'username',
-					'placeholder'	=> 'Choose receiver'
+					'placeholder'	=> 'Choose receiver',
+					'query_builder' => function(UserRepository $repository) {
+						return $repository->createQueryBuilder('u')
+								->where('u.roles LIKE \'%ROLE_SUPER_ADMIN%\' OR u.roles LIKE \'%ROLE_ADMIN%\' OR u.roles LIKE \'%ROLE_RESPONSIBLE%\'')
+								->orderBy('u.username', 'ASC');
+					}
 			))
 			;
 	}

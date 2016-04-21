@@ -485,6 +485,11 @@
                 <target>Roles</target>
             </trans-unit>
             
+            <trans-unit id="text.user.no_group">
+                <source>text.user.no_group</source>
+                <target>No group assigned</target>
+            </trans-unit>
+            
             
             
             
@@ -638,6 +643,52 @@
             <trans-unit id="action.user.remove_from_group">
                 <source>action.user.remove_from_group</source>
                 <target>Remove from group</target>
+            </trans-unit>
+            
+            <trans-unit id="action.user.reset_password">
+                <source>action.user.change_password</source>
+                <target>Change password</target>
+            </trans-unit>
+            
+            <trans-unit id="action.user.send_request">
+                <source>action.user.send_request</source>
+                <target>Assign to group</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
+            <trans-unit id="header.site.welcome">
+                <source>header.site.welcome</source>
+                <target>Welcome!</target>
+            </trans-unit>
+            <trans-unit id="text.site.welcome">
+                <source>text.site.welcome</source>
+                <target>Welcome on site dedicated to Neocatechumenat in Cracow.</target>
+            </trans-unit>
+            <trans-unit id="text.site.preProfile">
+                <source>text.site.preProfile</source>
+                <target>If you don't see any content concerning your brotherhood, go to the  
+				</target>
+            </trans-unit>
+            <trans-unit id="text.site.profile">
+                <source>text.site.profile</source>
+                <target>profile</target>
+            </trans-unit>
+            <trans-unit id="text.site.preGroup">
+                <source>text.site.preGroup</source>
+                <target> page and make sure that field </target>
+            </trans-unit>
+            <trans-unit id="text.site.group">
+                <source>text.site.group</source>
+                <target>group</target>
+            </trans-unit>
+            <trans-unit id="text.site.talkTo">
+                <source>text.site.talkTo</source>
+                <target> is not empty. In other case talk to one of your superiors.
+				</target>
             </trans-unit>
         </body>
     </file>

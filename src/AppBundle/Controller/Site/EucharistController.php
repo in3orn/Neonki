@@ -2,14 +2,15 @@
 
 namespace AppBundle\Controller\Site;
 
+use AppBundle\Controller\Site\Base\GroupEntityController;
 use AppBundle\Controller\Site\Base\SiteEntityController;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Eucharist;
-use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Group;
 use AppBundle\Form\EucharistType;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
-class EucharistController extends SiteEntityController
+class EucharistController extends GroupEntityController
 {
 	/**
 	 * 

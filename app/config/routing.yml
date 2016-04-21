@@ -107,8 +107,8 @@ site_song:
   
 # Site Users Routing  
 site_user_show:
-    path:      /profile
-    defaults:  { _controller: "AppBundle:Site/User:show", id: 1 }    
+    path:      /profile/{id}
+    defaults:  { _controller: "AppBundle:Site/User:show", id: 0 }    
     
 site_user_add:
     path:      /profile/add/{id}

@@ -429,7 +429,7 @@
             </trans-unit>
             <trans-unit id="label.subject.stage">
                 <source>label.subject.stage</source>
-                <target>Etao</target>
+                <target>Etap</target>
             </trans-unit>
             
             <trans-unit id="label.subject.liturgies">
@@ -485,6 +485,10 @@
                 <target>Role</target>
             </trans-unit>
             
+            <trans-unit id="text.user.no_group">
+                <source>text.user.no_group</source>
+                <target>Nie przypisano do grupy</target>
+            </trans-unit>
             
             
             
@@ -638,6 +642,54 @@
             <trans-unit id="action.user.remove_from_group">
                 <source>action.user.remove_from_group</source>
                 <target>Usuń z grupy</target>
+            </trans-unit>
+            
+            <trans-unit id="action.user.reset_password">
+                <source>action.user.change_password</source>
+                <target>Zmień hasło</target>
+            </trans-unit>
+            
+            <trans-unit id="action.user.send_request">
+                <source>action.user.send_request</source>
+                <target>Przypisz do grupy</target>
+            </trans-unit>
+            
+            
+            
+            
+            
+            
+            
+            <trans-unit id="header.site.welcome">
+                <source>header.site.welcome</source>
+                <target>Witamy!</target>
+            </trans-unit>
+            <trans-unit id="text.site.welcome">
+                <source>text.site.welcome</source>
+                <target>Witamy na stronie poświęconej Krakowskiemu Neokatechumenatowi.</target>
+            </trans-unit>
+            <trans-unit id="text.site.preProfile">
+                <source>text.site.preProfile</source>
+                <target>Jeśli w żadnej sekcji strony nie widzisz treści dotyczących twojej wspólnoty, 
+						wejdź na stronę swojego 
+				</target>
+            </trans-unit>
+            <trans-unit id="text.site.profile">
+                <source>text.site.profile</source>
+                <target>profilu</target>
+            </trans-unit>
+            <trans-unit id="text.site.preGroup">
+                <source>text.site.preGroup</source>
+                <target> i upewnij się, że pole </target>
+            </trans-unit>
+            <trans-unit id="text.site.group">
+                <source>text.site.group</source>
+                <target>wspólnota</target>
+            </trans-unit>
+            <trans-unit id="text.site.talkTo">
+                <source>text.site.talkTo</source>
+                <target> jest wypełnione. W przeciwnym przypadku zgłoś się do jednego z odpowiedzialnych z twojej wspólnoty.
+				</target>
             </trans-unit>
         </body>
     </file>

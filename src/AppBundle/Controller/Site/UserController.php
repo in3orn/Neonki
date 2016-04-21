@@ -16,7 +16,12 @@ class UserController extends SiteEntityController
 {	
 	public function showAction(Request $request, $id)
 	{
-		$entry = $this->get('security.token_storage')->getToken()->getUser();
+		$entry = null;
+		if($id > 0) {
+			$entry = $this->getEntry($id);
+		} else {
+			$entry = $this->get('security.token_storage')->getToken()->getUser();
+		}
 		return $this->render($this->getTwigShow(), array('entry' => $entry));
 	}
 	
@@ -49,19 +54,6 @@ class UserController extends SiteEntityController
 	
 		return $this->redirectToRoute($this->getShowRoute());
 	}
-	
-// 	public function sendRequestAction(Request $request, $id)
-// 	{
-// 		$sender = $this->get('security.token_storage')->getToken()->getUser();
-// 		$receiver = $this->getEntry($id);
-		
-// 		$entry = new \AppBundle\Entity\Request();
-// 		$entry->setSender($sender);
-// 		$entry->setReceiver($receiver);
-// 		$this->saveEntry($entry);
-	
-// 		return $this->redirectToRoute($this->getShowRoute());
-// 	}
 	
 	/**
 	 *

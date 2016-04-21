@@ -34,7 +34,7 @@ abstract class SiteEntityController extends SimpleEntityController
 			}
 		}
 		
-		$allEntries = $this->getAllEntries($filter, $page);
+		$allEntries = $this->getAllEntries($request, $filter, $page);
 		
 		$params = $this->initTwigParams($request);
 		

@@ -6,6 +6,10 @@
 {% block actionsBlock %}
 {% endblock %}
 
+{% block filterMoreFields2 %}
+<li class="col-xs-12 lowered">{{ form_widget(filter.stages) }}</li>
+{% endblock %}
+
 {% block mainContentTitle %}
 {% endblock %}
 
@@ -26,7 +30,13 @@
 
 {% block entryMoreFields2 %}
 <div class="col-xs-4 col-sm-2">
-	{{ entry.stage.name }}
+	{% if app.user.group %}
+		{% if app.user.group.stage and app.user.group.stage.id >= entry.stage.id %}
+			<p class="text-success"><span class="fa fa-check"></span> {{ entry.stage.name }} </p>
+		{% else %}
+			<p class="text-danger"><span class="fa fa-close"></span> {{ entry.stage.name }} </p>
+		{% endif %}
+	{% endif %}
 </div>
 <div class="col-xs-4 col-sm-2">
 	{% if entry.liturgies.count > 0 %}

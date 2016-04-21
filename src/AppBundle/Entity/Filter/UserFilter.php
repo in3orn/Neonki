@@ -65,6 +65,13 @@ class UserFilter extends SimpleEntityFilter {
 	protected function getExpressions() {
 		$expressions = parent::getExpressions();
 		
+		for($i = 0; $i < count($expressions); $i++) {
+			$expression = $expressions[$i];
+			if (strpos($expression, 'e.name') !== false) {
+				$expressions[$i] = str_replace('e.name', 'e.username', $expression);
+			}
+		}
+		
 		$expression = $this->getEqualArrayExpression('group', $this->groups);
 		if($expression)
 			$expressions[] = $expression;

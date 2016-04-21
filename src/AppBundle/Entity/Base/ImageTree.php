@@ -99,6 +99,17 @@ class ImageTree extends Image
     }
 
     /**
+     * 
+     * @param integer $id
+     * @return \AppBundle\Entity\Base\ImageTree
+     */
+    public function setId($id)
+    {
+    	$this->id = $id;
+    	return $this;
+    }
+    
+    /**
      * Get id
      *
      * @return integer

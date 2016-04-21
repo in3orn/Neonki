@@ -4,15 +4,16 @@ namespace AppBundle\Controller\Site;
 
 use AppBundle\Controller\Site\Base\SiteEntityController;
 use AppBundle\Entity\Filter\SiglumFilter;
+use AppBundle\Entity\Filter\SiglumRenderer;
 use AppBundle\Entity\Filter\SubjectFilter;
 use AppBundle\Entity\Siglum;
 use AppBundle\Entity\SiglumKind;
 use AppBundle\Entity\Stage;
 use AppBundle\Entity\Subject;
+use AppBundle\Form\Filter\SiglumRendererType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Filter\SiglumRenderer;
-use AppBundle\Form\Filter\SiglumRendererType;
+use AppBundle\Form\Filter\SubjectFilterType;
 
 class SubjectController extends SiteEntityController
 {
@@ -81,14 +82,8 @@ class SubjectController extends SiteEntityController
 	}
 	
 	protected function createNewFilter() {
-		$repository = $this->getDoctrine()->getRepository(Stage::class); 
-		
-		$user = $this->get('security.token_storage')->getToken()->getUser();
-		$id = $user->getGroup()->getStage()->getId();
-		$stage = $repository->find($id);
-		
+		$repository = $this->getDoctrine()->getRepository(Stage::class);
 		$filter = new SubjectFilter($repository);
-		$filter->setStages(array($stage));
 		
 		return $filter;
 	}
@@ -133,6 +128,15 @@ class SubjectController extends SiteEntityController
 	protected function getDetailEntityType()
 	{
 		return Siglum::class;
+	}
+	
+	/**
+	 * 
+	 * {@inheritDoc}
+	 * @see \AppBundle\Controller\Admin\Base\SimpleEntityController::getFormType()
+	 */
+	protected function getFilterFormType() {
+		return SubjectFilterType::class;
 	}
 	
 	protected function getRendererFormType()

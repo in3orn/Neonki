@@ -23,42 +23,42 @@ class SimpleEntityFilterType extends BaseFormType
 			))
 			->add('updatedAfter', DateTimeType::class, array(
 					'widget' => 'single_text',
-					'format' => 'DD-MM-YYYY hh:mm',
+					'format' => 'dd/MM/yyyy HH:mm',
 					'required' => false,
 					'attr' => [
 							'class' => 'form-control input-inline datetimepicker',
 							'data-provide' => 'datetimepicker',
-							'data-date-format' => 'DD-MM-YYYY hh:mm'
+							'data-date-format' => 'DD/MM/YYYY HH:mm'
 					]
 			))
 			->add('updatedBefore', DateTimeType::class, array(
 					'widget' => 'single_text',
-					'format' => 'DD-MM-YYYY hh:mm',
+					'format' => 'dd/MM/yyyy HH:mm',
 					'required' => false,
 					'attr' => [
 							'class' => 'form-control input-inline datetimepicker',
 							'data-provide' => 'datepicker',
-							'data-date-format' => 'DD-MM-YYYY hh:mm'
+							'data-date-format' => 'DD/MM/YYYY HH:mm'
 					]
 			))
 			->add('createdAfter', DateTimeType::class, array(
 					'widget' => 'single_text',
-					'format' => 'DD-MM-YYYY hh:mm',
+					'format' => 'dd/MM/yyyy HH:mm',
 					'required' => false,
 					'attr' => [
 							'class' => 'form-control input-inline datetimepicker',
 							'data-provide' => 'datepicker',
-							'data-date-format' => 'DD-MM-YYYY hh:mm'
+							'data-date-format' => 'DD/MM/YYYY HH:mm'
 					]
 			))
 			->add('createdBefore', DateTimeType::class, array(
 					'widget' => 'single_text',
-					'format' => 'DD-MM-YYYY hh:mm',
+					'format' => 'dd/MM/yyyy HH:mm',
 					'required' => false,
 					'attr' => [
 							'class' => 'form-control input-inline datetimepicker',
 							'data-provide' => 'datepicker',
-							'data-date-format' => 'DD-MM-YYYY hh:mm'
+							'data-date-format' => 'DD/MM/YYYY HH:mm'
 					]
 			))
 		;
