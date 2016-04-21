@@ -7,7 +7,11 @@
 {% endblock %}
 
 {% block mainContentTitle %}
-<h2>{{ app.user.group.name }}</h2>
+{% if app.user.group %}
+	<h2>{{ app.user.group.name }}</h2>
+{% else %}
+	<h2 class="text-danger">{{ 'text.user.no_group'|trans }}</h2>
+{% endif %}
 {% endblock %}
 
 {% block headerMainFields1 %}

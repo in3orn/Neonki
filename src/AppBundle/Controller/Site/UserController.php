@@ -102,8 +102,13 @@ class UserController extends SiteEntityController
 		$groupRepository = $this->getDoctrine()->getRepository(Group::class);
 		
 		$user = $this->get('security.token_storage')->getToken()->getUser();
-		$groupId = $user->getGroup()->getId();
-		$group = $groupRepository->find($groupId);
+		$group = new Group();
+		$group->setId(-1);
+		
+		if($user->getGroup()) {
+			$groupId = $user->getGroup()->getId();
+			$group = $groupRepository->find($groupId);
+		}
 		
 		$filter = new UserFilter($groupRepository);
 		if($group) $filter->setGroups([$group]);

@@ -31,7 +31,7 @@ class StageDependentVoter extends Voter
 		if(!self::isLoggedIn($user)) {
 			return false;
 		}
-
+		
 		/** @var StageDependent $entry */
 		$entry = $object;
 

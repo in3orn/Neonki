@@ -6,6 +6,7 @@ use AppBundle\Entity\Base\Audit;
 use AppBundle\Entity\User;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+use AppBundle\Entity\GroupRequest;
 
 class BaseEntityVoter extends Voter
 {
@@ -19,7 +20,7 @@ class BaseEntityVoter extends Voter
 			return false;
 		}
 
-		if (!$object instanceof Audit) {
+		if (!$object instanceof GroupRequest) {
 			return false;
 		}
 
@@ -34,7 +35,7 @@ class BaseEntityVoter extends Voter
 			return false;
 		}
 
-		/** @var Audit $entry */
+		/** @var GroupRequest $entry */
 		$entry = $object;
 
 		switch($attribute) {
@@ -52,7 +53,13 @@ class BaseEntityVoter extends Voter
 		return $user instanceof User;
 	}
 
+	private function canShow(GroupRequest $entry, User $user) {
+		return $user->getId() === $entry->getSender()->getId() ||
+			$user->getId() === $entry->getReceiver()->getId();
+	}
+	
 	private function canEdit(Audit $entry, User $user) {
-		return $user->getId() === $entry->getCreatedBy()->getId();
+		return $user->getId() === $entry->getSender()->getId() ||
+			$user->getId() === $entry->getReceiver()->getId();
 	}
 }

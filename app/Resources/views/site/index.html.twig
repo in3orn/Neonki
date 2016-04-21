@@ -83,6 +83,14 @@
 						            		<span class="label-as-badge label-success">x</span>
 					            		</a>
 					            	</li>
+					            	{% if is_granted('ROLE_ADMIN') and app.user.group %}
+						            	<li>
+						            		<a href="{{ path('admin') }}">
+						            			<span class="fa fa-dashboard"></span> 
+						            			{{ 'label.admin'|trans }}
+					            			</a>
+						            	</li>
+					            	{% endif %}
 					            	<li>
 					            		<a href="{{ path('fos_user_security_logout') }}">
 					            			<span class="fa fa-power-off"></span> 
@@ -105,15 +113,6 @@
 				<div class="col-sm-3 col-sm-push-9">
 				{% block sidebar %}
 					{% block userContent %}
-						{% if is_granted('ROLE_USER') %}
-							<p class="text-right">
-								{{ 'label.welcome'|trans }} <strong>{{ app.user.username }}</strong>, 
-								<a href="{{ path('fos_user_security_logout') }}">{{ 'label.logout'|trans }}</a>
-							</p>
-							<p class="text-right">
-								<a href="{{ path('site_user_show') }}">{{ 'label.profile'|trans }}</a>
-							</p>
-						{% endif %}
 					{% endblock %}
 					
 					{% block sidebarContent %}

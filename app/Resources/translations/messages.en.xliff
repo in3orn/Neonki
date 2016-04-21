@@ -97,6 +97,10 @@
                 <source>label.welcome</source>
                 <target>Welcome</target>
             </trans-unit>
+            <trans-unit id="label.admin">
+                <source>label.admin</source>
+                <target>Admin panel</target>
+            </trans-unit>
             
             
             

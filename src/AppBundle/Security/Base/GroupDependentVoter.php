@@ -10,6 +10,8 @@ use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 class GroupDependentVoter extends Voter
 {
 	const SHOW = 'show';
+	const EDIT = 'show';
+	const DELETE = 'show';
 
 	protected function supports($attribute, $object)
 	{

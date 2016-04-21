@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
+use AppBundle\Entity\Dependent\GroupDependent;
 
 /**
  * User
@@ -10,7 +11,7 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @author inb
  *
  */
-class User extends BaseUser
+class User extends BaseUser implements GroupDependent
 {
 	const ROLE_EDITOR = 'ROLE_EDITOR';
 	const ROLE_RESPONSIBLE = 'ROLE_RESPONSIBLE';
