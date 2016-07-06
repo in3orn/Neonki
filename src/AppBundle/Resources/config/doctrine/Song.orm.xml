@@ -7,6 +7,13 @@
     <entity name="AppBundle\Entity\Song" table="songs"
         repository-class="AppBundle\Repository\SongRepository">
         
+        <field name="website" type="string" length="256" />
+        
+        <field name="liturgical" type="boolean" default="false" />
+        <field name="forPeace" type="boolean" default="false" />
+        <field name="forBread" type="boolean" default="false" />
+        <field name="forWine" type="boolean" default="false" />
+        
         <field name="site" type="integer" nullable="true" />
         <field name="content" type="text" nullable="true" />
         

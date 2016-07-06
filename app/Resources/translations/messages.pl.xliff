@@ -78,6 +78,10 @@
             
             
             
+            <trans-unit id="label.website">
+                <source>label.website</source>
+                <target>www</target>
+            </trans-unit>
             
             
             
@@ -553,6 +557,14 @@
             <trans-unit id="label.showUserOnly">
                 <source>label.showUserOnly</source>
                 <target>Pokaż tylko wybrane</target>
+            </trans-unit>
+            <trans-unit id="label.showPsalms">
+                <source>label.showPsalms</source>
+                <target>Pokaż Psalmy</target>
+            </trans-unit>
+            <trans-unit id="label.showSongOfSongs">
+                <source>label.showSongOfSongs</source>
+                <target>Pokaż Pieśń nad Pieśniami</target>
             </trans-unit>
             
             

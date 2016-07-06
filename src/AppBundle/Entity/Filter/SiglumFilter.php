@@ -74,6 +74,15 @@ class SiglumFilter extends SimpleEntityFilter {
 	}
 	
 	/**
+	 * 
+	 * {@inheritDoc}
+	 * @see \AppBundle\Entity\Filter\Base\SimpleEntityFilter::getOrderByExpression()
+	 */
+	public function getOrderByExpression() {
+		return ' ORDER BY e.orderNumber ASC ';
+	}
+	
+	/**
 	 * @var array
 	 */
 	protected $subjects;

@@ -38,6 +38,8 @@
 						<li class="col-xs-12 lowered">{{ form_widget(rendererForm.maxUser, { 'placeholder': 'label.selectMaxUser' }) }}</li>
 						<li class="col-xs-12">{{ form_widget(rendererForm.colorUser, { 'label': 'label.colorUser' }) }}</li>
 						<li class="col-xs-12">{{ form_widget(rendererForm.showUserOnly, { 'label': 'label.showUserOnly' }) }}</li>
+						<li class="col-xs-12">{{ form_widget(rendererForm.showPsalms, { 'label': 'label.showPsalms' }) }}</li>
+						<li class="col-xs-12">{{ form_widget(rendererForm.showSongOfSongs, { 'label': 'label.showSongOfSongs' }) }}</li>
 						
 						<li>
 							<div class="btn-group">
@@ -70,6 +72,14 @@
 			{% set textColor = "" %}
 			{% set textHidden = "" %}
 			
+			{% if renderer.showPsalms == false and detail.name starts with 'Ps ' %}
+				{% set textHidden = "hidden" %}
+			{% endif %}
+			
+			{% if renderer.showSongOfSongs == false and detail.name starts with 'Pnp ' %}
+				{% set textHidden = "hidden" %}
+			{% endif %}
+				
 			{% if renderer.actUser > 0 and renderer.maxUser >= renderer.actUser %}
 				{% if 1 + (loop.index0 % renderer.maxUser) == renderer.actUser %}
 					{% if renderer.colorUser %}

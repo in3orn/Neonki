@@ -37,6 +37,12 @@ class SiglumRendererType extends BaseFormType
 			->add('showUserOnly', CheckboxType::class, array(
 					'required'		=> false
 			))
+			->add('showPsalms', CheckboxType::class, array(
+					'required'		=> false
+			))
+			->add('showSongOfSongs', CheckboxType::class, array(
+					'required'		=> false
+			))
 			;
 	}
 	

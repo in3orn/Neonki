@@ -7,6 +7,8 @@
     <entity name="AppBundle\Entity\Siglum" table="sigla"
         repository-class="AppBundle\Repository\SiglumRepository">
         
+        <field name="orderNumber" type="integer" default="0" />
+        
         <many-to-one field="kind" target-entity="SiglumKind" />
         <many-to-one field="subject" target-entity="Subject" />
         

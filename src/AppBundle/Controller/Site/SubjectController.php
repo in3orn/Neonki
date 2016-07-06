@@ -39,13 +39,13 @@ class SubjectController extends SiteEntityController
 		$filter->setKinds(array($propheticKind));
 		$prophetic = $this->getDetails($filter);
 		
-		$otherKind = $repository->find(3);
-		$filter->setKinds(array($otherKind));
-		$other = $this->getDetails($filter);
-		
-		$gospelsKind = $repository->find(4);
+		$gospelsKind = $repository->find(3);
 		$filter->setKinds(array($gospelsKind));
 		$gospels = $this->getDetails($filter);
+		
+		$otherKind = $repository->find(4);
+		$filter->setKinds(array($otherKind));
+		$other = $this->getDetails($filter);
 		
 		$renderer = $this->createRenderer();
 		$renderer->initValues($request);
@@ -93,7 +93,6 @@ class SubjectController extends SiteEntityController
 		
 		$filter = new SiglumFilter($repository);
 		$filter->setSubjects(array($header));
-		//$filter->setName($name);
 		
 		return $filter;
 	}

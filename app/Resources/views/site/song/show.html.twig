@@ -9,6 +9,89 @@
 {% block moreFields1 %}
 	<div class="row">
 		<div class="col-sm-4">
+			<strong>{{ 'label.song.stage'|trans }}</strong>
+		</div>
+		<div class="col-sm-8">
+			{% if app.user.group and app.user.group.stage and app.user.group.stage.id >= entry.stage.id %}
+				<p class="text-success"><span class="fa fa-check"></span> {{ entry.stage.name }} </p>
+			{% else %}
+				<p class="text-danger"><span class="fa fa-close"></span> {{ entry.stage.name }} </p>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-4">
+			<strong>{{ 'label.song.site'|trans }}</strong>
+		</div>
+		<div class="col-sm-8">
+			{{ entry.site }}
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-4">
+			<strong>{{ 'label.song.liturgical'|trans }}</strong>
+		</div>
+		<div class="col-sm-8">
+			{% if entry.liturgical %}
+				<span class="text-success fa fa-check"></span>
+			{% else %}
+				<span class="text-danger fa fa-close"></span>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-4">
+			<strong>{{ 'label.song.forPeace'|trans }}</strong>
+		</div>
+		<div class="col-sm-8">
+			{% if entry.forPeace %}
+				<span class="text-success fa fa-check"></span>
+			{% else %}
+				<span class="text-danger fa fa-close"></span>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-4">
+			<strong>{{ 'label.song.forBread'|trans }}</strong>
+		</div>
+		<div class="col-sm-8">
+			{% if entry.forBread %}
+				<span class="text-success fa fa-check"></span>
+			{% else %}
+				<span class="text-danger fa fa-close"></span>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-4">
+			<strong>{{ 'label.song.forWine'|trans }}</strong>
+		</div>
+		<div class="col-sm-8">
+			{% if entry.forWine %}
+				<span class="text-success fa fa-check"></span>
+			{% else %}
+				<span class="text-danger fa fa-close"></span>
+			{% endif %}
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<a href="{{ entry.website }}" class="btn btn-primary">
+				<span class="fa fa-globe"></span> 
+				{{ 'label.website'|trans }}
+			</a>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-12">
 			<p>{{ entry.content }}</p>
 		</div>
 	</div>

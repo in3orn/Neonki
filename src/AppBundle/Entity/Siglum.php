@@ -71,4 +71,33 @@ class Siglum extends SimpleEntity
     {
         return $this->subject;
     }
+    /**
+     * @var integer
+     */
+    private $orderNumber;
+
+
+    /**
+     * Set orderNumber
+     *
+     * @param integer $orderNumber
+     *
+     * @return Siglum
+     */
+    public function setOrderNumber($orderNumber)
+    {
+        $this->orderNumber = $orderNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get orderNumber
+     *
+     * @return integer
+     */
+    public function getOrderNumber()
+    {
+        return $this->orderNumber;
+    }
 }

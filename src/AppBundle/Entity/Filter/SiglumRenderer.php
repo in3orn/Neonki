@@ -17,10 +17,11 @@ class SiglumRenderer extends BaseEntityFilter
 		$this->actUser = $request->get('actUser', null);
 		$this->maxUser = $request->get('maxUser', null);
 		
-		$colorUser = $request->get('colorUser', 0);
-		$this->colorUser = $colorUser > 0;
-		$showUserOnly = $request->get('showUserOnly', 0);
-		$this->showUserOnly = $showUserOnly > 0;
+		$this->colorUser = $request->get('colorUser', 0) > 0;
+		$this->showUserOnly = $request->get('showUserOnly', 0) > 0;
+		
+		$this->showPsalms = $request->get('showPsalms', 0) > 0;
+		$this->showSongOfSongs = $request->get('showSongOfSongs', 0) > 0;
 	
 		return $this;
 	}
@@ -35,8 +36,12 @@ class SiglumRenderer extends BaseEntityFilter
 	
 		$this->actUser = null;
 		$this->maxUser = null;
+		
 		$this->colorUser = false;
 		$this->showUserOnly = false;
+		
+		$this->showPsalms = false;
+		$this->showSongOfSongs = false;
 	
 		return $this;
 	}
@@ -51,8 +56,12 @@ class SiglumRenderer extends BaseEntityFilter
 	
 		$values['actUser'] = $this->actUser;
 		$values['maxUser'] = $this->maxUser;
+		
 		$values['colorUser'] = $this->colorUser;
 		$values['showUserOnly'] = $this->showUserOnly;
+		
+		$values['showPsalms'] = $this->showPsalms;
+		$values['showSongOfSongs'] = $this->showSongOfSongs;
 	
 		return $values;
 	}
@@ -96,6 +105,16 @@ class SiglumRenderer extends BaseEntityFilter
 	 * @var boolean
 	 */
 	private $showUserOnly;
+	
+	/**
+	 * @var boolean
+	 */
+	private $showPsalms;
+	
+	/**
+	 * @var boolean
+	 */
+	private $showSongOfSongs;
 	
 	/**
 	 * Set actUser
@@ -191,5 +210,53 @@ class SiglumRenderer extends BaseEntityFilter
 	public function isShowUserOnly()
 	{
 		return $this->showUserOnly;
+	}
+	
+	/**
+	 * Set showPsalms
+	 *
+	 * @param boolean $showPsalms
+	 *
+	 * @return SiglumRenderer
+	 */
+	public function setShowPsalms($showPsalms = null)
+	{
+		$this->showPsalms = $showPsalms;
+	
+		return $this;
+	}
+	
+	/**
+	 * Is showPsalms
+	 *
+	 * @return boolean
+	 */
+	public function isShowPsalms()
+	{
+		return $this->showPsalms;
+	}
+	
+	/**
+	 * Set showSongOfSongs
+	 *
+	 * @param boolean $showSongOfSongs
+	 *
+	 * @return SiglumRenderer
+	 */
+	public function setShowSongOfSongs($showSongOfSongs = null)
+	{
+		$this->showSongOfSongs = $showSongOfSongs;
+	
+		return $this;
+	}
+	
+	/**
+	 * Is showSongOfSongs
+	 *
+	 * @return boolean
+	 */
+	public function isShowSongOfSongs()
+	{
+		return $this->showSongOfSongs;
 	}
 }

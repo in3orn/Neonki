@@ -45,12 +45,10 @@
 
 {% block entryMoreFields2 %}
 <div class="col-xs-4 col-sm-5">
-	{% if app.user.group %}
-		{% if app.user.group.stage and app.user.group.stage.id >= entry.stage.id %}
-			<p class="text-success"><span class="fa fa-check"></span> {{ entry.stage.name }} </p>
-		{% else %}
-			<p class="text-danger"><span class="fa fa-close"></span> {{ entry.stage.name }} </p>
-		{% endif %}
+	{% if app.user.group and app.user.group.stage and app.user.group.stage.id >= entry.stage.id %}
+		<p class="text-success"><span class="fa fa-check"></span> {{ entry.stage.name }} </p>
+	{% else %}
+		<p class="text-danger"><span class="fa fa-close"></span> {{ entry.stage.name }} </p>
 	{% endif %}
 </div>
 {% endblock %}
