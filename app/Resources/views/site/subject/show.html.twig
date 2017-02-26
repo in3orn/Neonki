@@ -59,12 +59,8 @@
 {% endblock %}
 	
 {% block list %}
+
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
-			<div class="rect rounded-1 bkg-success">
-				<p class="div-center subject-logo">{{ 'label.subject.historical_sc'|trans }}</p>
-			</div>
-		</div>
 		
 		<div class="col-xs-12"><h3>{{ 'label.subject.historical'|trans }}</h3></div>
 		
@@ -102,17 +98,10 @@
 				</div>
 				<div class="col-xs-10">{{ detail.name }}</div>
 			</div>
-		{% else %}
-			No entries found.
 		{% endfor %}
 	</div>
 	
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
-			<div class="rect rounded-1 bkg-primary">
-				<p class="div-center subject-logo">{{ 'label.subject.prophetic_sc'|trans }}</p>
-			</div>
-		</div>
 		
 		<div class="col-xs-12"><h3>{{ 'label.subject.prophetic'|trans }}</h3></div>
 		
@@ -142,17 +131,10 @@
 				</div>
 				<div class="col-xs-10">{{ detail.name }}</div>
 			</div>
-		{% else %}
-			No entries found.
 		{% endfor %}
 	</div>
 	
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
-			<div class="rect rounded-1 bkg-warning">
-				<p class="div-center subject-logo">{{ 'label.subject.gospels_sc'|trans }}</p>
-			</div>
-		</div>
 		
 		<div class="col-xs-12"><h3>{{ 'label.subject.gospels'|trans }}</h3></div>
 		
@@ -182,17 +164,10 @@
 				</div>
 				<div class="col-xs-10">{{ detail.name }}</div>
 			</div>
-		{% else %}
-			No entries found.
 		{% endfor %}
 	</div>
 	
 	<div class="col-xs-12 col-sm-6 col-md-3">
-		<div class="col-xs-4 col-xs-offset-4 col-sm-8 col-sm-offset-2">
-			<div class="rect rounded-1 bkg-primary">
-				<p class="div-center subject-logo">{{ 'label.subject.others_sc'|trans }}</p>
-			</div>
-		</div>
 		
 		<div class="col-xs-12"><h3>{{ 'label.subject.others'|trans }}</h3></div>
 		
@@ -222,8 +197,6 @@
 				</div>
 				<div class="col-xs-10">{{ detail.name }}</div>
 			</div>
-		{% else %}
-			No entries found.
 		{% endfor %}
 	</div>
 {% endblock %}
