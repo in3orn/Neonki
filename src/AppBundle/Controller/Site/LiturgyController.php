@@ -2,14 +2,16 @@
 
 namespace AppBundle\Controller\Site;
 
+use AppBundle\Controller\Site\Base\GroupEntityController;
 use AppBundle\Controller\Site\Base\SiteEntityController;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use AppBundle\Entity\Liturgy;
-use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Filter\LiturgyFilter;
 use AppBundle\Entity\Group;
+use AppBundle\Entity\Liturgy;
 use AppBundle\Entity\Subject;
 use AppBundle\Form\LiturgyType;
-use AppBundle\Controller\Site\Base\GroupEntityController;
+use AppBundle\Repository\GroupRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class LiturgyController extends GroupEntityController
 {
@@ -38,6 +40,10 @@ class LiturgyController extends GroupEntityController
 		}
 		
 		return $liturgy;
+	}
+	
+	protected function createGroupFilter(GroupRepository $groupRepository) {
+		return new LiturgyFilter($groupRepository);
 	}
 	
 	/**
